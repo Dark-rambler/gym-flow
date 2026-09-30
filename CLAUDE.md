@@ -55,6 +55,16 @@ Skill `/run-stack`. Resumen: `docker compose up -d db` (Postgres en **:5433**) �
 - Montos con `Money.of` (2 decimales) y tope S/ 99,999.99 en precios/monto inicial.
 - Reporte `GET /api/reports/income?from&to` (inclusive, días en zona del gym, máx. 1 año). Tests: helpers `openCash(session)` y `sell(...)` en `ApiTestSupport`.
 
+## Check-in, QR y dashboard (semana 4)
+
+- `POST /api/check-ins {code}`: `code` es el QR (`GF1:<uuid>` o el uuid solo) o un DNI (`CheckInCode.parse`). Responde 200 también si se deniega (`result`, `reason`, `message` listo para mostrar).
+- Veredicto (`CheckInVerdict`): UNKNOWN → MEMBER_INACTIVE → NO_MEMBERSHIP → según `Memberships.current(hoy)` (solo ACTIVE pasa). Se registran los denegados (INVALID_CODE no). Otra lectura del mismo socio en < 2 h devuelve `duplicate: true` y **no inserta**.
+- Buscar el socio por **id escalar** (`findIdByQrToken`/`findIdByDni`) → `lockById` → leer. Nunca cargar la entidad antes del bloqueo.
+- El `qrToken` es la credencial de acceso. `GET /api/members/{id}/qr` (todos los roles, para imprimir carnet) y `POST .../qr/rotate` (OWNER/ADMIN) que invalida carnet y enlace.
+- **Ruta pública** `GET /api/public/member-card/{token}` (sin login, `callAsSystem`): solo nombre, gym, payload y estado de membresía; socio inactivo o token viejo → 404. El enlace del celular contiene la credencial: si se filtra, se **rota**. `index.html` usa `referrer: no-referrer`; `BearerTokenResolver` e interceptor ignoran `/api/public/`.
+- Dashboard `GET /api/dashboard/summary`: activos hoy, congelados, entradas de hoy, por vencer en 7 días (sin renovación posterior y socio activo).
+- Front: `/check-in` (input siempre enfocado para lector USB, cámara con `@zxing/browser` cargado por import dinámico), `gf-qr-code` (lib `qrcode`), `/imprimir/carnet/:id` (tarjeta CR80) y `/carnet/:token` (pública, fuera del shell).
+
 ## Contrato front ↔ back
 
 - Base `/api`. Errores `{ status, message, timestamp, errors? }`: 400 validación, 401, 403, 404, 409 regla de negocio/conflicto.
@@ -69,7 +79,7 @@ Hexagonal por módulo: `com.gymflow.<modulo>.{domain,application,infrastructure,
 
 `src/app/{core,shared/ui,api,features/<f>}`, páginas lazy, `OnPush`, signals/`resource`, Tailwind. Textos en español. Detalle en `/angular-feature`.
 
-- Sesión: `core/auth/auth.store.ts` (signals + localStorage, sincronizado entre pestañas), `auth.service.ts` (login/registro/logout/refresh), `auth.interceptor.ts` (Bearer + un refresh y reintento ante 401; no toca `/api/auth/*`), `auth.guards.ts` (`authGuard`, `guestGuard`, `roleGuard(...)`).
+- Sesión: `core/auth/auth.store.ts` (signals + localStorage, sincronizado entre pestañas), `auth.service.ts` (login/registro/logout/refresh), `auth.interceptor.ts` (Bearer + un refresh y reintento ante 401; no toca `/api/auth/*` ni `/api/public/*`), `auth.guards.ts` (`authGuard`, `guestGuard`, `roleGuard(...)`).
 - API: `inject(Api).invoke(fn, params)` con las funciones de `api/functions`. Errores: `apiErrorMessage` / `apiFieldErrors` de `core/http/api-error.ts`; notificaciones con `ToastService`.
 - UI base en `shared/ui`: `button[gfButton]`, `gf-form-field` (+ `fieldError()` de `shared/forms`), `gf-icon`, toasts. Inputs con la clase `gf-input`; colores de marca `brand-*` en `styles.css`.
 - `environment.development.ts` (apiUrl `http://localhost:8080`) reemplaza a `environment.ts` en `ng serve`.
@@ -84,4 +94,4 @@ Hexagonal por módulo: `com.gymflow.<modulo>.{domain,application,infrastructure,
 
 ## Hoja de ruta
 
-Plan completo: semana 0 setup ✅ · 1 auth + tenant ✅ (pendiente: rate limiting de login/registro → semana 5) · 2 socios/planes/membresías ✅ · 3 pagos y caja ✅ · 4 check-in (QR con rotación / DNI) + dashboard · 5 E2E, hardening, rate limiting y deploy.
+Plan completo: semana 0 setup ✅ · 1 auth + tenant ✅ (pendiente: rate limiting de login/registro → semana 5) · 2 socios/planes/membresías ✅ · 3 pagos y caja ✅ · 4 check-in (QR con rotación / DNI) + dashboard ✅ · 5 E2E, hardening, rate limiting y deploy.

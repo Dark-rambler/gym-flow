@@ -4,8 +4,8 @@ import { catchError, from, switchMap, throwError } from 'rxjs';
 import { AuthService } from './auth.service';
 import { AuthStore } from './auth.store';
 
-/** Las rutas de auth son públicas: sin Bearer y sin reintento (evita bucles de refresh). */
-const isAuthEndpoint = (req: HttpRequest<unknown>) => req.url.includes('/api/auth/');
+/** Rutas de auth y públicas (carnet): sin Bearer y sin reintento (evita bucles de refresh). */
+const isAuthEndpoint = (req: HttpRequest<unknown>) => req.url.includes('/api/auth/') || req.url.includes('/api/public/');
 
 const withToken = (req: HttpRequest<unknown>, token: string | null) =>
   token ? req.clone({ setHeaders: { Authorization: `Bearer ${token}` } }) : req;

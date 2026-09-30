@@ -3,6 +3,7 @@ package com.gymflow.member.infrastructure.persistence;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import jakarta.persistence.LockModeType;
 import org.springframework.data.domain.Page;
@@ -23,6 +24,14 @@ interface MemberJpaRepository extends JpaRepository<MemberJpaEntity, Long> {
     Optional<MemberJpaEntity> lockScopedById(@Param("id") Long id);
 
     List<MemberJpaEntity> findByIdIn(Collection<Long> ids);
+
+    Optional<MemberJpaEntity> findByQrToken(UUID qrToken);
+
+    @Query("select m.id from MemberJpaEntity m where m.qrToken = :token")
+    Optional<Long> findIdByQrToken(@Param("token") UUID token);
+
+    @Query("select m.id from MemberJpaEntity m where m.dni = :dni")
+    Optional<Long> findIdByDni(@Param("dni") String dni);
 
     @Query("select m from MemberJpaEntity m order by lower(m.fullName), m.id")
     Page<MemberJpaEntity> findAllSorted(Pageable pageable);

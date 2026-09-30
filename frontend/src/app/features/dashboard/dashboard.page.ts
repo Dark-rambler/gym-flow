@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, computed, inject, resource } from '
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Api } from '../../api/api';
-import { getCurrentCash, getIncomeReport, listPlans, searchMembers } from '../../api/functions';
+import { getCurrentCash, getDashboardSummary, getIncomeReport, listPlans, searchMembers } from '../../api/functions';
 import { AuthStore } from '../../core/auth/auth.store';
 import { IconComponent } from '../../shared/ui/icon/icon.component';
 import { todayIso } from '../members/membership-status';
@@ -14,7 +14,7 @@ interface Step {
   done: boolean;
 }
 
-// Semana 3: primeros pasos + caja + ingresos. Asistencias y vencimientos llegan con el check-in (semana 4).
+// Primeros pasos, caja, ingresos (OWNER/ADMIN), asistencias y socios por vencer.
 @Component({
   selector: 'gf-dashboard-page',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -75,19 +75,51 @@ interface Step {
             <p class="text-xs text-neutral-500">{{ income.value()?.totals?.count ?? 0 }} ventas</p>
           </div>
         }
-        <a routerLink="/socios" class="rounded-xl bg-white p-5 ring-1 ring-neutral-200 hover:ring-brand-500">
-          <p class="text-sm text-neutral-500">Socios registrados</p>
-          <p class="mt-1 text-2xl font-semibold tracking-tight text-neutral-900">{{ memberCount() ?? '—' }}</p>
+        <a routerLink="/check-in" class="rounded-xl bg-white p-5 ring-1 ring-neutral-200 hover:ring-brand-500">
+          <p class="flex items-center gap-2 text-sm text-neutral-500"><gf-icon name="qr" [size]="16" /> Asistencias hoy</p>
+          <p class="mt-1 text-2xl font-semibold tracking-tight text-neutral-900">{{ summary.value()?.checkInsToday ?? '—' }}</p>
         </a>
       </div>
 
-      <div class="mt-8 flex gap-4 rounded-xl bg-white p-5 ring-1 ring-neutral-200">
-        <span class="flex size-10 items-center justify-center rounded-lg bg-neutral-100 text-neutral-600"><gf-icon name="qr" /></span>
-        <div>
-          <p class="font-semibold text-neutral-900">Próximamente: Check-in</p>
-          <p class="mt-0.5 text-sm text-neutral-600">Control de acceso por QR o DNI, asistencias del día y socios por vencer.</p>
+      <div class="mt-4 grid gap-4 sm:grid-cols-3">
+        <a routerLink="/socios" class="rounded-xl bg-white p-5 ring-1 ring-neutral-200 hover:ring-brand-500">
+          <p class="text-sm text-neutral-500">Socios con membresía activa</p>
+          <p class="mt-1 text-2xl font-semibold tracking-tight text-neutral-900">{{ summary.value()?.activeMembers ?? '—' }}</p>
+          <p class="text-xs text-neutral-500">de {{ memberCount() ?? '—' }} registrados</p>
+        </a>
+        <div class="rounded-xl bg-white p-5 ring-1 ring-neutral-200">
+          <p class="text-sm text-neutral-500">Congelados</p>
+          <p class="mt-1 text-2xl font-semibold tracking-tight text-neutral-900">{{ summary.value()?.frozenMembers ?? '—' }}</p>
+        </div>
+        <div class="rounded-xl bg-white p-5 ring-1 ring-neutral-200">
+          <p class="text-sm text-neutral-500">Por vencer en 7 días</p>
+          <p class="mt-1 text-2xl font-semibold tracking-tight" [class]="(summary.value()?.expiringSoon?.length ?? 0) > 0 ? 'text-amber-700' : 'text-neutral-900'">
+            {{ summary.value()?.expiringSoon?.length ?? '—' }}
+          </p>
         </div>
       </div>
+
+      @if (summary.value()?.expiringSoon; as expiring) {
+        @if (expiring.length) {
+          <section class="mt-6 overflow-hidden rounded-xl bg-white ring-1 ring-neutral-200" aria-labelledby="expiring-title">
+            <h3 id="expiring-title" class="px-5 pt-5 font-semibold text-neutral-900">Por vencer esta semana</h3>
+            <p class="px-5 text-sm text-neutral-500">Buen momento para ofrecerles la renovación.</p>
+            <ul class="mt-3 divide-y divide-neutral-100">
+              @for (e of expiring; track e.memberId) {
+                <li>
+                  <a [routerLink]="['/socios', e.memberId]" class="flex items-center gap-4 px-5 py-3 hover:bg-neutral-50">
+                    <span class="flex-1 truncate font-medium text-neutral-900">{{ e.memberName }}</span>
+                    <span class="text-sm text-neutral-500">{{ e.planName }}</span>
+                    <span class="w-32 text-right text-sm font-medium text-amber-700">
+                      {{ e.daysLeft <= 1 ? 'Último día' : 'Vence en ' + e.daysLeft + ' días' }}
+                    </span>
+                  </a>
+                </li>
+              }
+            </ul>
+          </section>
+        }
+      }
     </div>
   `,
 })
@@ -103,6 +135,7 @@ export class DashboardPage {
   protected readonly plans = resource({ loader: () => this.api.invoke(listPlans, { includeInactive: false }) });
   private readonly members = resource({ loader: () => this.api.invoke(searchMembers, { page: 0, size: 1 }) });
   protected readonly cash = resource({ loader: () => this.api.invoke(getCurrentCash) });
+  protected readonly summary = resource({ loader: () => this.api.invoke(getDashboardSummary) });
   /** Ingresos del mes en curso (solo OWNER/ADMIN; recepción no llama al reporte). */
   protected readonly income = resource({
     params: () => (this.isManager() ? { from: this.today.slice(0, 8) + '01', to: this.today } : undefined),
