@@ -29,6 +29,11 @@ public record Member(
                 blankToNull(data.email()), data.birthDate(), blankToNull(data.notes()), qrToken, active, createdAt);
     }
 
+    /** Nuevo QR: el carnet impreso y el enlace público anteriores dejan de valer. */
+    public Member rotateQr() {
+        return new Member(id, gymId, fullName, dni, phone, email, birthDate, notes, UUID.randomUUID(), active, createdAt);
+    }
+
     public Member withActive(boolean newActive) {
         return new Member(id, gymId, fullName, dni, phone, email, birthDate, notes, qrToken, newActive, createdAt);
     }
