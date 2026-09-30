@@ -1,5 +1,7 @@
 package com.gymflow.member.infrastructure.persistence;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
 
@@ -43,6 +45,11 @@ class MemberRepositoryAdapter implements MemberRepository {
     @Override
     public Optional<Member> lockById(Long id) {
         return jpa.lockScopedById(id).map(MemberRepositoryAdapter::toDomain);
+    }
+
+    @Override
+    public List<Member> findByIds(Collection<Long> ids) {
+        return ids.isEmpty() ? List.of() : jpa.findByIdIn(ids).stream().map(MemberRepositoryAdapter::toDomain).toList();
     }
 
     @Override

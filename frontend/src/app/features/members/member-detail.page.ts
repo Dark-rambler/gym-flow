@@ -14,6 +14,7 @@ import { ToastService } from '../../shared/ui/toast/toast.service';
 import { AssignMembershipData, AssignMembershipDialog } from './assign-membership.dialog';
 import { MemberFormDialog } from './member-form.dialog';
 import { STATUS_LABEL, STATUS_TONE, remainingLabel } from './membership-status';
+import { METHOD_LABEL } from '../cash/payment-method';
 
 type MembershipAction = 'freeze' | 'unfreeze' | 'cancel';
 
@@ -103,7 +104,18 @@ type MembershipAction = 'freeze' | 'unfreeze' | 'cancel';
               <li class="flex flex-col gap-2 px-5 py-3 sm:flex-row sm:items-center">
                 <div class="flex-1">
                   <p class="text-sm font-medium text-neutral-900">{{ ms.planName }} · {{ ms.price | currency }}</p>
-                  <p class="text-xs text-neutral-500">{{ ms.startDate | date: 'dd/MM/yyyy' }} al {{ ms.endDate | date: 'dd/MM/yyyy' }}</p>
+                  <p class="text-xs text-neutral-500">
+                    {{ ms.startDate | date: 'dd/MM/yyyy' }} al {{ ms.endDate | date: 'dd/MM/yyyy' }} ·
+                    @if (ms.payment; as pay) {
+                      @if (pay.voided) {
+                        <span class="text-red-700">pago anulado</span>
+                      } @else {
+                        pagado con {{ methodLabel[pay.method] }} el {{ pay.paidAt | date: 'dd/MM/yyyy' }}
+                      }
+                    } @else {
+                      sin pago registrado
+                    }
+                  </p>
                 </div>
                 <gf-badge [tone]="statusTone[ms.status]">{{ statusLabel[ms.status] }}</gf-badge>
                 @if (isManager()) {
@@ -145,6 +157,7 @@ export class MemberDetailPage {
   protected readonly statusLabel = STATUS_LABEL;
   protected readonly statusTone = STATUS_TONE;
   protected readonly remainingLabel = remainingLabel;
+  protected readonly methodLabel = METHOD_LABEL;
   protected readonly actionLabel: Record<MembershipAction, string> = {
     freeze: 'Congelar',
     unfreeze: 'Descongelar',
@@ -190,7 +203,7 @@ export class MemberDetailPage {
       .open<MembershipResponse>(AssignMembershipDialog, { data, ariaLabel: 'Asignar membresía' })
       .closed.subscribe((created) => {
         if (created) {
-          this.toast.success(`Membresía ${created.planName} registrada`);
+          this.toast.success(`Cobrado: ${created.planName}`);
           this.member.reload();
         }
       });

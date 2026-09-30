@@ -45,6 +45,16 @@ Skill `/run-stack`. Resumen: `docker compose up -d db` (Postgres en **:5433**) �
 - RECEPTIONIST: socios (crear/editar), vender/renovar al precio del plan, ver planes. OWNER/ADMIN: además planes, precio, congelar/cancelar, desactivar socios.
 - Front: estados/labels en `features/members/membership-status.ts`; `ConfirmService` para acciones destructivas; locale `es-PE` y moneda `PEN` globales (`{{ x | currency }}` → S/).
 
+## Caja y pagos (semana 3)
+
+- **Vender = membresía + pago en la caja abierta, en una transacción** (`MembershipUseCases.assign`). Sin caja abierta → 409. Cobro siempre completo. Métodos `CASH|YAPE|PLIN|CARD`.
+- Una caja abierta por gym (índice único parcial `uk_cash_session_open`). **Orden de bloqueo: socio → caja** (venta, anulación); el cierre solo bloquea la caja. No invertirlo (deadlock).
+- **Idempotencia**: `idempotencyKey` (UUID del cliente, uno por intento de venta; el front lo genera al abrir el diálogo). Repetirla con la misma venta devuelve la original; con otro socio/plan/método/precio → 409.
+- Arqueo: `esperado = inicial + efectivo no anulado`; `diferencia = contado − esperado`. **Arqueo a ciegas**: RECEPTIONIST no recibe `expectedCash`/`totals`/`difference` (`CashSessionDetailResponse.blind()`); OWNER/ADMIN sí (historial).
+- Anular pago (OWNER/ADMIN, motivo): solo si su caja sigue abierta; cancela la membresía; bloqueado si hay una renovación posterior no cancelada. Cancelar una membresía desde la ficha NO toca el pago (no hay devoluciones).
+- Montos con `Money.of` (2 decimales) y tope S/ 99,999.99 en precios/monto inicial.
+- Reporte `GET /api/reports/income?from&to` (inclusive, días en zona del gym, máx. 1 año). Tests: helpers `openCash(session)` y `sell(...)` en `ApiTestSupport`.
+
 ## Contrato front ↔ back
 
 - Base `/api`. Errores `{ status, message, timestamp, errors? }`: 400 validación, 401, 403, 404, 409 regla de negocio/conflicto.
@@ -74,4 +84,4 @@ Hexagonal por módulo: `com.gymflow.<modulo>.{domain,application,infrastructure,
 
 ## Hoja de ruta
 
-Plan completo: semana 0 setup ✅ · 1 auth + tenant ✅ (pendiente: rate limiting de login/registro → semana 5) · 2 socios/planes/membresías ✅ · 3 pagos y caja (venta de membresía + pago en la misma transacción, idempotente) · 4 check-in (QR con rotación / DNI) + dashboard · 5 E2E, hardening, rate limiting y deploy.
+Plan completo: semana 0 setup ✅ · 1 auth + tenant ✅ (pendiente: rate limiting de login/registro → semana 5) · 2 socios/planes/membresías ✅ · 3 pagos y caja ✅ · 4 check-in (QR con rotación / DNI) + dashboard · 5 E2E, hardening, rate limiting y deploy.

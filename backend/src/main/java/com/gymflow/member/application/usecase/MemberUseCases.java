@@ -11,7 +11,7 @@ import com.gymflow.member.application.dto.MemberRequest;
 import com.gymflow.member.application.dto.MemberSummaryResponse;
 import com.gymflow.member.domain.model.Member;
 import com.gymflow.member.domain.port.MemberRepository;
-import com.gymflow.membership.application.dto.MembershipResponse;
+import com.gymflow.membership.application.MembershipViews;
 import com.gymflow.membership.domain.model.Membership;
 import com.gymflow.membership.domain.model.Memberships;
 import com.gymflow.membership.domain.port.MembershipRepository;
@@ -32,6 +32,7 @@ public class MemberUseCases {
 
     private final MemberRepository members;
     private final MembershipRepository memberships;
+    private final MembershipViews views;
     private final GymCalendar calendar;
 
     /** Listado paginado con la membresía actual de cada socio (una sola consulta extra para toda la página). */
@@ -40,11 +41,12 @@ public class MemberUseCases {
         String q = query != null && query.length() > MAX_QUERY_LENGTH ? query.substring(0, MAX_QUERY_LENGTH) : query;
         PageResult<Member> result = members.search(q, Math.max(page, 0), Math.clamp(size, 1, MAX_PAGE_SIZE));
         LocalDate today = calendar.today(actor.gymId());
-        Map<Long, List<Membership>> byMember = memberships
-                .findByMembers(result.items().stream().map(Member::id).toList()).stream()
-                .collect(Collectors.groupingBy(Membership::memberId));
+        List<Membership> all = memberships.findByMembers(result.items().stream().map(Member::id).toList());
+        Map<Long, List<Membership>> byMember = all.stream().collect(Collectors.groupingBy(Membership::memberId));
+        var toResponse = views.forMemberships(all, today);
         List<MemberSummaryResponse> items = result.items().stream()
-                .map(m -> MemberSummaryResponse.of(m, current(byMember.getOrDefault(m.id(), List.of()), today)))
+                .map(m -> MemberSummaryResponse.of(m, Memberships.current(byMember.getOrDefault(m.id(), List.of()), today)
+                        .map(toResponse).orElse(null)))
                 .toList();
         return PageResponse.of(result, items);
     }
@@ -83,11 +85,8 @@ public class MemberUseCases {
     private MemberDetailResponse detail(Actor actor, Member member) {
         LocalDate today = calendar.today(actor.gymId());
         List<Membership> history = member.id() == null ? List.of() : memberships.findByMember(member.id());
-        return MemberDetailResponse.of(member, current(history, today),
-                history.stream().map(ms -> MembershipResponse.of(ms, today)).toList());
-    }
-
-    private static MembershipResponse current(List<Membership> list, LocalDate today) {
-        return Memberships.current(list, today).map(m -> MembershipResponse.of(m, today)).orElse(null);
+        var toResponse = views.forMemberships(history, today);
+        return MemberDetailResponse.of(member, Memberships.current(history, today).map(toResponse).orElse(null),
+                history.stream().map(toResponse).toList());
     }
 }

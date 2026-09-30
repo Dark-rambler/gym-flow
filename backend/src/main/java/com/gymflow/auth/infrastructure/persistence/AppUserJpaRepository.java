@@ -1,5 +1,6 @@
 package com.gymflow.auth.infrastructure.persistence;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,6 +22,8 @@ interface AppUserJpaRepository extends JpaRepository<AppUserJpaEntity, Long> {
     boolean existsByEmail(String email);
 
     List<AppUserJpaEntity> findAllByOrderByFullNameAsc();
+
+    List<AppUserJpaEntity> findByIdIn(Collection<Long> ids);
 
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     List<AppUserJpaEntity> findByRoleAndActiveTrue(Role role);

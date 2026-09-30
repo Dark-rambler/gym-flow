@@ -20,4 +20,6 @@ interface MembershipJpaRepository extends JpaRepository<MembershipJpaEntity, Lon
     List<MembershipJpaEntity> findByMemberIdOrderByStartDateDescIdDesc(Long memberId);
 
     List<MembershipJpaEntity> findByMemberIdIn(Collection<Long> memberIds);
+
+    List<MembershipJpaEntity> findByIdIn(Collection<Long> ids);
 }

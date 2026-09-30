@@ -58,6 +58,11 @@ class MembershipRepositoryAdapter implements MembershipRepository {
         return jpa.findByMemberIdIn(memberIds).stream().map(MembershipRepositoryAdapter::toDomain).toList();
     }
 
+    @Override
+    public List<Membership> findByIds(Collection<Long> ids) {
+        return ids.isEmpty() ? List.of() : jpa.findByIdIn(ids).stream().map(MembershipRepositoryAdapter::toDomain).toList();
+    }
+
     private static Membership toDomain(MembershipJpaEntity e) {
         return new Membership(e.getId(), e.getGymId(), e.getMemberId(), e.getPlanId(), e.getPlanName(), e.getPrice(),
                 e.getStartDate(), e.getEndDate(), e.getStatus(), e.getFrozenSince(), e.getFrozenDays(),

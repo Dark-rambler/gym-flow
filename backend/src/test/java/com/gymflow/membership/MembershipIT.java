@@ -15,6 +15,7 @@ class MembershipIT extends ApiTestSupport {
     @Test
     void assignComputesInclusiveDatesAndRenewalChains() throws Exception {
         Session owner = registerGym("Gym Venta", uniqueEmail("owner"));
+        openCash(owner);
         long monthly = createPlan(owner, "Mensual", 30, "100.00");
         long quarterly = createPlan(owner, "Trimestral", 90, "270.00");
         long member = createMember(owner, "Ana", uniqueDni());
@@ -46,6 +47,7 @@ class MembershipIT extends ApiTestSupport {
     @Test
     void expiredMembershipIsDerivedFromDateAndRenewalStartsToday() throws Exception {
         Session owner = registerGym("Gym Vence", uniqueEmail("owner"));
+        openCash(owner);
         long monthly = createPlan(owner, "Mensual", 30, "100");
         long member = createMember(owner, "Beto", uniqueDni());
         assign(owner, member, monthly);
@@ -61,6 +63,7 @@ class MembershipIT extends ApiTestSupport {
     @Test
     void freezeAndUnfreezeAddsFrozenDaysToEndDate() throws Exception {
         Session owner = registerGym("Gym Congela", uniqueEmail("owner"));
+        openCash(owner);
         long monthly = createPlan(owner, "Mensual", 30, "100");
         long member = createMember(owner, "Carla", uniqueDni());
         long membership = idOf(assign(owner, member, monthly));
@@ -85,6 +88,7 @@ class MembershipIT extends ApiTestSupport {
     @Test
     void cannotFreezeWithScheduledRenewal() throws Exception {
         Session owner = registerGym("Gym Programada", uniqueEmail("owner"));
+        openCash(owner);
         long monthly = createPlan(owner, "Mensual", 30, "100");
         long member = createMember(owner, "Diego", uniqueDni());
         long current = idOf(assign(owner, member, monthly));
@@ -98,6 +102,7 @@ class MembershipIT extends ApiTestSupport {
     @Test
     void cancelledMembershipDoesNotCountForChain() throws Exception {
         Session owner = registerGym("Gym Cancela", uniqueEmail("owner"));
+        openCash(owner);
         long monthly = createPlan(owner, "Mensual", 30, "100");
         long member = createMember(owner, "Elena", uniqueDni());
         long first = idOf(assign(owner, member, monthly));
@@ -110,6 +115,7 @@ class MembershipIT extends ApiTestSupport {
     @Test
     void receptionistSellsAtPlanPriceButCannotOverridePriceOrFreeze() throws Exception {
         Session owner = registerGym("Gym Recep Venta", uniqueEmail("owner"));
+        openCash(owner);
         long monthly = createPlan(owner, "Mensual", 30, "100");
         String email = uniqueEmail("recep");
         createStaff(owner, email, "RECEPTIONIST");
@@ -117,7 +123,7 @@ class MembershipIT extends ApiTestSupport {
         long member = createMember(recep, "Fede", uniqueDni());
 
         postJson("/api/members/" + member + "/memberships", """
-                {"planId":%d,"price":1}""".formatted(monthly), recep.accessToken())
+                {"planId":%d,"price":1,"paymentMethod":"CASH","idempotencyKey":"%s"}""".formatted(monthly, java.util.UUID.randomUUID()), recep.accessToken())
                 .andExpect(status().isForbidden());
         long membership = idOf(assign(recep, member, monthly).andExpect(status().isCreated()));
         postJson("/api/memberships/" + membership + "/freeze", "", recep.accessToken())
@@ -126,17 +132,19 @@ class MembershipIT extends ApiTestSupport {
         // el dueño sí puede aplicar descuento
         long other = createMember(owner, "Gabi", uniqueDni());
         postJson("/api/members/" + other + "/memberships", """
-                {"planId":%d,"price":80.50}""".formatted(monthly), owner.accessToken())
+                {"planId":%d,"price":80.50,"paymentMethod":"CASH","idempotencyKey":"%s"}""".formatted(monthly, java.util.UUID.randomUUID()), owner.accessToken())
                 .andExpect(jsonPath("$.price", is(80.5)));
     }
 
     @Test
     void cannotUseMemberOrPlanFromAnotherGym() throws Exception {
         Session gymA = registerGym("Gym Plan A", uniqueEmail("a"));
+        openCash(gymA);
         long planA = createPlan(gymA, "Mensual", 30, "100");
         long memberA = createMember(gymA, "Hugo", uniqueDni());
         long membershipA = idOf(assign(gymA, memberA, planA));
         Session gymB = registerGym("Gym Plan B", uniqueEmail("b"));
+        openCash(gymB);
         long planB = createPlan(gymB, "Mensual", 30, "100");
         long memberB = createMember(gymB, "Iris", uniqueDni());
 
@@ -151,6 +159,7 @@ class MembershipIT extends ApiTestSupport {
     @Test
     void inactivePlanOrMemberCannotBeSold() throws Exception {
         Session owner = registerGym("Gym Inactivo", uniqueEmail("owner"));
+        openCash(owner);
         long monthly = createPlan(owner, "Mensual", 30, "100");
         long member = createMember(owner, "Juan", uniqueDni());
         patchJson("/api/members/" + member + "/active", """

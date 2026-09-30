@@ -1,7 +1,10 @@
 package com.gymflow.auth.infrastructure.persistence;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import com.gymflow.auth.domain.model.AppUser;
 import com.gymflow.auth.domain.port.UserRepository;
@@ -40,6 +43,15 @@ class UserRepositoryAdapter implements UserRepository {
     @Override
     public List<AppUser> findAll() {
         return jpa.findAllByOrderByFullNameAsc().stream().map(mapper::toDomain).toList();
+    }
+
+    @Override
+    public Map<Long, String> findNamesByIds(Collection<Long> ids) {
+        if (ids.isEmpty()) {
+            return Map.of();
+        }
+        return jpa.findByIdIn(ids).stream()
+                .collect(Collectors.toMap(AppUserJpaEntity::getId, AppUserJpaEntity::getFullName));
     }
 
     @Override

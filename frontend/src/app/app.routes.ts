@@ -40,6 +40,23 @@ export const routes: Routes = [
         loadComponent: () => import('./features/plans/plans.page').then((m) => m.PlansPage),
       },
       {
+        path: 'caja',
+        title: 'Caja · gymFlow',
+        loadComponent: () => import('./features/cash/cash.page').then((m) => m.CashPage),
+      },
+      {
+        path: 'caja/historial',
+        title: 'Historial de cajas · gymFlow',
+        canActivate: [roleGuard('OWNER', 'ADMIN')],
+        loadComponent: () => import('./features/cash/cash-history.page').then((m) => m.CashHistoryPage),
+      },
+      {
+        path: 'caja/sesiones/:id',
+        title: 'Caja · gymFlow',
+        canActivate: [roleGuard('OWNER', 'ADMIN')],
+        loadComponent: () => import('./features/cash/cash-session.page').then((m) => m.CashSessionPage),
+      },
+      {
         path: 'staff',
         title: 'Staff · gymFlow',
         canActivate: [roleGuard('OWNER', 'ADMIN')],

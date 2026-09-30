@@ -1,5 +1,7 @@
 package com.gymflow.member.infrastructure.persistence;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 import jakarta.persistence.LockModeType;
@@ -19,6 +21,8 @@ interface MemberJpaRepository extends JpaRepository<MemberJpaEntity, Long> {
     @Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("select m from MemberJpaEntity m where m.id = :id")
     Optional<MemberJpaEntity> lockScopedById(@Param("id") Long id);
+
+    List<MemberJpaEntity> findByIdIn(Collection<Long> ids);
 
     @Query("select m from MemberJpaEntity m order by lower(m.fullName), m.id")
     Page<MemberJpaEntity> findAllSorted(Pageable pageable);

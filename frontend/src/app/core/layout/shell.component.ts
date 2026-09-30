@@ -16,7 +16,7 @@ const NAV: NavItem[] = [
   { label: 'Dashboard', icon: 'home', path: '/' },
   { label: 'Socios', icon: 'users', path: '/socios' },
   { label: 'Planes', icon: 'card', path: '/planes' },
-  { label: 'Caja', icon: 'cash', soon: true },
+  { label: 'Caja', icon: 'cash', path: '/caja' },
   { label: 'Check-in', icon: 'qr', soon: true },
   { label: 'Staff', icon: 'shield', path: '/staff', roles: ['OWNER', 'ADMIN'] },
 ];

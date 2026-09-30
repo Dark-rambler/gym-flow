@@ -53,9 +53,24 @@ public abstract class ApiTestSupport {
         return ((Number) JsonPath.read(json, "$.id")).longValue();
     }
 
+    /** Vende en efectivo con una clave de idempotencia nueva (requiere caja abierta: openCash). */
     protected ResultActions assign(Session as, long memberId, long planId) throws Exception {
+        return sell(as, memberId, planId, "CASH", UUID.randomUUID());
+    }
+
+    protected ResultActions sell(Session as, long memberId, long planId, String method, UUID key) throws Exception {
         return postJson("/api/members/" + memberId + "/memberships", """
-                {"planId":%d}""".formatted(planId), as.accessToken());
+                {"planId":%d,"paymentMethod":"%s","idempotencyKey":"%s"}""".formatted(planId, method, key),
+                as.accessToken());
+    }
+
+    protected ResultActions openCash(Session as, String openingAmount) throws Exception {
+        return postJson("/api/cash/open", """
+                {"openingAmount":%s}""".formatted(openingAmount), as.accessToken());
+    }
+
+    protected void openCash(Session as) throws Exception {
+        openCash(as, "0").andExpect(status().isCreated());
     }
 
     protected static long idOf(ResultActions result) throws Exception {

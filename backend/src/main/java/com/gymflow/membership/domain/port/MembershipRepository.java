@@ -21,4 +21,6 @@ public interface MembershipRepository {
 
     /** Membresías de varios socios en una sola consulta (listados paginados). */
     List<Membership> findByMembers(Collection<Long> memberIds);
+
+    List<Membership> findByIds(Collection<Long> ids);
 }
