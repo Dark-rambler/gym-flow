@@ -13,6 +13,7 @@ import { ConfirmService } from '../../shared/ui/confirm/confirm.service';
 import { ToastService } from '../../shared/ui/toast/toast.service';
 import { AssignMembershipData, AssignMembershipDialog } from './assign-membership.dialog';
 import { MemberFormDialog } from './member-form.dialog';
+import { MemberQrCardComponent } from './member-qr-card.component';
 import { STATUS_LABEL, STATUS_TONE, remainingLabel } from './membership-status';
 import { METHOD_LABEL } from '../cash/payment-method';
 
@@ -21,7 +22,7 @@ type MembershipAction = 'freeze' | 'unfreeze' | 'cancel';
 @Component({
   selector: 'gf-member-detail-page',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, CurrencyPipe, DatePipe, BadgeComponent, ButtonComponent],
+  imports: [RouterLink, CurrencyPipe, DatePipe, BadgeComponent, ButtonComponent, MemberQrCardComponent],
   template: `
     <div class="mx-auto max-w-5xl">
       <a routerLink="/socios" class="text-sm text-neutral-500 hover:text-neutral-900">← Socios</a>
@@ -95,6 +96,8 @@ type MembershipAction = 'freeze' | 'unfreeze' | 'cancel';
             </dl>
           </section>
         </div>
+
+        <gf-member-qr-card class="mt-6" [memberId]="m.id" />
 
         <!-- historial -->
         <section class="mt-6 overflow-hidden rounded-xl bg-white ring-1 ring-neutral-200" aria-labelledby="history-title">

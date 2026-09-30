@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
+import java.util.UUID;
 
 import com.gymflow.member.domain.model.Member;
 import com.gymflow.member.domain.port.MemberRepository;
@@ -50,6 +51,21 @@ class MemberRepositoryAdapter implements MemberRepository {
     @Override
     public List<Member> findByIds(Collection<Long> ids) {
         return ids.isEmpty() ? List.of() : jpa.findByIdIn(ids).stream().map(MemberRepositoryAdapter::toDomain).toList();
+    }
+
+    @Override
+    public Optional<Member> findByQrToken(UUID qrToken) {
+        return jpa.findByQrToken(qrToken).map(MemberRepositoryAdapter::toDomain);
+    }
+
+    @Override
+    public Optional<Long> findIdByQrToken(UUID qrToken) {
+        return jpa.findIdByQrToken(qrToken);
+    }
+
+    @Override
+    public Optional<Long> findIdByDni(String dni) {
+        return jpa.findIdByDni(dni);
     }
 
     @Override

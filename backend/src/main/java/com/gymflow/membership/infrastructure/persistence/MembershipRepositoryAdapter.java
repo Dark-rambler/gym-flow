@@ -1,12 +1,15 @@
 package com.gymflow.membership.infrastructure.persistence;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
 import com.gymflow.membership.domain.model.Membership;
 import com.gymflow.membership.domain.port.MembershipRepository;
+import com.gymflow.membership.domain.model.MembershipStatus;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -61,6 +64,22 @@ class MembershipRepositoryAdapter implements MembershipRepository {
     @Override
     public List<Membership> findByIds(Collection<Long> ids) {
         return ids.isEmpty() ? List.of() : jpa.findByIdIn(ids).stream().map(MembershipRepositoryAdapter::toDomain).toList();
+    }
+
+    @Override
+    public long countMembersActiveOn(LocalDate day) {
+        return jpa.countMembersWithStatusOn(MembershipStatus.ACTIVE, day);
+    }
+
+    @Override
+    public long countMembersFrozen() {
+        return jpa.countMembersWithStatus(MembershipStatus.FROZEN);
+    }
+
+    @Override
+    public List<Membership> findExpiringWithoutRenewal(LocalDate from, LocalDate to, int limit) {
+        return jpa.findExpiringWithoutRenewal(MembershipStatus.ACTIVE, MembershipStatus.CANCELLED, from, to,
+                PageRequest.of(0, limit)).stream().map(MembershipRepositoryAdapter::toDomain).toList();
     }
 
     private static Membership toDomain(MembershipJpaEntity e) {

@@ -35,16 +35,20 @@ public class SecurityConfig {
     // Rutas exactas: un endpoint nuevo bajo /api/auth NO nace público.
     private static final String[] PUBLIC_PATHS = {
             "/actuator/health", "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html",
-            "/api/auth/register-gym", "/api/auth/login", "/api/auth/refresh", "/api/auth/logout"
+            "/api/auth/register-gym", "/api/auth/login", "/api/auth/refresh", "/api/auth/logout",
+            // carnet del socio para su celular: el token del path es la credencial (ver MemberQrUseCases.publicCard)
+            "/api/public/member-card/*"
     };
 
-    // En las rutas de auth se ignora el header Authorization: un access token caducado no debe bloquear el refresh.
+    // En las rutas de auth y públicas se ignora el header Authorization: un access token caducado no debe bloquear
+    // el refresh ni el carnet público.
     private static final BearerTokenResolver BEARER_RESOLVER = new BearerTokenResolver() {
         private final DefaultBearerTokenResolver delegate = new DefaultBearerTokenResolver();
 
         @Override
         public String resolve(HttpServletRequest request) {
-            return request.getRequestURI().startsWith("/api/auth/") ? null : delegate.resolve(request);
+            String uri = request.getRequestURI();
+            return uri.startsWith("/api/auth/") || uri.startsWith("/api/public/") ? null : delegate.resolve(request);
         }
     };
 
