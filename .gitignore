@@ -1,0 +1,16 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# Claude Code local state
+.claude/hooks/.state/
+.claude/settings.local.json
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json

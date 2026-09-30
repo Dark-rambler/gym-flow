@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: gymflow
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5433/gymflow}
+    username: ${DB_USERNAME:gymflow}
+    password: ${DB_PASSWORD:gymflow}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+
+server:
+  port: ${PORT:8080}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+app:
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:4200}
