@@ -1,6 +1,4 @@
 # secrets
-.env
-.env.*
 !.env.example
 
 # Claude Code local state
@@ -12,5 +10,9 @@
 Thumbs.db
 .idea/
 *.iml
-.vscode/*
 !.vscode/extensions.json
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+config.bat
+node_modules

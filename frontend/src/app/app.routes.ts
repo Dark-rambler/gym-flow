@@ -15,6 +15,19 @@ export const routes: Routes = [
     loadComponent: () => import('./features/auth/register.page').then((m) => m.RegisterPage),
   },
   {
+    // pública: el socio la abre desde su celular sin cuenta
+    path: 'carnet/:token',
+    title: 'Mi carnet · gymFlow',
+    loadComponent: () => import('./features/members/public-card.page').then((m) => m.PublicCardPage),
+  },
+  {
+    // fuera del layout para imprimir solo la tarjeta
+    path: 'imprimir/carnet/:id',
+    title: 'Carnet · gymFlow',
+    canActivate: [authGuard],
+    loadComponent: () => import('./features/members/member-card-print.page').then((m) => m.MemberCardPrintPage),
+  },
+  {
     path: '',
     canActivate: [authGuard],
     loadComponent: () => import('./core/layout/shell.component').then((m) => m.ShellComponent),
@@ -38,6 +51,11 @@ export const routes: Routes = [
         path: 'planes',
         title: 'Planes · gymFlow',
         loadComponent: () => import('./features/plans/plans.page').then((m) => m.PlansPage),
+      },
+      {
+        path: 'check-in',
+        title: 'Check-in · gymFlow',
+        loadComponent: () => import('./features/checkin/checkin.page').then((m) => m.CheckinPage),
       },
       {
         path: 'caja',

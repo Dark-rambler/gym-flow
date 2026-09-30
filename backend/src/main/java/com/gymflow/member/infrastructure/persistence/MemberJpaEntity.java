@@ -49,7 +49,8 @@ public class MemberJpaEntity {
     @Column(length = 500)
     private String notes;
 
-    @Column(name = "qr_token", nullable = false, updatable = false, unique = true)
+    // se puede regenerar (POST /api/members/{id}/qr/rotate) para invalidar un carnet o enlace filtrado
+    @Column(name = "qr_token", nullable = false, unique = true)
     private UUID qrToken;
 
     @Column(nullable = false)
