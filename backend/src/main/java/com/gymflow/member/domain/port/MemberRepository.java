@@ -1,0 +1,20 @@
+package com.gymflow.member.domain.port;
+
+import java.util.Optional;
+
+import com.gymflow.member.domain.model.Member;
+import com.gymflow.shared.domain.model.PageResult;
+
+/** Consultas filtradas por el gym actual (@TenantId). */
+public interface MemberRepository {
+
+    Member save(Member member);
+
+    Optional<Member> findById(Long id);
+
+    /** Igual que findById pero con SELECT ... FOR UPDATE: serializa operaciones sobre las membresías del socio. */
+    Optional<Member> lockById(Long id);
+
+    /** Busca por nombre (contiene, sin distinguir mayúsculas) o DNI (contiene). query vacía = todos. */
+    PageResult<Member> search(String query, int page, int size);
+}

@@ -9,6 +9,7 @@ import java.util.UUID;
 
 import com.gymflow.TestcontainersConfiguration;
 import com.jayway.jsonpath.JsonPath;
+import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
@@ -20,13 +21,50 @@ import org.springframework.test.web.servlet.ResultActions;
 // Base de tests de API: Postgres real (Testcontainers) compartido entre clases; cada test usa emails únicos.
 @SpringBootTest
 @AutoConfigureMockMvc
-@Import(TestcontainersConfiguration.class)
+@Import({TestcontainersConfiguration.class, TestClockConfiguration.class})
 public abstract class ApiTestSupport {
 
     protected static final String PASSWORD = "secreto123";
 
     @Autowired
     protected MockMvc mvc;
+
+    @Autowired
+    protected MutableClock clock;
+
+    @BeforeEach
+    void resetClock() {
+        clock.set(TestClockConfiguration.START);
+    }
+
+    /** Crea un plan y devuelve su id. */
+    protected long createPlan(Session as, String name, int days, String price) throws Exception {
+        String json = postJson("/api/plans", """
+                {"name":"%s","durationDays":%d,"price":%s}""".formatted(name, days, price), as.accessToken())
+                .andExpect(status().isCreated()).andReturn().getResponse().getContentAsString();
+        return ((Number) JsonPath.read(json, "$.id")).longValue();
+    }
+
+    /** Crea un socio y devuelve su id. */
+    protected long createMember(Session as, String fullName, String dni) throws Exception {
+        String json = postJson("/api/members", """
+                {"fullName":"%s","dni":"%s"}""".formatted(fullName, dni), as.accessToken())
+                .andExpect(status().isCreated()).andReturn().getResponse().getContentAsString();
+        return ((Number) JsonPath.read(json, "$.id")).longValue();
+    }
+
+    protected ResultActions assign(Session as, long memberId, long planId) throws Exception {
+        return postJson("/api/members/" + memberId + "/memberships", """
+                {"planId":%d}""".formatted(planId), as.accessToken());
+    }
+
+    protected static long idOf(ResultActions result) throws Exception {
+        return ((Number) JsonPath.read(result.andReturn().getResponse().getContentAsString(), "$.id")).longValue();
+    }
+
+    protected static String uniqueDni() {
+        return String.valueOf(10_000_000 + (long) (Math.random() * 89_999_999));
+    }
 
     protected record Session(String accessToken, String refreshToken, long userId, long gymId) {
     }

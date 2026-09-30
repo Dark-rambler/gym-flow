@@ -14,8 +14,8 @@ interface NavItem {
 
 const NAV: NavItem[] = [
   { label: 'Dashboard', icon: 'home', path: '/' },
-  { label: 'Socios', icon: 'users', soon: true },
-  { label: 'Membresías', icon: 'card', soon: true },
+  { label: 'Socios', icon: 'users', path: '/socios' },
+  { label: 'Planes', icon: 'card', path: '/planes' },
   { label: 'Caja', icon: 'cash', soon: true },
   { label: 'Check-in', icon: 'qr', soon: true },
   { label: 'Staff', icon: 'shield', path: '/staff', roles: ['OWNER', 'ADMIN'] },
@@ -51,7 +51,7 @@ const ROLE_LABEL: Record<Role, string> = { OWNER: 'Dueño', ADMIN: 'Administrado
               <a
                 [routerLink]="item.path"
                 routerLinkActive="bg-white/10 text-white"
-                [routerLinkActiveOptions]="{ exact: true }"
+                [routerLinkActiveOptions]="{ exact: item.path === '/' }"
                 class="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium hover:bg-white/5 hover:text-white"
                 (click)="menuOpen.set(false)"
               >

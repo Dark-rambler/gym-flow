@@ -25,6 +25,21 @@ export const routes: Routes = [
         loadComponent: () => import('./features/dashboard/dashboard.page').then((m) => m.DashboardPage),
       },
       {
+        path: 'socios',
+        title: 'Socios · gymFlow',
+        loadComponent: () => import('./features/members/members.page').then((m) => m.MembersPage),
+      },
+      {
+        path: 'socios/:id',
+        title: 'Socio · gymFlow',
+        loadComponent: () => import('./features/members/member-detail.page').then((m) => m.MemberDetailPage),
+      },
+      {
+        path: 'planes',
+        title: 'Planes · gymFlow',
+        loadComponent: () => import('./features/plans/plans.page').then((m) => m.PlansPage),
+      },
+      {
         path: 'staff',
         title: 'Staff · gymFlow',
         canActivate: [roleGuard('OWNER', 'ADMIN')],

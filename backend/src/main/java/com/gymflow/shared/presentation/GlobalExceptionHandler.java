@@ -16,6 +16,7 @@ import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 @Slf4j
@@ -60,13 +61,26 @@ public class GlobalExceptionHandler {
         return respond(HttpStatus.FORBIDDEN, message, null);
     }
 
+    // constraint de BD → mensaje para el usuario (los nombres vienen de las migraciones Flyway)
+    private static final Map<String, String> CONSTRAINT_MESSAGES = Map.of(
+            "uk_app_user_email", "El email ya está registrado",
+            "uk_member_gym_dni", "Ya existe un socio con ese DNI",
+            "uk_plan_gym_name", "Ya existe un plan con ese nombre");
+
     @ExceptionHandler(DataIntegrityViolationException.class)
     ResponseEntity<ErrorResponse> integrity(DataIntegrityViolationException ex) {
         String detail = String.valueOf(ex.getMostSpecificCause().getMessage());
-        String message = detail.contains("uk_app_user_email")
-                ? "El email ya está registrado"
-                : "El registro entra en conflicto con datos existentes";
+        String message = CONSTRAINT_MESSAGES.entrySet().stream()
+                .filter(e -> detail.contains(e.getKey()))
+                .map(Map.Entry::getValue)
+                .findFirst()
+                .orElse("El registro entra en conflicto con datos existentes");
         return respond(HttpStatus.CONFLICT, message, null);
+    }
+
+    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+    ResponseEntity<ErrorResponse> typeMismatch(MethodArgumentTypeMismatchException ex) {
+        return respond(HttpStatus.BAD_REQUEST, "Parámetro inválido: " + ex.getName(), null);
     }
 
     @ExceptionHandler(Exception.class)

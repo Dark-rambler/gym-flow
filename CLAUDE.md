@@ -31,6 +31,19 @@ Skill `/run-stack`. Resumen: `docker compose up -d db` (Postgres en **:5433**) �
 - Casos de uso reciben un `Actor(userId, gymId, role)` construido en el controller con `CurrentActor.of(jwt)`.
 - Auth: JWT HS256 (`spring-boot-starter-oauth2-resource-server`), access 15 min con claims `sub, gymId, role, name, iss=gymflow`. Refresh token opaco (SHA-256 en `refresh_token`), 7 días, rotación con consumo atómico; reutilizar uno ya usado revoca todas las sesiones del usuario → el front serializa los refresh (Web Locks).
 - `JWT_SECRET` es obligatorio y sin default en `application.yml` (bootRun/tests inyectan uno de desarrollo). En producción también `API_DOCS_ENABLED=false`.
+- Defensa en BD (V4): FKs compuestas `(gym_id, x_id) → tabla(gym_id, id)`. Toda tabla nueva que referencie a otra con tenant debe seguir ese patrón (`UNIQUE (gym_id, id)` en la referenciada).
+
+## Socios, planes y membresías (semana 2)
+
+- Estado efectivo **derivado de fechas, no persistido**: en BD `membership.status` ∈ `ACTIVE|FROZEN|CANCELLED`; `SCHEDULED`/`EXPIRED` salen de `Membership.statusOn(hoy)`. No hay job de vencimientos.
+- "Hoy" = `GymCalendar.today(gymId)` (zona horaria del gym, `Clock` inyectable). Nunca `LocalDate.now()`. En tests: `MutableClock` (`clock.advanceDays(n)`), "hoy" = 2026-03-10.
+- Fechas inclusivas: `endDate = start + durationDays - 1`. Renovación encadenada (`Memberships.nextStartDate`), máximo **una** renovación programada.
+- Congelar: solo la vigente, solo si no hay renovación programada; no se puede renovar con una congelada. Descongelar suma los días al `endDate`. Cancelar no adelanta renovaciones programadas (limitación conocida).
+- La membresía guarda foto de `plan_name` y `price`. Precio distinto al del plan: solo OWNER/ADMIN.
+- Operaciones sobre membresías/socio bloquean la fila del socio (`lockById`) **antes** de leer (si se lee antes, la sesión de Hibernate queda con datos viejos).
+- `qrToken` del socio no se expone en ninguna respuesta todavía: en la semana 4 tendrá endpoint propio + rotación (OWNER/ADMIN).
+- RECEPTIONIST: socios (crear/editar), vender/renovar al precio del plan, ver planes. OWNER/ADMIN: además planes, precio, congelar/cancelar, desactivar socios.
+- Front: estados/labels en `features/members/membership-status.ts`; `ConfirmService` para acciones destructivas; locale `es-PE` y moneda `PEN` globales (`{{ x | currency }}` → S/).
 
 ## Contrato front ↔ back
 
@@ -61,4 +74,4 @@ Hexagonal por módulo: `com.gymflow.<modulo>.{domain,application,infrastructure,
 
 ## Hoja de ruta
 
-Plan completo: semana 0 setup ✅ · 1 auth + tenant ✅ (pendiente: rate limiting de login/registro → semana 5) · 2 socios/planes/membresías · 3 pagos y caja · 4 check-in + job de vencimientos + dashboard · 5 E2E, hardening y deploy.
+Plan completo: semana 0 setup ✅ · 1 auth + tenant ✅ (pendiente: rate limiting de login/registro → semana 5) · 2 socios/planes/membresías ✅ · 3 pagos y caja (venta de membresía + pago en la misma transacción, idempotente) · 4 check-in (QR con rotación / DNI) + dashboard · 5 E2E, hardening, rate limiting y deploy.
