@@ -24,7 +24,11 @@ En background (Bash con `run_in_background`). Requiere JDK 21: si `java -version
 cd backend && ./gradlew bootRun
 ```
 
-Listo cuando `curl -s http://localhost:8080/actuator/health` → `{"status":"UP"}`. Flyway aplica `db/migration` al arrancar; si falla la validación (`ddl-auto: validate`), la entidad y la migración no coinciden. Config por variables de entorno (ver `backend/.env.example`); los defaults de `application.yml` sirven en local.
+`bootRun` inyecta un `JWT_SECRET` de desarrollo (ver `build.gradle.kts`); el jar de producción no trae ninguno y no arranca sin él. Si el :8080 está ocupado por otra instancia (p. ej. una que dejó el usuario), no la mates sin preguntar: usa `PORT=8081 ./gradlew bootRun`.
+
+Listo cuando `curl -s http://localhost:8080/actuator/health` → `{"status":"UP"}`.
+
+Probar la API a mano: registra un gym con `POST /api/auth/register-gym` y usa el `accessToken` como Bearer. En Git Bash, `curl -d '...'` con tildes/ñ llega mal codificado a `curl.exe` (400 "Cuerpo de la petición inválido"): usa `--data-binary @archivo.json` o `fetch` desde Node. Flyway aplica `db/migration` al arrancar; si falla la validación (`ddl-auto: validate`), la entidad y la migración no coinciden. Config por variables de entorno (ver `backend/.env.example`); los defaults de `application.yml` sirven en local.
 
 Swagger: http://localhost:8080/swagger-ui.html
 

@@ -22,6 +22,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-flyway")
 	implementation("org.springframework.boot:spring-boot-starter-security")
+	implementation("org.springframework.boot:spring-boot-starter-oauth2-resource-server")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("org.springframework.boot:spring-boot-starter-webmvc")
 	implementation("org.flywaydb:flyway-database-postgresql")
@@ -41,11 +42,18 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-testcontainers")
 	testImplementation("org.testcontainers:testcontainers-junit-jupiter")
 	testImplementation("org.testcontainers:testcontainers-postgresql")
+	testImplementation("com.tngtech.archunit:archunit-junit5:1.5.1")
 	testCompileOnly("org.projectlombok:lombok")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 	testAnnotationProcessor("org.projectlombok:lombok")
 }
 
+// Secretos solo para desarrollo/tests. El jar de producción no trae ninguno: JWT_SECRET debe venir del entorno.
+tasks.named<org.springframework.boot.gradle.tasks.run.BootRun>("bootRun") {
+	environment("JWT_SECRET", System.getenv("JWT_SECRET") ?: "local-dev-only-jwt-secret-0123456789abcdef")
+}
+
 tasks.withType<Test> {
 	useJUnitPlatform()
+	environment("JWT_SECRET", "test-only-jwt-secret-0123456789abcdef-gymflow")
 }

@@ -22,9 +22,19 @@ management:
         include: health,info
 
 springdoc:
+  # sin esto las respuestas se documentan como */* y el cliente generado las lee como Blob
+  default-produces-media-type: application/json
+  api-docs:
+    enabled: ${API_DOCS_ENABLED:true} # en producción: API_DOCS_ENABLED=false
   swagger-ui:
     path: /swagger-ui.html
 
 app:
   cors:
     allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:4200}
+  jwt:
+    # Obligatorio y sin default: si falta, la app no arranca. En local lo inyectan las tareas
+    # bootRun/test de build.gradle.kts; en Railway se define como variable de entorno.
+    secret: ${JWT_SECRET}
+    access-ttl: ${JWT_ACCESS_TTL:15m}
+    refresh-ttl: ${JWT_REFRESH_TTL:7d}
