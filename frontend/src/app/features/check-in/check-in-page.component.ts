@@ -29,6 +29,7 @@ import { PageHeaderComponent } from '../../shared/ui/page-header.component';
 import { PaginationComponent } from '../../shared/ui/pagination.component';
 import { StatusChipComponent } from '../../shared/ui/status-chip.component';
 import { UiIconComponent } from '../../shared/ui/ui-icon.component';
+import { QrCameraScannerComponent } from './components/qr-camera-scanner/qr-camera-scanner.component';
 
 @Component({
   selector: 'app-check-in-page',
@@ -39,6 +40,7 @@ import { UiIconComponent } from '../../shared/ui/ui-icon.component';
     PaginationComponent,
     StatusChipComponent,
     UiIconComponent,
+    QrCameraScannerComponent,
     LimaDateTimePipe,
     LocalDatePipe,
   ],
@@ -54,6 +56,8 @@ export class CheckInPageComponent {
   protected readonly submitting = signal(false);
   protected readonly result = signal<CheckInResponse | null>(null);
   protected readonly submitError = signal('');
+  // Camera scanner (the child owns the camera; destroying it stops the stream)
+  protected readonly scanning = signal(false);
 
   // Log
   protected readonly date = signal(todayLima());
@@ -118,6 +122,18 @@ export class CheckInPageComponent {
           this.focusInput();
         },
       });
+  }
+
+  /** Camera read feeds the same flow as typing / USB reader. */
+  protected onScanned(text: string): void {
+    this.scanning.set(false);
+    this.code.set(text);
+    this.submit();
+  }
+
+  protected closeScanner(): void {
+    this.scanning.set(false);
+    this.focusInput();
   }
 
   protected setDate(value: string): void {

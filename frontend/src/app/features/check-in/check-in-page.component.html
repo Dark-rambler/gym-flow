@@ -33,6 +33,22 @@
       </button>
     </form>
 
+    <div class="mt-4">
+      @if (scanning()) {
+        <app-qr-camera-scanner (scanned)="onScanned($event)" (cancelled)="closeScanner()" />
+      } @else {
+        <button
+          type="button"
+          class="btn btn-secondary min-h-12 w-full"
+          [disabled]="submitting()"
+          (click)="scanning.set(true)"
+        >
+          <app-ui-icon name="scan" class="h-5 w-5" />
+          Escanear QR con la cámara
+        </button>
+      }
+    </div>
+
     <div class="mt-6 min-h-56" role="status" aria-live="assertive">
       @if (result(); as r) {
         @if (r.result === 'ALLOWED') {

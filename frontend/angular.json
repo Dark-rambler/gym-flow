@@ -30,7 +30,8 @@
             ],
             "allowedCommonJsDependencies": [
               "qrcode",
-              "dijkstrajs"
+              "dijkstrajs",
+              "jsqr"
             ]
           },
           "configurations": {
