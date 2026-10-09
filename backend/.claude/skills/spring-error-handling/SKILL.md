@@ -378,7 +378,7 @@ class ProductControllerErrorTest {
 }
 ```
 
-Adjust for the project: add `@WithMockUser` or exclude security auto-configuration when endpoints are protected. On Spring Boot < 3.4 use `@MockBean` instead of `@MockitoBean`.
+Adjust for the project: add `@WithMockUser` or exclude security autoconfiguration when endpoints are protected. On Spring Boot < 3.4 use `@MockBean` instead of `@MockitoBean`.
 
 Manual smoke checks: unknown id gives 404, empty body gives 400 with `errors`, `/api/products/abc` gives 400, `DELETE` on a GET-only route gives 405, a duplicate unique value gives 409, no token gives 401 JSON, the wrong role gives 403 JSON.
 
@@ -391,7 +391,7 @@ Manual smoke checks: unknown id gives 404, empty body gives 400 with `errors`, `
 5. No internal details (SQL, class names, stack traces) in any response.
 6. DB unique constraints back every `existsBy...` check.
 
-## Anti-patterns to reject
+## Antipatterns to reject
 
 - `try/catch` in controllers that builds `ResponseEntity.status(...)` by hand.
 - Returning `null`, `Optional`, or an empty object to signal "not found" from a service to a controller.
