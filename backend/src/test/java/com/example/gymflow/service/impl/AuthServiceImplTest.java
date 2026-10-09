@@ -2,6 +2,7 @@ package com.example.gymflow.service.impl;
 
 import com.example.gymflow.config.tenant.TenantContext;
 import com.example.gymflow.dto.auth.LoginRequest;
+import com.example.gymflow.dto.auth.RegisterGymRequest;
 import com.example.gymflow.entity.Account;
 import com.example.gymflow.entity.Gym;
 import com.example.gymflow.entity.Staff;
@@ -19,6 +20,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.PlatformTransactionManager;
 
@@ -31,7 +33,7 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-@DisplayName("AuthServiceImpl.login")
+@DisplayName("AuthServiceImpl")
 class AuthServiceImplTest {
     @Mock GymRepository gymRepository;
     @Mock AccountRepository accountRepository;
@@ -102,5 +104,20 @@ class AuthServiceImplTest {
         assertThatThrownBy(() -> service.login(new LoginRequest("ana@gym.pe", "mala")))
                 .isInstanceOf(UnauthorizedException.class);
         verifyNoInteractions(staffRepository);
+    }
+
+    @Test
+    void registerGym_should_dropSchemaAndDeleteGym_when_ownerSaveFails() {
+        when(gymRepository.save(any())).thenReturn(Gym.builder().id(7L).name("Nuevo").build());
+        when(passwordEncoder.encode("secreta123")).thenReturn("hash");
+        var conflict = new DataIntegrityViolationException("accounts_email_key");
+        when(staffRepository.save(any())).thenThrow(conflict);
+
+        assertThatThrownBy(() -> service.registerGym(new RegisterGymRequest("Nuevo", "Ana", "ana@gym.pe", "secreta123")))
+                .isSameAs(conflict);
+        verify(schemaProvisioningService).createTenantSchema("gym_7");
+        verify(schemaProvisioningService).dropTenantSchema("gym_7");
+        verify(gymRepository).deleteById(7L);
+        assertThat(TenantContext.getCurrentTenant()).isNull();
     }
 }

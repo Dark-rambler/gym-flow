@@ -10,4 +10,11 @@ public interface SchemaProvisioningService {
      * @param schemaName the schema, {@code gym_<id>}
      */
     void createTenantSchema(String schemaName);
+
+    /**
+     * Drops the schema and everything in it, if it exists.
+     *
+     * @param schemaName the schema, {@code gym_<id>}
+     */
+    void dropTenantSchema(String schemaName);
 }

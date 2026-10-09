@@ -54,9 +54,8 @@ public class AuthServiceImpl implements AuthService {
         var tx = new TransactionTemplate(transactionManager);
         var gym = tx.execute(_ -> gymRepository.save(Gym.builder().name(request.gymName().trim()).build()));
         var schemaName = TenantContext.schemaOf(gym.getId());
-        // ponytail: a failure after this point leaves an empty gym row; add cleanup if it happens in practice
-        schemaProvisioningService.createTenantSchema(schemaName);
         try {
+            schemaProvisioningService.createTenantSchema(schemaName);
             TenantContext.setCurrentTenant(schemaName);
             var owner = tx.execute(_ -> staffRepository.save(Staff.builder()
                     .account(Account.builder()
@@ -68,6 +67,16 @@ public class AuthServiceImpl implements AuthService {
                     .role(Role.OWNER)
                     .build()));
             return toAuthResponse(owner);
+        } catch (RuntimeException e) {
+            // e.g. a concurrent registration with the same email wins the unique constraint: undo this gym
+            TenantContext.clear();
+            try {
+                schemaProvisioningService.dropTenantSchema(schemaName);
+                tx.executeWithoutResult(_ -> gymRepository.deleteById(gym.getId()));
+            } catch (RuntimeException cleanup) {
+                e.addSuppressed(cleanup);
+            }
+            throw e;
         } finally {
             TenantContext.clear();
         }
