@@ -1,0 +1,104 @@
+- generic [ref=f19e5]:
+  - complementary "Menú principal" [ref=f19e6]:
+    - generic [ref=f19e7]: GymFlow
+    - list [ref=f19e16]:
+      - listitem [ref=f19e17]:
+        - link "Dashboard" [ref=f19e18] [cursor=pointer]:
+          - /url: /dashboard
+      - listitem [ref=f19e25]:
+        - link "Check-in" [ref=f19e26] [cursor=pointer]:
+          - /url: /check-in
+      - listitem [ref=f19e33]:
+        - link "Socios" [ref=f19e34] [cursor=pointer]:
+          - /url: /socios
+      - listitem [ref=f19e41]:
+        - link "Caja" [ref=f19e42] [cursor=pointer]:
+          - /url: /caja
+      - listitem [ref=f19e47]:
+        - link "Planes" [ref=f19e48] [cursor=pointer]:
+          - /url: /planes
+      - listitem [ref=f19e52]:
+        - link "Historial de cajas" [ref=f19e53] [cursor=pointer]:
+          - /url: /cajas
+      - listitem [ref=f19e59]:
+        - link "Reportes" [ref=f19e60] [cursor=pointer]:
+          - /url: /reportes/ingresos
+      - listitem [ref=f19e64]:
+        - link "Staff" [ref=f19e65] [cursor=pointer]:
+          - /url: /staff
+    - generic [ref=f19e70]:
+      - paragraph [ref=f19e71]: Quality Owner
+      - paragraph [ref=f19e72]: QA Gym
+      - generic [ref=f19e73]: Propietario
+      - button "Cerrar sesión" [ref=f19e75] [cursor=pointer]
+  - main [ref=f19e81]:
+    - generic [ref=f19e82]:
+      - generic "Check-in" [ref=f19e83]:
+        - generic [ref=f19e84]:
+          - heading "Check-in" [level=1] [ref=f19e86]
+          - paragraph [ref=f19e87]: Registra el ingreso de los socios
+      - generic [ref=f19e88]:
+        - region "Registrar ingreso" [ref=f19e89]:
+          - generic [ref=f19e90]:
+            - generic [ref=f19e91]:
+              - generic [ref=f19e92]: Código QR o DNI
+              - textbox "Código QR o DNI" [active] [ref=f19e93]
+            - button "Registrar ingreso" [disabled] [ref=f19e94]
+          - status [ref=f19e95]:
+            - generic [ref=f19e109]:
+              - generic [ref=f19e116]:
+                - paragraph [ref=f19e117]: Ingreso denegado
+                - paragraph [ref=f19e118]: 09:46:40
+              - paragraph [ref=f19e119]: Socio inactivo
+              - paragraph [ref=f19e120]: El socio está inactivo
+              - paragraph [ref=f19e167]: Pedro Sinplan
+              - link "Ver socio" [ref=f19e168] [cursor=pointer]:
+                - /url: /socios/24
+        - region [ref=f19e97]:
+          - generic [ref=f19e98]:
+            - heading "Ingresos del día" [level=2] [ref=f19e99]
+            - generic [ref=f19e100]:
+              - generic [ref=f19e101]: Fecha
+              - textbox "Fecha" [ref=f19e102]: 2026-10-09
+          - table [ref=f19e121]:
+            - caption [ref=f19e122]: Ingresos del 09/10/2026
+            - rowgroup [ref=f19e123]:
+              - row [ref=f19e124]:
+                - columnheader "Hora" [ref=f19e125]
+                - columnheader "Socio" [ref=f19e126]
+                - columnheader "Método" [ref=f19e127]
+                - columnheader "Resultado" [ref=f19e128]
+                - columnheader "Motivo" [ref=f19e129]
+            - rowgroup [ref=f19e130]:
+              - row [ref=f19e169]:
+                - cell "09:46" [ref=f19e170]
+                - cell [ref=f19e171]:
+                  - link "Pedro Sinplan" [ref=f19e172] [cursor=pointer]:
+                    - /url: /socios/24
+                - cell "QR" [ref=f19e173]
+                - cell "Denegado" [ref=f19e176]
+                - cell "Socio inactivo" [ref=f19e180]
+              - row [ref=f19e131]:
+                - cell "09:43" [ref=f19e132]
+                - cell [ref=f19e133]:
+                  - link "Ana Ríos Mendoza" [ref=f19e134] [cursor=pointer]:
+                    - /url: /socios/1
+                - cell "QR" [ref=f19e135]
+                - cell "Permitido" [ref=f19e138]
+                - cell "—" [ref=f19e142]
+              - row [ref=f19e143]:
+                - cell "09:42" [ref=f19e144]
+                - cell [ref=f19e145]:
+                  - link "Pedro Sinplan" [ref=f19e146] [cursor=pointer]:
+                    - /url: /socios/24
+                - cell "DNI" [ref=f19e147]
+                - cell "Denegado" [ref=f19e150]
+                - cell "Sin membresía" [ref=f19e154]
+              - row [ref=f19e155]:
+                - cell "09:42" [ref=f19e156]
+                - cell [ref=f19e157]:
+                  - link "Ana Ríos Mendoza" [ref=f19e158] [cursor=pointer]:
+                    - /url: /socios/1
+                - cell "DNI" [ref=f19e159]
+                - cell "Denegado" [ref=f19e162]
+                - cell "Membresía congelada" [ref=f19e166]

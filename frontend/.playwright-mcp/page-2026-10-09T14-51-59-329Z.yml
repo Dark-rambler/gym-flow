@@ -1,0 +1,94 @@
+- generic [ref=f42e2]:
+  - generic [ref=f42e5]:
+    - complementary "Menú principal" [ref=f42e244]:
+      - generic [ref=f42e7]: GymFlow
+      - list [ref=f42e16]:
+        - listitem [ref=f42e17]:
+          - link "Dashboard" [ref=f42e245] [cursor=pointer]:
+            - /url: /dashboard
+        - listitem [ref=f42e25]:
+          - link "Check-in" [ref=f42e246] [cursor=pointer]:
+            - /url: /check-in
+        - listitem [ref=f42e33]:
+          - link "Socios" [ref=f42e247] [cursor=pointer]:
+            - /url: /socios
+        - listitem [ref=f42e41]:
+          - link "Caja" [ref=f42e248] [cursor=pointer]:
+            - /url: /caja
+        - listitem [ref=f42e47]:
+          - link "Planes" [ref=f42e249] [cursor=pointer]:
+            - /url: /planes
+        - listitem [ref=f42e52]:
+          - link "Historial de cajas" [ref=f42e250] [cursor=pointer]:
+            - /url: /cajas
+        - listitem [ref=f42e59]:
+          - link "Reportes" [ref=f42e251] [cursor=pointer]:
+            - /url: /reportes/ingresos
+        - listitem [ref=f42e64]:
+          - link "Staff" [ref=f42e252] [cursor=pointer]:
+            - /url: /staff
+      - generic [ref=f42e70]:
+        - paragraph [ref=f42e71]: Adriana Admin
+        - paragraph [ref=f42e72]: QA Gym
+        - generic [ref=f42e73]: Administrador
+        - button "Cerrar sesión" [ref=f42e253] [cursor=pointer]
+    - main [ref=f42e81]:
+      - generic [ref=f42e82]:
+        - generic "Staff" [ref=f42e254]:
+          - generic [ref=f42e84]:
+            - heading "Staff" [level=1] [ref=f42e255]
+            - paragraph [ref=f42e87]: Personas con acceso al sistema
+          - button "Nuevo usuario" [ref=f42e256] [cursor=pointer]
+        - table [ref=f42e257]:
+          - caption [ref=f42e112]: Usuarios del sistema
+          - rowgroup [ref=f42e113]:
+            - row [ref=f42e258]:
+              - columnheader "Nombre" [ref=f42e259]
+              - columnheader "Rol" [ref=f42e260]
+              - columnheader "Estado" [ref=f42e261]
+              - columnheader "Creado" [ref=f42e262]
+              - columnheader "Acciones" [ref=f42e263]
+          - rowgroup [ref=f42e121]:
+            - row [ref=f42e264]:
+              - cell "Quality Owner qa+1760020000@test.com" [ref=f42e265]:
+                - generic [ref=f42e124]:
+                  - generic [aria-hidden] [ref=f42e125]: QO
+                  - generic [ref=f42e126]:
+                    - paragraph [ref=f42e127]:
+                      - generic "Quality Owner" [ref=f42e266]
+                    - paragraph [ref=f42e129]: qa+1760020000@test.com
+              - cell "Propietario" [ref=f42e267]
+              - cell "Activo" [ref=f42e268]
+              - cell "09/10/2026" [ref=f42e269]
+              - cell [ref=f42e138]
+            - row [ref=f42e270]:
+              - cell "Adriana Admin Tú qa+1760020000.admin@test.com" [ref=f42e271]:
+                - generic [ref=f42e141]:
+                  - generic [aria-hidden] [ref=f42e142]: AA
+                  - generic [ref=f42e143]:
+                    - paragraph [ref=f42e144]:
+                      - generic "Adriana Admin" [ref=f42e272]
+                      - generic [ref=f42e146]: Tú
+                    - paragraph [ref=f42e148]: qa+1760020000.admin@test.com
+              - cell "Administrador" [ref=f42e273]
+              - cell "Activo" [ref=f42e274]
+              - cell "09/10/2026" [ref=f42e275]
+              - cell [ref=f42e157]
+            - row [ref=f42e276]:
+              - cell "Rita Recepción qa+1760020000.recep@test.com" [ref=f42e277]:
+                - generic [ref=f42e160]:
+                  - generic [aria-hidden] [ref=f42e161]: RR
+                  - generic [ref=f42e162]:
+                    - paragraph [ref=f42e163]:
+                      - generic "Rita Recepción" [ref=f42e278]
+                    - paragraph [ref=f42e165]: qa+1760020000.recep@test.com
+              - cell "Recepcionista" [ref=f42e279]
+              - cell "Inactivo" [ref=f42e280]
+              - cell "09/10/2026" [ref=f42e281]
+              - cell [ref=f42e282]:
+                - generic [ref=f42e175]:
+                  - button "Editar Rita Recepción" [ref=f42e283] [cursor=pointer]
+                  - button "Activar Rita Recepción" [active] [ref=f42e284] [cursor=pointer]
+  - status [ref=f42e285]:
+    - paragraph [ref=f42e290]: Usuario desactivado
+    - button "Cerrar aviso" [ref=f42e291] [cursor=pointer]

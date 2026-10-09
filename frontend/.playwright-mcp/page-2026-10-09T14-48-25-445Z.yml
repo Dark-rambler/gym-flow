@@ -1,0 +1,8 @@
+- generic [ref=f25e6]:
+  - banner [ref=f25e7]:
+    - button "Abrir menú" [ref=f25e8] [cursor=pointer]
+    - paragraph [ref=f25e11]: Detalle de caja
+    - generic [aria-hidden] [ref=f25e12]: QO
+  - main [ref=f25e13]:
+    - link "Historial de cajas" [ref=f25e15] [cursor=pointer]:
+      - /url: /cajas

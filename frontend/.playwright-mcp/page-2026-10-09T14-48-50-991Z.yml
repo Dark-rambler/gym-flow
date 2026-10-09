@@ -1,0 +1,144 @@
+- generic [ref=f31e1]:
+  - generic [ref=f31e5]:
+    - complementary [ref=f31e12]:
+      - generic [ref=f31e13]: GymFlow
+      - list [ref=f31e22]:
+        - listitem [ref=f31e23]:
+          - link [ref=f31e24] [cursor=pointer]:
+            - /url: /dashboard
+            - text: Dashboard
+        - listitem [ref=f31e31]:
+          - link [ref=f31e32] [cursor=pointer]:
+            - /url: /check-in
+            - text: Check-in
+        - listitem [ref=f31e39]:
+          - link [ref=f31e40] [cursor=pointer]:
+            - /url: /socios
+            - text: Socios
+        - listitem [ref=f31e47]:
+          - link [ref=f31e48] [cursor=pointer]:
+            - /url: /caja
+            - text: Caja
+        - listitem [ref=f31e53]:
+          - link [ref=f31e54] [cursor=pointer]:
+            - /url: /planes
+            - text: Planes
+        - listitem [ref=f31e58]:
+          - link [ref=f31e59] [cursor=pointer]:
+            - /url: /cajas
+            - text: Historial de cajas
+        - listitem [ref=f31e65]:
+          - link [ref=f31e66] [cursor=pointer]:
+            - /url: /reportes/ingresos
+            - text: Reportes
+        - listitem [ref=f31e70]:
+          - link [ref=f31e71] [cursor=pointer]:
+            - /url: /staff
+            - text: Staff
+      - generic [ref=f31e76]:
+        - paragraph [ref=f31e77]: Quality Owner
+        - paragraph [ref=f31e78]: QA Gym
+        - generic [ref=f31e79]: Propietario
+        - button [ref=f31e81] [cursor=pointer]: Cerrar sesión
+    - main [ref=f31e11]:
+      - generic [ref=f31e86]:
+        - link [ref=f31e87] [cursor=pointer]:
+          - /url: /socios
+          - text: Socios
+        - generic [ref=f31e91]:
+          - generic [ref=f31e92]:
+            - generic [ref=f31e93]:
+              - heading [level=1] [ref=f31e94]: Ana Ríos Mendoza
+              - generic [ref=f31e95]: Activo
+            - paragraph [ref=f31e98]: DNI 11111111 · Socio desde 09/10/2026
+          - generic [ref=f31e99]:
+            - button [ref=f31e100] [cursor=pointer]: Editar
+            - button [ref=f31e104] [cursor=pointer]: Desactivar
+        - generic [ref=f31e109]:
+          - region [ref=f31e110]:
+            - heading [level=2] [ref=f31e111]: MEMBRESÍA ACTUAL
+            - generic [ref=f31e112]:
+              - paragraph [ref=f31e113]: Mensual QA
+              - generic [ref=f31e114]: Activa
+            - paragraph [ref=f31e117]: 09/10/2026 – 07/11/2026
+            - paragraph [ref=f31e118]: 29 días restantes
+            - paragraph [ref=f31e119]:
+              - generic [ref=f31e120]: S/ 100.00
+              - text: · Yape · 09/10/2026, 09:41
+            - generic [ref=f31e121]:
+              - button [ref=f31e122] [cursor=pointer]: Renovar
+              - button [ref=f31e125] [cursor=pointer]: Congelar
+              - button [ref=f31e132] [cursor=pointer]: Cancelar membresía
+          - region [ref=f31e133]:
+            - heading [level=2] [ref=f31e134]: CARNET QR
+            - paragraph [ref=f31e137]: GF1:edb1ac32-0c6c-4bf8-9ae0-f179a7d4a15b
+            - generic [ref=f31e138]:
+              - button [ref=f31e139] [cursor=pointer]: Copiar enlace
+              - link [ref=f31e144] [cursor=pointer]:
+                - /url: http://localhost:4200/card/edb1ac32-0c6c-4bf8-9ae0-f179a7d4a15b
+            - button [ref=f31e150] [cursor=pointer]: Regenerar QR
+          - region [ref=f31e157]:
+            - heading [level=2] [ref=f31e158]: DATOS
+            - generic [ref=f31e159]:
+              - generic [ref=f31e160]:
+                - term [ref=f31e161]: Teléfono
+                - definition [ref=f31e162]: "987654321"
+              - generic [ref=f31e163]:
+                - term [ref=f31e164]: Correo
+                - definition [ref=f31e165]: —
+              - generic [ref=f31e166]:
+                - term [ref=f31e167]: Fecha de nacimiento
+                - definition [ref=f31e168]: 15/05/1990 (36 años)
+              - generic [ref=f31e169]:
+                - term [ref=f31e170]: Notas
+                - definition [ref=f31e171]: Línea 1 Línea 2
+          - region [ref=f31e172]:
+            - heading [level=2] [ref=f31e173]: HISTORIAL
+            - table [ref=f31e175]:
+              - caption [ref=f31e176]: Historial de membresías
+              - rowgroup [ref=f31e177]:
+                - row [ref=f31e178]:
+                  - columnheader [ref=f31e179]: Plan
+                  - columnheader [ref=f31e180]: Periodo
+                  - columnheader [ref=f31e181]: Estado
+                  - columnheader [ref=f31e182]: Pago
+                  - columnheader [ref=f31e183]:
+                    - generic [ref=f31e184]: Acciones
+              - rowgroup [ref=f31e185]:
+                - row [ref=f31e186]:
+                  - cell [ref=f31e187]: Mensual QA
+                  - cell [ref=f31e188]: 09/10/2026 – 07/11/2026
+                  - cell [ref=f31e189]:
+                    - generic [ref=f31e190]: Activa
+                  - cell [ref=f31e193]: YapeS/ 100.00
+                  - cell [ref=f31e194]
+  - generic [ref=f31e199]:
+    - banner [ref=f31e200]:
+      - heading "Editar socio" [level=2] [ref=f31e202]
+      - button "Cerrar" [ref=f31e203] [cursor=pointer]
+    - generic [ref=f31e209]:
+      - generic [ref=f31e210]:
+        - generic [ref=f31e211]: Nombre completo *
+        - textbox "Nombre completo *" [active] [ref=f31e212]: Ana Ríos Mendoza
+      - generic [ref=f31e213]:
+        - generic [ref=f31e214]: DNI *
+        - textbox "DNI *" [ref=f31e215]: "11111111"
+      - generic [ref=f31e216]:
+        - generic [ref=f31e217]: Teléfono
+        - textbox "Teléfono" [ref=f31e218]: "987654321"
+      - generic [ref=f31e219]:
+        - generic [ref=f31e220]: Correo
+        - textbox "Correo" [ref=f31e221]
+      - generic [ref=f31e222]:
+        - generic [ref=f31e223]: Fecha de nacimiento
+        - textbox "Fecha de nacimiento" [ref=f31e224]: 1990-05-15
+      - generic [ref=f31e225]:
+        - generic [ref=f31e226]: Notas
+        - textbox "Notas" [ref=f31e227]: Línea 1 Línea 2
+        - generic [ref=f31e228]:
+          - paragraph
+          - paragraph [ref=f31e229]: 15/500
+    - contentinfo [ref=f31e230]:
+      - generic [ref=f31e231]:
+        - button "Cancelar" [ref=f31e232] [cursor=pointer]
+        - button "Guardar socio" [ref=f31e233] [cursor=pointer]

@@ -1,0 +1,87 @@
+- generic [ref=f32e36]:
+  - complementary "Menú principal" [ref=f32e37]:
+    - generic [ref=f32e38]: GymFlow
+    - list [ref=f32e47]:
+      - listitem [ref=f32e48]:
+        - link "Dashboard" [ref=f32e49] [cursor=pointer]:
+          - /url: /dashboard
+      - listitem [ref=f32e56]:
+        - link "Check-in" [ref=f32e57] [cursor=pointer]:
+          - /url: /check-in
+      - listitem [ref=f32e64]:
+        - link "Socios" [ref=f32e65] [cursor=pointer]:
+          - /url: /socios
+      - listitem [ref=f32e72]:
+        - link "Caja" [ref=f32e73] [cursor=pointer]:
+          - /url: /caja
+      - listitem [ref=f32e78]:
+        - link "Planes" [ref=f32e79] [cursor=pointer]:
+          - /url: /planes
+    - generic [ref=f32e83]:
+      - paragraph [ref=f32e84]: Rita Recepción
+      - paragraph [ref=f32e85]: QA Gym
+      - generic [ref=f32e86]: Recepcionista
+      - button "Cerrar sesión" [ref=f32e88] [cursor=pointer]
+  - main [ref=f32e94]:
+    - generic [ref=f32e95]:
+      - generic "Check-in" [ref=f32e96]:
+        - generic [ref=f32e97]:
+          - heading "Check-in" [level=1] [ref=f32e99]
+          - paragraph [ref=f32e100]: Registra el ingreso de los socios
+      - generic [ref=f32e101]:
+        - region "Registrar ingreso" [ref=f32e102]:
+          - generic [ref=f32e103]:
+            - generic [ref=f32e104]:
+              - generic [ref=f32e105]: Código QR o DNI
+              - textbox "Código QR o DNI" [active] [ref=f32e106]
+            - button "Registrar ingreso" [disabled] [ref=f32e107]
+          - status [ref=f32e108]:
+            - paragraph [ref=f32e109]: Escanea el QR o escribe el DNI del socio.
+        - region [ref=f32e110]:
+          - generic [ref=f32e111]:
+            - heading "Ingresos del día" [level=2] [ref=f32e112]
+            - generic [ref=f32e113]:
+              - generic [ref=f32e114]: Fecha
+              - textbox "Fecha" [ref=f32e115]: 2026-10-09
+          - table [ref=f32e117]:
+            - caption [ref=f32e118]: Ingresos del 09/10/2026
+            - rowgroup [ref=f32e119]:
+              - row [ref=f32e120]:
+                - columnheader "Hora" [ref=f32e121]
+                - columnheader "Socio" [ref=f32e122]
+                - columnheader "Método" [ref=f32e123]
+                - columnheader "Resultado" [ref=f32e124]
+                - columnheader "Motivo" [ref=f32e125]
+            - rowgroup [ref=f32e126]:
+              - row [ref=f32e127]:
+                - cell "09:46" [ref=f32e128]
+                - cell [ref=f32e129]:
+                  - link "Pedro Sinplan" [ref=f32e130] [cursor=pointer]:
+                    - /url: /socios/24
+                - cell "QR" [ref=f32e131]
+                - cell "Denegado" [ref=f32e134]
+                - cell "Socio inactivo" [ref=f32e138]
+              - row [ref=f32e139]:
+                - cell "09:43" [ref=f32e140]
+                - cell [ref=f32e141]:
+                  - link "Ana Ríos Mendoza" [ref=f32e142] [cursor=pointer]:
+                    - /url: /socios/1
+                - cell "QR" [ref=f32e143]
+                - cell "Permitido" [ref=f32e146]
+                - cell "—" [ref=f32e150]
+              - row [ref=f32e151]:
+                - cell "09:42" [ref=f32e152]
+                - cell [ref=f32e153]:
+                  - link "Pedro Sinplan" [ref=f32e154] [cursor=pointer]:
+                    - /url: /socios/24
+                - cell "DNI" [ref=f32e155]
+                - cell "Denegado" [ref=f32e158]
+                - cell "Sin membresía" [ref=f32e162]
+              - row [ref=f32e163]:
+                - cell "09:42" [ref=f32e164]
+                - cell [ref=f32e165]:
+                  - link "Ana Ríos Mendoza" [ref=f32e166] [cursor=pointer]:
+                    - /url: /socios/1
+                - cell "DNI" [ref=f32e167]
+                - cell "Denegado" [ref=f32e170]
+                - cell "Membresía congelada" [ref=f32e174]

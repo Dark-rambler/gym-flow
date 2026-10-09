@@ -1,0 +1,41 @@
+- generic [ref=f2e5]:
+  - complementary "Menú principal" [ref=f2e293]:
+    - generic [ref=f2e7]: GymFlow
+    - list [ref=f2e16]:
+      - listitem [ref=f2e17]:
+        - link "Dashboard" [ref=f2e294] [cursor=pointer]:
+          - /url: /dashboard
+      - listitem [ref=f2e25]:
+        - link "Check-in" [ref=f2e295] [cursor=pointer]:
+          - /url: /check-in
+      - listitem [ref=f2e33]:
+        - link "Socios" [ref=f2e296] [cursor=pointer]:
+          - /url: /socios
+      - listitem [ref=f2e41]:
+        - link "Caja" [ref=f2e297] [cursor=pointer]:
+          - /url: /caja
+      - listitem [ref=f2e47]:
+        - link "Planes" [ref=f2e298] [cursor=pointer]:
+          - /url: /planes
+      - listitem [ref=f2e52]:
+        - link "Historial de cajas" [ref=f2e299] [cursor=pointer]:
+          - /url: /cajas
+      - listitem [ref=f2e59]:
+        - link "Reportes" [ref=f2e300] [cursor=pointer]:
+          - /url: /reportes/ingresos
+      - listitem [ref=f2e64]:
+        - link "Staff" [ref=f2e301] [cursor=pointer]:
+          - /url: /staff
+    - generic [ref=f2e70]:
+      - paragraph [ref=f2e71]: Quality Owner
+      - paragraph [ref=f2e72]: QA Gym
+      - generic [ref=f2e73]: Propietario
+      - button "Cerrar sesión" [ref=f2e302] [cursor=pointer]
+  - main [ref=f2e81]:
+    - generic [ref=f2e303]:
+      - generic "Socios" [ref=f2e304]:
+        - heading "Socios" [level=1] [ref=f2e307]
+        - button "Nuevo socio" [ref=f2e309] [cursor=pointer]
+      - generic [ref=f2e313]:
+        - generic [ref=f2e314]: Buscar socio
+        - searchbox "Buscar socio" [ref=f2e315]

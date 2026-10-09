@@ -1,0 +1,111 @@
+- generic [ref=f1e25]:
+  - generic [ref=f1e29]:
+    - complementary [ref=f1e511]:
+      - generic [ref=f1e31]: GymFlow
+      - list [ref=f1e40]:
+        - listitem [ref=f1e41]:
+          - link [ref=f1e512] [cursor=pointer]:
+            - /url: /dashboard
+            - text: Dashboard
+        - listitem [ref=f1e49]:
+          - link [ref=f1e513] [cursor=pointer]:
+            - /url: /check-in
+            - text: Check-in
+        - listitem [ref=f1e57]:
+          - link [ref=f1e514] [cursor=pointer]:
+            - /url: /socios
+            - text: Socios
+        - listitem [ref=f1e65]:
+          - link [ref=f1e515] [cursor=pointer]:
+            - /url: /caja
+            - text: Caja
+        - listitem [ref=f1e71]:
+          - link [ref=f1e516] [cursor=pointer]:
+            - /url: /planes
+            - text: Planes
+        - listitem [ref=f1e76]:
+          - link [ref=f1e517] [cursor=pointer]:
+            - /url: /cajas
+            - text: Historial de cajas
+        - listitem [ref=f1e83]:
+          - link [ref=f1e518] [cursor=pointer]:
+            - /url: /reportes/ingresos
+            - text: Reportes
+        - listitem [ref=f1e88]:
+          - link [ref=f1e519] [cursor=pointer]:
+            - /url: /staff
+            - text: Staff
+      - generic [ref=f1e94]:
+        - paragraph [ref=f1e95]: Quality Owner
+        - paragraph [ref=f1e96]: QA Gym
+        - generic [ref=f1e97]: Propietario
+        - button [ref=f1e520] [cursor=pointer]: Cerrar sesión
+    - main [ref=f1e1]:
+      - generic [ref=f1e2]:
+        - generic [ref=f1e521]:
+          - generic [ref=f1e4]:
+            - heading [level=1] [ref=f1e522]: Planes
+            - paragraph [ref=f1e7]: Lo que vendes en recepción
+          - button [ref=f1e523] [cursor=pointer]: Nuevo plan
+        - generic [ref=f1e12]:
+          - generic [ref=f1e13] [cursor=pointer]:
+            - checkbox [ref=f1e524]
+            - text: Mostrar inactivos
+          - table [ref=f1e525]:
+            - caption [ref=f1e149]: Planes
+            - rowgroup [ref=f1e150]:
+              - row [ref=f1e526]:
+                - columnheader [ref=f1e527]: Nombre
+                - columnheader [ref=f1e528]: Duración
+                - columnheader [ref=f1e529]: Precio
+                - columnheader [ref=f1e530]: Estado
+                - columnheader [ref=f1e531]:
+                  - generic [ref=f1e157]: Acciones
+            - rowgroup [ref=f1e158]:
+              - row [ref=f1e532]:
+                - cell [ref=f1e533]: Mensual QA
+                - cell [ref=f1e534]: 30 días
+                - cell [ref=f1e535]: S/ 120.00
+                - cell [ref=f1e536]:
+                  - generic [ref=f1e164]: Activo
+                - cell [ref=f1e537]:
+                  - button [ref=f1e538] [cursor=pointer]
+              - row [ref=f1e539]:
+                - cell [ref=f1e540]: Trimestral QA
+                - cell [ref=f1e541]: 90 días
+                - cell [ref=f1e542]: S/ 300.00
+                - cell [ref=f1e543]:
+                  - generic [ref=f1e253]: Activo
+                - cell [ref=f1e544]:
+                  - button [ref=f1e545] [cursor=pointer]
+              - row [ref=f1e546]:
+                - cell [ref=f1e547]: Plan de prueba con un nombre extremadamente largo para proba
+                - cell [ref=f1e548]: 365 días
+                - cell [ref=f1e549]: S/ 50.50
+                - cell [ref=f1e550]:
+                  - generic [ref=f1e492]: Activo
+                - cell [ref=f1e551]:
+                  - button [ref=f1e552] [cursor=pointer]
+  - generic [ref=f1e558]:
+    - banner [ref=f1e559]:
+      - heading "Editar plan" [level=2] [ref=f1e561]
+      - button "Cerrar" [ref=f1e562] [cursor=pointer]
+    - generic [ref=f1e568]:
+      - generic [ref=f1e569]:
+        - generic [ref=f1e570]: Nombre *
+        - textbox "Nombre *" [ref=f1e571]: Plan de prueba con un nombre extremadamente largo para proba
+      - generic [ref=f1e572]:
+        - generic [ref=f1e573]: Duración en días *
+        - spinbutton "Duración en días *" [ref=f1e574]: "365"
+      - generic [ref=f1e575]:
+        - generic [ref=f1e576]: Precio *
+        - generic [ref=f1e577]:
+          - generic: S/
+          - spinbutton "Precio *" [ref=f1e578]: "50.5"
+      - generic [ref=f1e579] [cursor=pointer]:
+        - checkbox "Plan activo (disponible para vender)" [active] [ref=f1e580]
+        - text: Plan activo (disponible para vender)
+    - contentinfo [ref=f1e581]:
+      - generic [ref=f1e582]:
+        - button "Cancelar" [ref=f1e583] [cursor=pointer]
+        - button "Guardar plan" [ref=f1e584] [cursor=pointer]

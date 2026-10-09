@@ -1,0 +1,130 @@
+- generic [ref=f42e1]:
+  - generic [ref=f42e5]:
+    - complementary [ref=f42e98]:
+      - generic [ref=f42e7]: GymFlow
+      - list [ref=f42e16]:
+        - listitem [ref=f42e17]:
+          - link [ref=f42e99] [cursor=pointer]:
+            - /url: /dashboard
+            - text: Dashboard
+        - listitem [ref=f42e25]:
+          - link [ref=f42e100] [cursor=pointer]:
+            - /url: /check-in
+            - text: Check-in
+        - listitem [ref=f42e33]:
+          - link [ref=f42e101] [cursor=pointer]:
+            - /url: /socios
+            - text: Socios
+        - listitem [ref=f42e41]:
+          - link [ref=f42e102] [cursor=pointer]:
+            - /url: /caja
+            - text: Caja
+        - listitem [ref=f42e47]:
+          - link [ref=f42e103] [cursor=pointer]:
+            - /url: /planes
+            - text: Planes
+        - listitem [ref=f42e52]:
+          - link [ref=f42e104] [cursor=pointer]:
+            - /url: /cajas
+            - text: Historial de cajas
+        - listitem [ref=f42e59]:
+          - link [ref=f42e105] [cursor=pointer]:
+            - /url: /reportes/ingresos
+            - text: Reportes
+        - listitem [ref=f42e64]:
+          - link [ref=f42e106] [cursor=pointer]:
+            - /url: /staff
+            - text: Staff
+      - generic [ref=f42e70]:
+        - paragraph [ref=f42e71]: Adriana Admin
+        - paragraph [ref=f42e72]: QA Gym
+        - generic [ref=f42e73]: Administrador
+        - button [ref=f42e107] [cursor=pointer]: Cerrar sesión
+    - main [ref=f42e81]:
+      - generic [ref=f42e82]:
+        - generic [ref=f42e108]:
+          - generic [ref=f42e84]:
+            - heading [level=1] [ref=f42e109]: Staff
+            - paragraph [ref=f42e87]: Personas con acceso al sistema
+          - button [ref=f42e110] [cursor=pointer]: Nuevo usuario
+        - table [ref=f42e111]:
+          - caption [ref=f42e112]: Usuarios del sistema
+          - rowgroup [ref=f42e113]:
+            - row [ref=f42e114]:
+              - columnheader [ref=f42e115]: Nombre
+              - columnheader [ref=f42e116]: Rol
+              - columnheader [ref=f42e117]: Estado
+              - columnheader [ref=f42e118]: Creado
+              - columnheader [ref=f42e119]:
+                - generic [ref=f42e120]: Acciones
+          - rowgroup [ref=f42e121]:
+            - row [ref=f42e122]:
+              - cell [ref=f42e123]:
+                - generic [ref=f42e124]:
+                  - generic [aria-hidden] [ref=f42e125]: QO
+                  - generic [ref=f42e126]:
+                    - paragraph [ref=f42e127]:
+                      - generic [ref=f42e128]: Quality Owner
+                    - paragraph [ref=f42e129]: qa+1760020000@test.com
+              - cell [ref=f42e130]:
+                - generic [ref=f42e131]: Propietario
+              - cell [ref=f42e133]:
+                - generic [ref=f42e134]: Activo
+              - cell [ref=f42e137]: 09/10/2026
+              - cell [ref=f42e138]
+            - row [ref=f42e139]:
+              - cell [ref=f42e140]:
+                - generic [ref=f42e141]:
+                  - generic [aria-hidden] [ref=f42e142]: AA
+                  - generic [ref=f42e143]:
+                    - paragraph [ref=f42e144]:
+                      - generic [ref=f42e145]: Adriana Admin
+                      - generic [ref=f42e146]: Tú
+                    - paragraph [ref=f42e148]: qa+1760020000.admin@test.com
+              - cell [ref=f42e149]:
+                - generic [ref=f42e150]: Administrador
+              - cell [ref=f42e152]:
+                - generic [ref=f42e153]: Activo
+              - cell [ref=f42e156]: 09/10/2026
+              - cell [ref=f42e157]
+            - row [ref=f42e158]:
+              - cell [ref=f42e159]:
+                - generic [ref=f42e160]:
+                  - generic [aria-hidden] [ref=f42e161]: RR
+                  - generic [ref=f42e162]:
+                    - paragraph [ref=f42e163]:
+                      - generic [ref=f42e164]: Rita Recepción
+                    - paragraph [ref=f42e165]: qa+1760020000.recep@test.com
+              - cell [ref=f42e166]:
+                - generic [ref=f42e167]: Recepcionista
+              - cell [ref=f42e169]:
+                - generic [ref=f42e170]: Activo
+              - cell [ref=f42e173]: 09/10/2026
+              - cell [ref=f42e174]:
+                - generic [ref=f42e175]:
+                  - button [ref=f42e176] [cursor=pointer]
+                  - button [ref=f42e180] [cursor=pointer]
+  - generic [ref=f42e189]:
+    - banner [ref=f42e190]:
+      - heading "Nuevo usuario" [level=2] [ref=f42e192]
+      - button "Cerrar" [ref=f42e193] [cursor=pointer]
+    - generic [ref=f42e199]:
+      - generic [ref=f42e200]:
+        - generic [ref=f42e201]: Nombre completo *
+        - textbox "Nombre completo *" [active] [ref=f42e202]
+      - generic [ref=f42e203]:
+        - generic [ref=f42e204]: Correo *
+        - textbox "Correo *" [ref=f42e205]
+      - generic [ref=f42e206]:
+        - generic [ref=f42e207]: Contraseña temporal *
+        - generic [ref=f42e208]:
+          - textbox "Contraseña temporal *" [ref=f42e209]
+          - button "Mostrar contraseña" [ref=f42e210] [cursor=pointer]
+        - paragraph [ref=f42e215]: Mínimo 8 caracteres. Compártela con la persona.
+      - generic [ref=f42e216]:
+        - paragraph [ref=f42e217]: Rol
+        - paragraph [ref=f42e218]: Recepcionista
+    - contentinfo [ref=f42e219]:
+      - generic [ref=f42e220]:
+        - button "Cancelar" [ref=f42e221] [cursor=pointer]
+        - button "Crear usuario" [ref=f42e222] [cursor=pointer]

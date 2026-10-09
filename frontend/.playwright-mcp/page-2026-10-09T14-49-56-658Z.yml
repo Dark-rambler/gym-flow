@@ -1,0 +1,18 @@
+- main [ref=f31e331]:
+  - generic [ref=f31e333]:
+    - generic [ref=f31e334]: GymFlow
+    - heading "Ingresa a tu gimnasio" [level=1] [ref=f31e343]
+    - generic [ref=f31e344]:
+      - generic [ref=f31e345]:
+        - generic [ref=f31e346]: Correo
+        - textbox "Correo" [ref=f31e347]
+      - generic [ref=f31e348]:
+        - generic [ref=f31e349]: Contraseña
+        - generic [ref=f31e350]:
+          - textbox "Contraseña" [ref=f31e351]
+          - button "Mostrar contraseña" [ref=f31e352] [cursor=pointer]
+      - button "Ingresar" [ref=f31e357] [cursor=pointer]
+    - paragraph [ref=f31e358]:
+      - text: ¿Tienes un gimnasio nuevo?
+      - link "Regístralo" [ref=f31e359] [cursor=pointer]:
+        - /url: /registro

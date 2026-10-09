@@ -1,0 +1,7 @@
+- generic [ref=f33e2]:
+  - generic [ref=f33e5]:
+    - complementary "Menú principal" [ref=f33e6]
+    - main [ref=f33e8]
+  - alert [ref=f33e9]:
+    - paragraph [ref=f33e14]: No tienes permiso para ver esa sección.
+    - button "Cerrar aviso" [ref=f33e15] [cursor=pointer]

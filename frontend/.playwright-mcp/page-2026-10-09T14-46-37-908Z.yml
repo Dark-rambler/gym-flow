@@ -1,0 +1,54 @@
+- generic [ref=f19e5]:
+  - complementary "Menú principal" [ref=f19e6]:
+    - generic [ref=f19e7]: GymFlow
+    - list [ref=f19e16]:
+      - listitem [ref=f19e17]:
+        - link "Dashboard" [ref=f19e18] [cursor=pointer]:
+          - /url: /dashboard
+      - listitem [ref=f19e25]:
+        - link "Check-in" [ref=f19e26] [cursor=pointer]:
+          - /url: /check-in
+      - listitem [ref=f19e33]:
+        - link "Socios" [ref=f19e34] [cursor=pointer]:
+          - /url: /socios
+      - listitem [ref=f19e41]:
+        - link "Caja" [ref=f19e42] [cursor=pointer]:
+          - /url: /caja
+      - listitem [ref=f19e47]:
+        - link "Planes" [ref=f19e48] [cursor=pointer]:
+          - /url: /planes
+      - listitem [ref=f19e52]:
+        - link "Historial de cajas" [ref=f19e53] [cursor=pointer]:
+          - /url: /cajas
+      - listitem [ref=f19e59]:
+        - link "Reportes" [ref=f19e60] [cursor=pointer]:
+          - /url: /reportes/ingresos
+      - listitem [ref=f19e64]:
+        - link "Staff" [ref=f19e65] [cursor=pointer]:
+          - /url: /staff
+    - generic [ref=f19e70]:
+      - paragraph [ref=f19e71]: Quality Owner
+      - paragraph [ref=f19e72]: QA Gym
+      - generic [ref=f19e73]: Propietario
+      - button "Cerrar sesión" [ref=f19e75] [cursor=pointer]
+  - main [ref=f19e81]:
+    - generic [ref=f19e82]:
+      - generic "Check-in" [ref=f19e83]:
+        - generic [ref=f19e84]:
+          - heading "Check-in" [level=1] [ref=f19e86]
+          - paragraph [ref=f19e87]: Registra el ingreso de los socios
+      - generic [ref=f19e88]:
+        - region "Registrar ingreso" [ref=f19e89]:
+          - generic [ref=f19e90]:
+            - generic [ref=f19e91]:
+              - generic [ref=f19e92]: Código QR o DNI
+              - textbox "Código QR o DNI" [active] [ref=f19e93]
+            - button "Registrar ingreso" [disabled] [ref=f19e94]
+          - status [ref=f19e95]:
+            - paragraph [ref=f19e96]: Escanea el QR o escribe el DNI del socio.
+        - region [ref=f19e97]:
+          - generic [ref=f19e98]:
+            - heading "Ingresos del día" [level=2] [ref=f19e99]
+            - generic [ref=f19e100]:
+              - generic [ref=f19e101]: Fecha
+              - textbox "Fecha" [ref=f19e102]: 2026-10-09

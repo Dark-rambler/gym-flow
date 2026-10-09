@@ -1,0 +1,91 @@
+- generic [ref=f40e2]:
+  - generic [ref=f40e5]:
+    - complementary "Menú principal" [ref=f40e195]:
+      - generic [ref=f40e7]: GymFlow
+      - list [ref=f40e16]:
+        - listitem [ref=f40e17]:
+          - link "Dashboard" [ref=f40e196] [cursor=pointer]:
+            - /url: /dashboard
+        - listitem [ref=f40e25]:
+          - link "Check-in" [ref=f40e197] [cursor=pointer]:
+            - /url: /check-in
+        - listitem [ref=f40e33]:
+          - link "Socios" [ref=f40e198] [cursor=pointer]:
+            - /url: /socios
+        - listitem [ref=f40e41]:
+          - link "Caja" [ref=f40e199] [cursor=pointer]:
+            - /url: /caja
+        - listitem [ref=f40e47]:
+          - link "Planes" [ref=f40e200] [cursor=pointer]:
+            - /url: /planes
+      - generic [ref=f40e52]:
+        - paragraph [ref=f40e53]: Rita Recepción
+        - paragraph [ref=f40e54]: QA Gym
+        - generic [ref=f40e55]: Recepcionista
+        - button "Cerrar sesión" [ref=f40e201] [cursor=pointer]
+    - main [ref=f40e63]:
+      - generic [ref=f40e64]:
+        - link "Socios" [ref=f40e202] [cursor=pointer]:
+          - /url: /socios
+        - generic [ref=f40e69]:
+          - generic [ref=f40e70]:
+            - generic [ref=f40e71]:
+              - heading "Socio Prueba 03" [level=1] [ref=f40e203]
+              - generic [ref=f40e73]: Activo
+            - paragraph [ref=f40e76]: DNI QA100003 · Socio desde 09/10/2026
+          - button "Editar" [ref=f40e204] [cursor=pointer]
+        - generic [ref=f40e82]:
+          - region [ref=f40e205]:
+            - heading "MEMBRESÍA ACTUAL" [level=2] [ref=f40e206]
+            - generic [ref=f40e207]:
+              - paragraph [ref=f40e208]: Pase 5 días QA
+              - generic [ref=f40e209]: Activa
+              - generic [ref=f40e212]: Vence en 4 días
+            - paragraph [ref=f40e214]: 09/10/2026 – 13/10/2026
+            - paragraph [ref=f40e215]: 4 días restantes
+            - paragraph [ref=f40e216]:
+              - generic [ref=f40e217]: S/ 25.00
+              - text: · Efectivo · 09/10/2026, 09:51
+            - button "Renovar" [active] [ref=f40e218] [cursor=pointer]
+          - region [ref=f40e219]:
+            - heading "CARNET QR" [level=2] [ref=f40e220]
+            - img "Código QR de Socio Prueba 03" [ref=f40e221]
+            - paragraph [ref=f40e94]: GF1:86fcc277-7a22-4965-83d1-fded91a7c797
+            - generic [ref=f40e95]:
+              - button "Copiar enlace" [ref=f40e222] [cursor=pointer]
+              - link "Abrir tarjeta (nueva pestaña)" [ref=f40e223] [cursor=pointer]:
+                - /url: http://localhost:4200/card/86fcc277-7a22-4965-83d1-fded91a7c797
+          - region [ref=f40e224]:
+            - heading "DATOS" [level=2] [ref=f40e225]
+            - generic [ref=f40e109]:
+              - generic [ref=f40e110]:
+                - term [ref=f40e111]: Teléfono
+                - definition [ref=f40e112]: "90000003"
+              - generic [ref=f40e113]:
+                - term [ref=f40e114]: Correo
+                - definition [ref=f40e115]: —
+              - generic [ref=f40e116]:
+                - term [ref=f40e117]: Fecha de nacimiento
+                - definition [ref=f40e118]: —
+              - generic [ref=f40e119]:
+                - term [ref=f40e120]: Notas
+                - definition [ref=f40e121]: —
+          - region [ref=f40e226]:
+            - heading "HISTORIAL" [level=2] [ref=f40e227]
+            - table [ref=f40e229]:
+              - caption [ref=f40e230]: Historial de membresías
+              - rowgroup [ref=f40e231]:
+                - row [ref=f40e232]:
+                  - columnheader "Plan" [ref=f40e233]
+                  - columnheader "Periodo" [ref=f40e234]
+                  - columnheader "Estado" [ref=f40e235]
+                  - columnheader "Pago" [ref=f40e236]
+              - rowgroup [ref=f40e237]:
+                - row [ref=f40e238]:
+                  - cell "Pase 5 días QA" [ref=f40e239]
+                  - cell "09/10/2026 – 13/10/2026" [ref=f40e240]
+                  - cell "Activa" [ref=f40e241]
+                  - cell "EfectivoS/ 25.00" [ref=f40e245]
+  - status [ref=f40e246]:
+    - paragraph [ref=f40e251]: Membresía vendida · S/ 25.00 (Efectivo)
+    - button "Cerrar aviso" [ref=f40e252] [cursor=pointer]

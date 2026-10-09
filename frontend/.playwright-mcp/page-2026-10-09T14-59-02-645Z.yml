@@ -1,0 +1,5 @@
+- generic [ref=f10e6]:
+  - banner [ref=f10e7]:
+    - button "Abrir menú" [ref=f10e8] [cursor=pointer]
+    - paragraph
+  - main [ref=f10e11]

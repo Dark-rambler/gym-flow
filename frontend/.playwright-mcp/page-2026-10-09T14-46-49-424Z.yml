@@ -1,0 +1,97 @@
+- generic [ref=f20e2]:
+  - generic [ref=f20e5]:
+    - complementary "Menú principal" [ref=f20e226]:
+      - generic [ref=f20e7]: GymFlow
+      - list [ref=f20e16]:
+        - listitem [ref=f20e17]:
+          - link "Dashboard" [ref=f20e227] [cursor=pointer]:
+            - /url: /dashboard
+        - listitem [ref=f20e25]:
+          - link "Check-in" [ref=f20e228] [cursor=pointer]:
+            - /url: /check-in
+        - listitem [ref=f20e33]:
+          - link "Socios" [ref=f20e229] [cursor=pointer]:
+            - /url: /socios
+        - listitem [ref=f20e41]:
+          - link "Caja" [ref=f20e230] [cursor=pointer]:
+            - /url: /caja
+        - listitem [ref=f20e47]:
+          - link "Planes" [ref=f20e231] [cursor=pointer]:
+            - /url: /planes
+        - listitem [ref=f20e52]:
+          - link "Historial de cajas" [ref=f20e232] [cursor=pointer]:
+            - /url: /cajas
+        - listitem [ref=f20e59]:
+          - link "Reportes" [ref=f20e233] [cursor=pointer]:
+            - /url: /reportes/ingresos
+        - listitem [ref=f20e64]:
+          - link "Staff" [ref=f20e234] [cursor=pointer]:
+            - /url: /staff
+      - generic [ref=f20e70]:
+        - paragraph [ref=f20e71]: Quality Owner
+        - paragraph [ref=f20e72]: QA Gym
+        - generic [ref=f20e73]: Propietario
+        - button "Cerrar sesión" [ref=f20e235] [cursor=pointer]
+    - main [ref=f20e81]:
+      - generic [ref=f20e82]:
+        - link "Socios" [ref=f20e236] [cursor=pointer]:
+          - /url: /socios
+        - generic [ref=f20e102]:
+          - generic [ref=f20e103]:
+            - generic [ref=f20e104]:
+              - heading "Socio Prueba 01" [level=1] [ref=f20e237]
+              - generic [ref=f20e106]: Activo
+            - paragraph [ref=f20e109]: DNI QA100001 · Socio desde 09/10/2026
+          - generic [ref=f20e110]:
+            - button "Editar" [ref=f20e238] [cursor=pointer]
+            - button "Desactivar" [ref=f20e239] [cursor=pointer]
+        - generic [ref=f20e120]:
+          - region [ref=f20e240]:
+            - heading "MEMBRESÍA ACTUAL" [level=2] [ref=f20e241]
+            - paragraph [ref=f20e242]: Sin membresía activa
+            - button "Vender membresía" [ref=f20e243] [cursor=pointer]
+          - region [ref=f20e244]:
+            - heading "CARNET QR" [level=2] [ref=f20e245]
+            - img "Código QR de Socio Prueba 01" [ref=f20e246]
+            - paragraph [ref=f20e148]: GF1:4bb49ca8-94fd-4a92-bcb8-25aeb0b95381
+            - generic [ref=f20e149]:
+              - button "Copiar enlace" [ref=f20e247] [cursor=pointer]
+              - link "Abrir tarjeta (nueva pestaña)" [ref=f20e248] [cursor=pointer]:
+                - /url: http://localhost:4200/card/4bb49ca8-94fd-4a92-bcb8-25aeb0b95381
+            - button "Regenerar QR" [ref=f20e249] [cursor=pointer]
+          - region [ref=f20e250]:
+            - heading "DATOS" [level=2] [ref=f20e251]
+            - generic [ref=f20e170]:
+              - generic [ref=f20e171]:
+                - term [ref=f20e172]: Teléfono
+                - definition [ref=f20e173]: "90000001"
+              - generic [ref=f20e174]:
+                - term [ref=f20e175]: Correo
+                - definition [ref=f20e176]: —
+              - generic [ref=f20e177]:
+                - term [ref=f20e178]: Fecha de nacimiento
+                - definition [ref=f20e179]: —
+              - generic [ref=f20e180]:
+                - term [ref=f20e181]: Notas
+                - definition [ref=f20e182]: —
+          - region [ref=f20e252]:
+            - heading "HISTORIAL" [level=2] [ref=f20e253]
+            - table [ref=f20e254]:
+              - caption [ref=f20e187]: Historial de membresías
+              - rowgroup [ref=f20e188]:
+                - row [ref=f20e255]:
+                  - columnheader "Plan" [ref=f20e256]
+                  - columnheader "Periodo" [ref=f20e257]
+                  - columnheader "Estado" [ref=f20e258]
+                  - columnheader "Pago" [ref=f20e259]
+                  - columnheader "Acciones" [ref=f20e260]
+              - rowgroup [ref=f20e196]:
+                - row [ref=f20e261]:
+                  - cell "Trimestral QA" [ref=f20e262]
+                  - cell "09/10/2026 – 06/01/2027" [ref=f20e263]
+                  - cell "Cancelada" [ref=f20e264]
+                  - cell "EfectivoS/ 300.00" [ref=f20e265]
+                  - cell [ref=f20e205]
+  - status [ref=f20e266]:
+    - paragraph [ref=f20e271]: Membresía cancelada
+    - button "Cerrar aviso" [ref=f20e272] [cursor=pointer]

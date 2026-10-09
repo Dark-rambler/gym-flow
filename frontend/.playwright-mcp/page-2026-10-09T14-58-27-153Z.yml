@@ -1,0 +1,130 @@
+- generic [ref=f4e1]:
+  - generic [ref=f4e5]:
+    - complementary [ref=f4e6]:
+      - generic [ref=f4e7]: GymFlow
+      - list [ref=f4e16]:
+        - listitem [ref=f4e17]:
+          - link [ref=f4e18] [cursor=pointer]:
+            - /url: /dashboard
+            - text: Dashboard
+        - listitem [ref=f4e25]:
+          - link [ref=f4e26] [cursor=pointer]:
+            - /url: /check-in
+            - text: Check-in
+        - listitem [ref=f4e33]:
+          - link [ref=f4e34] [cursor=pointer]:
+            - /url: /socios
+            - text: Socios
+        - listitem [ref=f4e41]:
+          - link [ref=f4e42] [cursor=pointer]:
+            - /url: /caja
+            - text: Caja
+        - listitem [ref=f4e47]:
+          - link [ref=f4e48] [cursor=pointer]:
+            - /url: /planes
+            - text: Planes
+        - listitem [ref=f4e52]:
+          - link [ref=f4e53] [cursor=pointer]:
+            - /url: /cajas
+            - text: Historial de cajas
+        - listitem [ref=f4e59]:
+          - link [ref=f4e60] [cursor=pointer]:
+            - /url: /reportes/ingresos
+            - text: Reportes
+        - listitem [ref=f4e64]:
+          - link [ref=f4e65] [cursor=pointer]:
+            - /url: /staff
+            - text: Staff
+      - generic [ref=f4e70]:
+        - paragraph [ref=f4e71]: Quality Owner
+        - paragraph [ref=f4e72]: QA Gym
+        - generic [ref=f4e73]: Propietario
+        - button [ref=f4e75] [cursor=pointer]: Cerrar sesión
+    - main [ref=f4e81]:
+      - generic [ref=f4e82]:
+        - link [ref=f4e83] [cursor=pointer]:
+          - /url: /socios
+          - text: Socios
+        - generic [ref=f4e87]:
+          - generic [ref=f4e88]:
+            - generic [ref=f4e89]:
+              - heading [level=1] [ref=f4e90]: Socio Prueba 04
+              - generic [ref=f4e91]: Activo
+            - paragraph [ref=f4e94]: DNI QA100004 · Socio desde 09/10/2026
+          - generic [ref=f4e95]:
+            - button [ref=f4e96] [cursor=pointer]: Editar
+            - button [ref=f4e100] [cursor=pointer]: Desactivar
+        - generic [ref=f4e105]:
+          - region [ref=f4e106]:
+            - heading [level=2] [ref=f4e107]: MEMBRESÍA ACTUAL
+            - paragraph [ref=f4e108]: Sin membresía activa
+            - button [ref=f4e110] [cursor=pointer]: Vender membresía
+          - region [ref=f4e113]:
+            - heading [level=2] [ref=f4e114]: CARNET QR
+            - paragraph [ref=f4e117]: GF1:b6e6dd7d-6744-4ec0-8644-d9bfb5665534
+            - generic [ref=f4e118]:
+              - button [ref=f4e119] [cursor=pointer]: Copiar enlace
+              - link [ref=f4e124] [cursor=pointer]:
+                - /url: http://localhost:4200/card/b6e6dd7d-6744-4ec0-8644-d9bfb5665534
+            - button [ref=f4e130] [cursor=pointer]: Regenerar QR
+          - region [ref=f4e137]:
+            - heading [level=2] [ref=f4e138]: DATOS
+            - generic [ref=f4e139]:
+              - generic [ref=f4e140]:
+                - term [ref=f4e141]: Teléfono
+                - definition [ref=f4e142]: "90000004"
+              - generic [ref=f4e143]:
+                - term [ref=f4e144]: Correo
+                - definition [ref=f4e145]: —
+              - generic [ref=f4e146]:
+                - term [ref=f4e147]: Fecha de nacimiento
+                - definition [ref=f4e148]: —
+              - generic [ref=f4e149]:
+                - term [ref=f4e150]: Notas
+                - definition [ref=f4e151]: —
+          - region [ref=f4e152]:
+            - heading [level=2] [ref=f4e153]: HISTORIAL
+            - paragraph [ref=f4e161]: Sin historial de membresías.
+  - dialog [ref=f4e165]:
+    - generic "Vender membresía" [ref=f4e167]:
+      - banner [ref=f4e168]:
+        - generic [ref=f4e169]:
+          - heading "Vender membresía" [level=2] [ref=f4e170]
+          - paragraph [ref=f4e171]: Socio Prueba 04
+        - button "Cerrar" [ref=f4e172] [cursor=pointer]
+      - generic [ref=f4e178]:
+        - generic [ref=f4e179]:
+          - generic [ref=f4e180]: Plan *
+          - combobox "Plan *" [ref=f4e181]:
+            - option "Selecciona un plan" [disabled]
+            - option "Mensual QA · 30 días · S/ 120.00" [selected]
+            - option "Trimestral QA · 90 días · S/ 300.00"
+            - option "Pase 5 días QA · 5 días · S/ 25.00"
+        - generic [ref=f4e182]:
+          - generic [ref=f4e183]: Precio
+          - generic [ref=f4e184]:
+            - generic: S/
+            - spinbutton "Precio" [invalid] [ref=f4e185]: "50.555"
+          - paragraph [ref=f4e204]: Máximo 2 decimales
+        - group "Método de pago *" [ref=f4e186]:
+          - generic [ref=f4e188]:
+            - generic [ref=f4e189] [cursor=pointer]:
+              - radio "Efectivo" [checked] [ref=f4e190]
+              - text: Efectivo
+            - generic [ref=f4e191] [cursor=pointer]:
+              - radio "Yape" [ref=f4e192]
+              - text: Yape
+            - generic [ref=f4e193] [cursor=pointer]:
+              - radio "Plin" [ref=f4e194]
+              - text: Plin
+            - generic [ref=f4e195] [cursor=pointer]:
+              - radio "Tarjeta" [ref=f4e196]
+              - text: Tarjeta
+        - paragraph [ref=f4e202]:
+          - text: "Total a cobrar:"
+          - strong [ref=f4e203]: S/ 50.56
+          - text: en Efectivo
+      - contentinfo [ref=f4e197]:
+        - generic [ref=f4e198]:
+          - button "Cancelar" [ref=f4e199] [cursor=pointer]
+          - button "Cobrar y vender" [active] [ref=f4e200] [cursor=pointer]

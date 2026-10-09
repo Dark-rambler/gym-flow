@@ -1,0 +1,3 @@
+- alert [ref=f11e1]:
+  - paragraph [ref=f11e6]: Tu sesión expiró. Ingresa de nuevo.
+  - button "Cerrar aviso" [ref=f11e7] [cursor=pointer]

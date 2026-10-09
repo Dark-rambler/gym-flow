@@ -1,0 +1,124 @@
+- generic [ref=f7e1]:
+  - generic [ref=f7e5]:
+    - complementary [ref=f7e404]:
+      - generic [ref=f7e7]: GymFlow
+      - list [ref=f7e16]:
+        - listitem [ref=f7e17]:
+          - link [ref=f7e405] [cursor=pointer]:
+            - /url: /dashboard
+            - text: Dashboard
+        - listitem [ref=f7e25]:
+          - link [ref=f7e406] [cursor=pointer]:
+            - /url: /check-in
+            - text: Check-in
+        - listitem [ref=f7e33]:
+          - link [ref=f7e407] [cursor=pointer]:
+            - /url: /socios
+            - text: Socios
+        - listitem [ref=f7e41]:
+          - link [ref=f7e408] [cursor=pointer]:
+            - /url: /caja
+            - text: Caja
+        - listitem [ref=f7e47]:
+          - link [ref=f7e409] [cursor=pointer]:
+            - /url: /planes
+            - text: Planes
+        - listitem [ref=f7e52]:
+          - link [ref=f7e410] [cursor=pointer]:
+            - /url: /cajas
+            - text: Historial de cajas
+        - listitem [ref=f7e59]:
+          - link [ref=f7e411] [cursor=pointer]:
+            - /url: /reportes/ingresos
+            - text: Reportes
+        - listitem [ref=f7e64]:
+          - link [ref=f7e412] [cursor=pointer]:
+            - /url: /staff
+            - text: Staff
+      - generic [ref=f7e70]:
+        - paragraph [ref=f7e71]: Quality Owner
+        - paragraph [ref=f7e72]: QA Gym
+        - generic [ref=f7e73]: Propietario
+        - button [ref=f7e413] [cursor=pointer]: Cerrar sesión
+    - main [ref=f7e81]:
+      - generic [ref=f7e82]:
+        - link [ref=f7e414] [cursor=pointer]:
+          - /url: /socios
+          - text: Socios
+        - generic [ref=f7e102]:
+          - generic [ref=f7e103]:
+            - generic [ref=f7e104]:
+              - heading [level=1] [ref=f7e415]: Ana Ríos Mendoza
+              - generic [ref=f7e106]: Activo
+            - paragraph [ref=f7e109]: DNI 11111111 · Socio desde 09/10/2026
+          - generic [ref=f7e110]:
+            - button [ref=f7e416] [cursor=pointer]: Editar
+            - button [ref=f7e417] [cursor=pointer]: Desactivar
+        - generic [ref=f7e120]:
+          - region [ref=f7e418]:
+            - heading [level=2] [ref=f7e419]: MEMBRESÍA ACTUAL
+            - generic [ref=f7e334]:
+              - paragraph [ref=f7e335]: Mensual QA
+              - generic [ref=f7e336]: Activa
+            - paragraph [ref=f7e339]: 09/10/2026 – 07/11/2026
+            - paragraph [ref=f7e340]: 29 días restantes
+            - paragraph [ref=f7e341]:
+              - generic [ref=f7e342]: S/ 100.00
+              - text: · Yape · 09/10/2026, 09:41
+            - generic [ref=f7e124]:
+              - button [ref=f7e420] [cursor=pointer]: Renovar
+              - button [ref=f7e421] [cursor=pointer]: Congelar
+              - button [ref=f7e422] [cursor=pointer]: Cancelar membresía
+          - region [ref=f7e423]:
+            - heading [level=2] [ref=f7e424]: CARNET QR
+            - paragraph [ref=f7e132]: GF1:edb1ac32-0c6c-4bf8-9ae0-f179a7d4a15b
+            - generic [ref=f7e133]:
+              - button [ref=f7e426] [cursor=pointer]: Copiar enlace
+              - link [ref=f7e427] [cursor=pointer]:
+                - /url: http://localhost:4200/card/edb1ac32-0c6c-4bf8-9ae0-f179a7d4a15b
+            - button [ref=f7e428] [cursor=pointer]: Regenerar QR
+          - region [ref=f7e429]:
+            - heading [level=2] [ref=f7e430]: DATOS
+            - generic [ref=f7e154]:
+              - generic [ref=f7e155]:
+                - term [ref=f7e156]: Teléfono
+                - definition [ref=f7e157]: "987654321"
+              - generic [ref=f7e158]:
+                - term [ref=f7e159]: Correo
+                - definition [ref=f7e160]: —
+              - generic [ref=f7e161]:
+                - term [ref=f7e162]: Fecha de nacimiento
+                - definition [ref=f7e163]: 15/05/1990 (36 años)
+              - generic [ref=f7e164]:
+                - term [ref=f7e165]: Notas
+                - definition [ref=f7e166]: Línea 1 Línea 2
+          - region [ref=f7e431]:
+            - heading [level=2] [ref=f7e432]: HISTORIAL
+            - table [ref=f7e433]:
+              - caption [ref=f7e364]: Historial de membresías
+              - rowgroup [ref=f7e365]:
+                - row [ref=f7e434]:
+                  - columnheader [ref=f7e435]: Plan
+                  - columnheader [ref=f7e436]: Periodo
+                  - columnheader [ref=f7e437]: Estado
+                  - columnheader [ref=f7e438]: Pago
+                  - columnheader [ref=f7e439]:
+                    - generic [ref=f7e372]: Acciones
+              - rowgroup [ref=f7e373]:
+                - row [ref=f7e440]:
+                  - cell [ref=f7e441]: Mensual QA
+                  - cell [ref=f7e442]: 09/10/2026 – 07/11/2026
+                  - cell [ref=f7e443]:
+                    - generic [ref=f7e378]: Activa
+                  - cell [ref=f7e444]: YapeS/ 100.00
+                  - cell [ref=f7e382]
+  - alertdialog [ref=f7e467]:
+    - generic [ref=f7e469]:
+      - banner [ref=f7e470]:
+        - heading "Congelar membresía" [level=2] [ref=f7e472]
+        - button "Cerrar" [active] [ref=f7e473] [cursor=pointer]
+      - paragraph [ref=f7e479]: Se pausarán los días restantes hasta que la descongeles.
+      - contentinfo [ref=f7e480]:
+        - generic [ref=f7e481]:
+          - button "Cancelar" [ref=f7e482] [cursor=pointer]
+          - button "Congelar" [ref=f7e483] [cursor=pointer]

@@ -1,0 +1,43 @@
+- generic [ref=f6e5]:
+  - complementary "Menú principal" [ref=f6e6]:
+    - generic [ref=f6e7]: GymFlow
+    - list [ref=f6e16]:
+      - listitem [ref=f6e17]:
+        - link "Dashboard" [ref=f6e18] [cursor=pointer]:
+          - /url: /dashboard
+      - listitem [ref=f6e25]:
+        - link "Check-in" [ref=f6e26] [cursor=pointer]:
+          - /url: /check-in
+      - listitem [ref=f6e33]:
+        - link "Socios" [ref=f6e34] [cursor=pointer]:
+          - /url: /socios
+      - listitem [ref=f6e41]:
+        - link "Caja" [ref=f6e42] [cursor=pointer]:
+          - /url: /caja
+      - listitem [ref=f6e47]:
+        - link "Planes" [ref=f6e48] [cursor=pointer]:
+          - /url: /planes
+      - listitem [ref=f6e52]:
+        - link "Historial de cajas" [ref=f6e53] [cursor=pointer]:
+          - /url: /cajas
+      - listitem [ref=f6e59]:
+        - link "Reportes" [ref=f6e60] [cursor=pointer]:
+          - /url: /reportes/ingresos
+      - listitem [ref=f6e64]:
+        - link "Staff" [ref=f6e65] [cursor=pointer]:
+          - /url: /staff
+    - generic [ref=f6e70]:
+      - paragraph [ref=f6e71]: Quality Owner
+      - paragraph [ref=f6e72]: QA Gym
+      - generic [ref=f6e73]: Propietario
+      - button "Cerrar sesión" [ref=f6e75] [cursor=pointer]
+  - main [ref=f6e81]:
+    - generic [ref=f6e82]:
+      - generic "Planes" [ref=f6e83]:
+        - generic [ref=f6e84]:
+          - heading "Planes" [level=1] [ref=f6e86]
+          - paragraph [ref=f6e87]: Lo que vendes en recepción
+        - button "Nuevo plan" [ref=f6e89] [cursor=pointer]
+      - generic [ref=f6e93] [cursor=pointer]:
+        - checkbox "Mostrar inactivos" [ref=f6e94]
+        - text: Mostrar inactivos

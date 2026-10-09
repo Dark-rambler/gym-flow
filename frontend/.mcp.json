@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "angular-cli": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "@angular/cli@latest", "mcp"]
+    },
+    "playwright": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "@playwright/mcp@latest", "--browser", "chrome"]
+    }
+  }
+}

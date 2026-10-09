@@ -1,0 +1,98 @@
+- generic [ref=f5e2]:
+  - generic [ref=f5e5]:
+    - complementary "Menú principal" [ref=f5e198]:
+      - generic [ref=f5e7]: GymFlow
+      - list [ref=f5e16]:
+        - listitem [ref=f5e17]:
+          - link "Dashboard" [ref=f5e199] [cursor=pointer]:
+            - /url: /dashboard
+        - listitem [ref=f5e25]:
+          - link "Check-in" [ref=f5e200] [cursor=pointer]:
+            - /url: /check-in
+        - listitem [ref=f5e33]:
+          - link "Socios" [ref=f5e201] [cursor=pointer]:
+            - /url: /socios
+        - listitem [ref=f5e41]:
+          - link "Caja" [ref=f5e202] [cursor=pointer]:
+            - /url: /caja
+        - listitem [ref=f5e47]:
+          - link "Planes" [ref=f5e203] [cursor=pointer]:
+            - /url: /planes
+        - listitem [ref=f5e52]:
+          - link "Historial de cajas" [ref=f5e204] [cursor=pointer]:
+            - /url: /cajas
+        - listitem [ref=f5e59]:
+          - link "Reportes" [ref=f5e205] [cursor=pointer]:
+            - /url: /reportes/ingresos
+        - listitem [ref=f5e64]:
+          - link "Staff" [ref=f5e206] [cursor=pointer]:
+            - /url: /staff
+      - generic [ref=f5e70]:
+        - paragraph [ref=f5e71]: Quality Owner
+        - paragraph [ref=f5e72]: QA Gym
+        - generic [ref=f5e73]: Propietario
+        - button "Cerrar sesión" [ref=f5e207] [cursor=pointer]
+    - main [ref=f5e81]:
+      - generic [ref=f5e82]:
+        - generic "Caja" [ref=f5e208]:
+          - generic [ref=f5e101]:
+            - generic [ref=f5e102]:
+              - heading "Caja" [level=1] [ref=f5e209]
+              - generic [ref=f5e104]: Abierta
+            - paragraph [ref=f5e107]: Abierta por Quality Owner · 09:58
+          - button "Cerrar caja" [ref=f5e210] [cursor=pointer]
+        - generic [ref=f5e110]:
+          - generic [ref=f5e111]:
+            - paragraph [ref=f5e112]: Monto inicial
+            - paragraph [ref=f5e113]: S/ 10.00
+          - generic [ref=f5e114]:
+            - paragraph [ref=f5e115]: Total vendido
+            - paragraph [ref=f5e116]: S/ 0.00
+          - generic [ref=f5e117]:
+            - paragraph [ref=f5e118]: Efectivo esperado
+            - paragraph [ref=f5e119]: S/ 10.00
+          - generic [ref=f5e120]:
+            - paragraph [ref=f5e121]: Efectivo
+            - paragraph [ref=f5e122]: S/ 0.00
+          - generic [ref=f5e123]:
+            - paragraph [ref=f5e124]: Yape
+            - paragraph [ref=f5e125]: S/ 0.00
+          - generic [ref=f5e126]:
+            - paragraph [ref=f5e127]: Plin
+            - paragraph [ref=f5e128]: S/ 0.00
+          - generic [ref=f5e129]:
+            - paragraph [ref=f5e130]: Tarjeta
+            - paragraph [ref=f5e131]: S/ 0.00
+        - region [ref=f5e211]:
+          - heading "PAGOS DE ESTA CAJA" [level=2] [ref=f5e212]
+          - table [ref=f5e213]:
+            - caption [ref=f5e137]: Pagos de la caja
+            - rowgroup [ref=f5e138]:
+              - row [ref=f5e214]:
+                - columnheader "Hora" [ref=f5e215]
+                - columnheader "Socio" [ref=f5e216]
+                - columnheader "Plan" [ref=f5e217]
+                - columnheader "Método" [ref=f5e218]
+                - columnheader "Referencia" [ref=f5e219]
+                - columnheader "Recibido por" [ref=f5e220]
+                - columnheader "Monto" [ref=f5e221]
+                - columnheader "Estado" [ref=f5e222]
+                - columnheader "Acciones" [ref=f5e223]
+            - rowgroup [ref=f5e150]:
+              - row [ref=f5e224]:
+                - cell "09:58" [ref=f5e225]
+                - cell [ref=f5e226]:
+                  - link "Socio Prueba 04" [ref=f5e227] [cursor=pointer]:
+                    - /url: /socios/5
+                - cell "Mensual QA" [ref=f5e228]
+                - cell "Efectivo" [ref=f5e229]
+                - cell "—" [ref=f5e230]
+                - cell "Quality Owner" [ref=f5e231]
+                - cell "S/ 120.00" [ref=f5e232]
+                - 'cell "Anulado Motivo: Regresión QA" [ref=f5e233]':
+                  - generic "Regresión QA" [ref=f5e235]: Anulado
+                  - generic [ref=f5e236]: "Motivo: Regresión QA"
+                - cell [ref=f5e163]
+  - status [ref=f5e237]:
+    - paragraph [ref=f5e242]: Pago anulado
+    - button "Cerrar aviso" [ref=f5e243] [cursor=pointer]

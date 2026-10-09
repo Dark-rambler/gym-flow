@@ -3,10 +3,6 @@
 .env.*
 !.env.example
 
-# Claude Code local state
-.claude/hooks/.state/
-.claude/settings.local.json
-
 # OS / IDE
 .DS_Store
 Thumbs.db
@@ -14,3 +10,17 @@ Thumbs.db
 *.iml
 .vscode/*
 !.vscode/extensions.json
+
+# dependencies & build output
+node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/test-results/
+frontend/playwright-report/
+backend/.gradle/
+backend/build/
+backend/bin/
+*.log
+
+# Claude Code personal overrides
+.claude/settings.local.json

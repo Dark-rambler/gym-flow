@@ -1,5 +1,4 @@
-// Producción (Vercel). La URL pública del backend en Railway se define en el deploy (semana 5).
 export const environment = {
-  production: true,
-  apiUrl: '',
+  /** API classes use relative paths ('api/members'); in dev, proxy.conf.json forwards /api to http://localhost:8080. */
+  apiUrl: '/',
 };

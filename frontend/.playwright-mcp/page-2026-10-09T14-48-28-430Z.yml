@@ -1,0 +1,11 @@
+- generic [ref=f28e6]:
+  - banner [ref=f28e7]:
+    - button "Abrir menú" [ref=f28e8] [cursor=pointer]
+    - paragraph [ref=f28e11]: Staff
+    - generic [aria-hidden] [ref=f28e12]: QO
+  - main [ref=f28e13]:
+    - generic "Staff" [ref=f28e15]:
+      - generic [ref=f28e16]:
+        - heading "Staff" [level=1] [ref=f28e18]
+        - paragraph [ref=f28e19]: Personas con acceso al sistema
+      - button "Nuevo usuario" [ref=f28e21] [cursor=pointer]

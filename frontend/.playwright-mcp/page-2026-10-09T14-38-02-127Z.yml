@@ -1,0 +1,79 @@
+- generic [ref=f1e26]:
+  - generic [ref=f1e29]:
+    - complementary "Menú principal" [ref=f1e452]:
+      - generic [ref=f1e31]: GymFlow
+      - list [ref=f1e40]:
+        - listitem [ref=f1e41]:
+          - link "Dashboard" [ref=f1e453] [cursor=pointer]:
+            - /url: /dashboard
+        - listitem [ref=f1e49]:
+          - link "Check-in" [ref=f1e454] [cursor=pointer]:
+            - /url: /check-in
+        - listitem [ref=f1e57]:
+          - link "Socios" [ref=f1e455] [cursor=pointer]:
+            - /url: /socios
+        - listitem [ref=f1e65]:
+          - link "Caja" [ref=f1e456] [cursor=pointer]:
+            - /url: /caja
+        - listitem [ref=f1e71]:
+          - link "Planes" [ref=f1e457] [cursor=pointer]:
+            - /url: /planes
+        - listitem [ref=f1e76]:
+          - link "Historial de cajas" [ref=f1e458] [cursor=pointer]:
+            - /url: /cajas
+        - listitem [ref=f1e83]:
+          - link "Reportes" [ref=f1e459] [cursor=pointer]:
+            - /url: /reportes/ingresos
+        - listitem [ref=f1e88]:
+          - link "Staff" [ref=f1e460] [cursor=pointer]:
+            - /url: /staff
+      - generic [ref=f1e94]:
+        - paragraph [ref=f1e95]: Quality Owner
+        - paragraph [ref=f1e96]: QA Gym
+        - generic [ref=f1e97]: Propietario
+        - button "Cerrar sesión" [ref=f1e461] [cursor=pointer]
+    - main [ref=f1e1]:
+      - generic [ref=f1e2]:
+        - generic "Planes" [ref=f1e462]:
+          - generic [ref=f1e4]:
+            - heading "Planes" [level=1] [ref=f1e463]
+            - paragraph [ref=f1e7]: Lo que vendes en recepción
+          - button "Nuevo plan" [active] [ref=f1e464] [cursor=pointer]
+        - generic [ref=f1e12]:
+          - generic [ref=f1e13] [cursor=pointer]:
+            - checkbox "Mostrar inactivos" [ref=f1e465]
+            - text: Mostrar inactivos
+          - table [ref=f1e466]:
+            - caption [ref=f1e149]: Planes
+            - rowgroup [ref=f1e150]:
+              - row [ref=f1e467]:
+                - columnheader "Nombre" [ref=f1e468]
+                - columnheader "Duración" [ref=f1e469]
+                - columnheader "Precio" [ref=f1e470]
+                - columnheader "Estado" [ref=f1e471]
+                - columnheader "Acciones" [ref=f1e472]
+            - rowgroup [ref=f1e158]:
+              - row [ref=f1e473]:
+                - cell "Mensual QA" [ref=f1e474]
+                - cell "30 días" [ref=f1e475]
+                - cell "S/ 120.00" [ref=f1e476]
+                - cell "Activo" [ref=f1e477]
+                - cell [ref=f1e478]:
+                  - button "Editar Mensual QA" [ref=f1e479] [cursor=pointer]
+              - row [ref=f1e480]:
+                - cell "Trimestral QA" [ref=f1e481]
+                - cell "90 días" [ref=f1e482]
+                - cell "S/ 300.00" [ref=f1e483]
+                - cell "Activo" [ref=f1e484]
+                - cell [ref=f1e485]:
+                  - button "Editar Trimestral QA" [ref=f1e486] [cursor=pointer]
+              - row [ref=f1e487]:
+                - cell "Plan de prueba con un nombre extremadamente largo para proba" [ref=f1e488]
+                - cell "365 días" [ref=f1e489]
+                - cell "S/ 50.50" [ref=f1e490]
+                - cell "Activo" [ref=f1e491]
+                - cell [ref=f1e495]:
+                  - button "Editar Plan de prueba con un nombre extremadamente largo para proba" [ref=f1e496] [cursor=pointer]
+  - status [ref=f1e500]:
+    - paragraph [ref=f1e505]: Plan guardado
+    - button "Cerrar aviso" [ref=f1e506] [cursor=pointer]

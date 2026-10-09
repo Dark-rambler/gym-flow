@@ -1,0 +1,39 @@
+- generic [ref=f42e5]:
+  - complementary "Menú principal" [ref=f42e6]:
+    - generic [ref=f42e7]: GymFlow
+    - list [ref=f42e16]:
+      - listitem [ref=f42e17]:
+        - link "Dashboard" [ref=f42e18] [cursor=pointer]:
+          - /url: /dashboard
+      - listitem [ref=f42e25]:
+        - link "Check-in" [ref=f42e26] [cursor=pointer]:
+          - /url: /check-in
+      - listitem [ref=f42e33]:
+        - link "Socios" [ref=f42e34] [cursor=pointer]:
+          - /url: /socios
+      - listitem [ref=f42e41]:
+        - link "Caja" [ref=f42e42] [cursor=pointer]:
+          - /url: /caja
+      - listitem [ref=f42e47]:
+        - link "Planes" [ref=f42e48] [cursor=pointer]:
+          - /url: /planes
+      - listitem [ref=f42e52]:
+        - link "Historial de cajas" [ref=f42e53] [cursor=pointer]:
+          - /url: /cajas
+      - listitem [ref=f42e59]:
+        - link "Reportes" [ref=f42e60] [cursor=pointer]:
+          - /url: /reportes/ingresos
+      - listitem [ref=f42e64]:
+        - link "Staff" [ref=f42e65] [cursor=pointer]:
+          - /url: /staff
+    - generic [ref=f42e70]:
+      - paragraph [ref=f42e71]: Adriana Admin
+      - paragraph [ref=f42e72]: QA Gym
+      - generic [ref=f42e73]: Administrador
+      - button "Cerrar sesión" [ref=f42e75] [cursor=pointer]
+  - main [ref=f42e81]:
+    - generic "Staff" [ref=f42e83]:
+      - generic [ref=f42e84]:
+        - heading "Staff" [level=1] [ref=f42e86]
+        - paragraph [ref=f42e87]: Personas con acceso al sistema
+      - button "Nuevo usuario" [ref=f42e89] [cursor=pointer]

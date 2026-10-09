@@ -1,0 +1,127 @@
+- generic [ref=f7e1]:
+  - generic [ref=f7e5]:
+    - complementary [ref=f7e256]:
+      - generic [ref=f7e7]: GymFlow
+      - list [ref=f7e16]:
+        - listitem [ref=f7e17]:
+          - link [ref=f7e257] [cursor=pointer]:
+            - /url: /dashboard
+            - text: Dashboard
+        - listitem [ref=f7e25]:
+          - link [ref=f7e258] [cursor=pointer]:
+            - /url: /check-in
+            - text: Check-in
+        - listitem [ref=f7e33]:
+          - link [ref=f7e259] [cursor=pointer]:
+            - /url: /socios
+            - text: Socios
+        - listitem [ref=f7e41]:
+          - link [ref=f7e260] [cursor=pointer]:
+            - /url: /caja
+            - text: Caja
+        - listitem [ref=f7e47]:
+          - link [ref=f7e261] [cursor=pointer]:
+            - /url: /planes
+            - text: Planes
+        - listitem [ref=f7e52]:
+          - link [ref=f7e262] [cursor=pointer]:
+            - /url: /cajas
+            - text: Historial de cajas
+        - listitem [ref=f7e59]:
+          - link [ref=f7e263] [cursor=pointer]:
+            - /url: /reportes/ingresos
+            - text: Reportes
+        - listitem [ref=f7e64]:
+          - link [ref=f7e264] [cursor=pointer]:
+            - /url: /staff
+            - text: Staff
+      - generic [ref=f7e70]:
+        - paragraph [ref=f7e71]: Quality Owner
+        - paragraph [ref=f7e72]: QA Gym
+        - generic [ref=f7e73]: Propietario
+        - button [ref=f7e265] [cursor=pointer]: Cerrar sesión
+    - main [ref=f7e81]:
+      - generic [ref=f7e82]:
+        - link [ref=f7e266] [cursor=pointer]:
+          - /url: /socios
+          - text: Socios
+        - generic [ref=f7e102]:
+          - generic [ref=f7e103]:
+            - generic [ref=f7e104]:
+              - heading [level=1] [ref=f7e267]: Ana Ríos Mendoza
+              - generic [ref=f7e106]: Activo
+            - paragraph [ref=f7e109]: DNI 11111111 · Socio desde 09/10/2026
+          - generic [ref=f7e110]:
+            - button [ref=f7e268] [cursor=pointer]: Editar
+            - button [ref=f7e269] [cursor=pointer]: Desactivar
+        - generic [ref=f7e120]:
+          - region [ref=f7e270]:
+            - heading [level=2] [ref=f7e271]: MEMBRESÍA ACTUAL
+            - paragraph [ref=f7e123]: Sin membresía activa
+            - button [ref=f7e272] [cursor=pointer]: Vender membresía
+          - region [ref=f7e273]:
+            - heading [level=2] [ref=f7e274]: CARNET QR
+            - paragraph [ref=f7e132]: GF1:edb1ac32-0c6c-4bf8-9ae0-f179a7d4a15b
+            - generic [ref=f7e133]:
+              - button [ref=f7e276] [cursor=pointer]: Copiar enlace
+              - link [ref=f7e277] [cursor=pointer]:
+                - /url: http://localhost:4200/card/edb1ac32-0c6c-4bf8-9ae0-f179a7d4a15b
+            - button [ref=f7e278] [cursor=pointer]: Regenerar QR
+          - region [ref=f7e279]:
+            - heading [level=2] [ref=f7e280]: DATOS
+            - generic [ref=f7e154]:
+              - generic [ref=f7e155]:
+                - term [ref=f7e156]: Teléfono
+                - definition [ref=f7e157]: "987654321"
+              - generic [ref=f7e158]:
+                - term [ref=f7e159]: Correo
+                - definition [ref=f7e160]: —
+              - generic [ref=f7e161]:
+                - term [ref=f7e162]: Fecha de nacimiento
+                - definition [ref=f7e163]: 15/05/1990 (36 años)
+              - generic [ref=f7e164]:
+                - term [ref=f7e165]: Notas
+                - definition [ref=f7e166]: Línea 1 Línea 2
+          - region [ref=f7e281]:
+            - heading [level=2] [ref=f7e282]: HISTORIAL
+            - paragraph [ref=f7e176]: Sin historial de membresías.
+  - generic "Vender membresía" [ref=f7e288]:
+    - banner [ref=f7e289]:
+      - generic [ref=f7e290]:
+        - heading "Vender membresía" [level=2] [ref=f7e291]
+        - paragraph [ref=f7e292]: Ana Ríos Mendoza
+      - button "Cerrar" [active] [ref=f7e293] [cursor=pointer]
+    - generic [ref=f7e299]:
+      - generic [ref=f7e300]:
+        - generic [ref=f7e301]: Plan *
+        - combobox "Plan *" [ref=f7e302]:
+          - option "Selecciona un plan" [disabled]
+          - option "Mensual QA · 30 días · S/ 120.00" [selected]
+          - option "Trimestral QA · 90 días · S/ 300.00"
+      - generic [ref=f7e303]:
+        - generic [ref=f7e304]: Precio
+        - generic [ref=f7e305]:
+          - generic: S/
+          - spinbutton "Precio" [ref=f7e306]: "120"
+      - group "Método de pago *" [ref=f7e307]:
+        - generic [ref=f7e309]:
+          - generic [ref=f7e310] [cursor=pointer]:
+            - radio "Efectivo" [checked] [ref=f7e311]
+            - text: Efectivo
+          - generic [ref=f7e312] [cursor=pointer]:
+            - radio "Yape" [ref=f7e313]
+            - text: Yape
+          - generic [ref=f7e314] [cursor=pointer]:
+            - radio "Plin" [ref=f7e315]
+            - text: Plin
+          - generic [ref=f7e316] [cursor=pointer]:
+            - radio "Tarjeta" [ref=f7e317]
+            - text: Tarjeta
+      - paragraph [ref=f7e323]:
+        - text: "Total a cobrar:"
+        - strong [ref=f7e324]: S/ 120.00
+        - text: en Efectivo
+    - contentinfo [ref=f7e318]:
+      - generic [ref=f7e319]:
+        - button "Cancelar" [ref=f7e320] [cursor=pointer]
+        - button "Cobrar y vender" [ref=f7e321] [cursor=pointer]

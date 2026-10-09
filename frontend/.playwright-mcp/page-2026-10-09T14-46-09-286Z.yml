@@ -1,0 +1,82 @@
+- generic [ref=f17e2]:
+  - generic [ref=f17e5]:
+    - complementary "Menú principal" [ref=f17e168]:
+      - generic [ref=f17e7]: GymFlow
+      - list [ref=f17e16]:
+        - listitem [ref=f17e17]:
+          - link "Dashboard" [ref=f17e169] [cursor=pointer]:
+            - /url: /dashboard
+        - listitem [ref=f17e25]:
+          - link "Check-in" [ref=f17e170] [cursor=pointer]:
+            - /url: /check-in
+        - listitem [ref=f17e33]:
+          - link "Socios" [ref=f17e171] [cursor=pointer]:
+            - /url: /socios
+        - listitem [ref=f17e41]:
+          - link "Caja" [ref=f17e172] [cursor=pointer]:
+            - /url: /caja
+        - listitem [ref=f17e47]:
+          - link "Planes" [ref=f17e173] [cursor=pointer]:
+            - /url: /planes
+        - listitem [ref=f17e52]:
+          - link "Historial de cajas" [ref=f17e174] [cursor=pointer]:
+            - /url: /cajas
+        - listitem [ref=f17e59]:
+          - link "Reportes" [ref=f17e175] [cursor=pointer]:
+            - /url: /reportes/ingresos
+        - listitem [ref=f17e64]:
+          - link "Staff" [ref=f17e176] [cursor=pointer]:
+            - /url: /staff
+      - generic [ref=f17e70]:
+        - paragraph [ref=f17e71]: Quality Owner
+        - paragraph [ref=f17e72]: QA Gym
+        - generic [ref=f17e73]: Propietario
+        - button "Cerrar sesión" [ref=f17e177] [cursor=pointer]
+    - main [ref=f17e81]:
+      - generic [ref=f17e82]:
+        - generic "Staff" [ref=f17e178]:
+          - generic [ref=f17e84]:
+            - heading "Staff" [level=1] [ref=f17e179]
+            - paragraph [ref=f17e87]: Personas con acceso al sistema
+          - button "Nuevo usuario" [active] [ref=f17e180] [cursor=pointer]
+        - table [ref=f17e181]:
+          - caption [ref=f17e95]: Usuarios del sistema
+          - rowgroup [ref=f17e96]:
+            - row [ref=f17e182]:
+              - columnheader "Nombre" [ref=f17e183]
+              - columnheader "Rol" [ref=f17e184]
+              - columnheader "Estado" [ref=f17e185]
+              - columnheader "Creado" [ref=f17e186]
+              - columnheader "Acciones" [ref=f17e187]
+          - rowgroup [ref=f17e104]:
+            - row [ref=f17e188]:
+              - cell "Quality Owner Tú qa+1760020000@test.com" [ref=f17e189]:
+                - generic [ref=f17e107]:
+                  - generic [aria-hidden] [ref=f17e108]: QO
+                  - generic [ref=f17e109]:
+                    - paragraph [ref=f17e110]:
+                      - generic "Quality Owner" [ref=f17e190]
+                      - generic [ref=f17e112]: Tú
+                    - paragraph [ref=f17e114]: qa+1760020000@test.com
+              - cell "Propietario" [ref=f17e191]
+              - cell "Activo" [ref=f17e192]
+              - cell "09/10/2026" [ref=f17e193]
+              - cell [ref=f17e123]
+            - row [ref=f17e194]:
+              - cell "Adriana Admin qa+1760020000.admin@test.com" [ref=f17e195]:
+                - generic [ref=f17e196]:
+                  - generic [aria-hidden] [ref=f17e197]: AA
+                  - generic [ref=f17e198]:
+                    - paragraph [ref=f17e199]:
+                      - generic "Adriana Admin" [ref=f17e200]
+                    - paragraph [ref=f17e201]: qa+1760020000.admin@test.com
+              - cell "Administrador" [ref=f17e202]
+              - cell "Activo" [ref=f17e205]
+              - cell "09/10/2026" [ref=f17e209]
+              - cell [ref=f17e210]:
+                - generic [ref=f17e211]:
+                  - button "Editar Adriana Admin" [ref=f17e212] [cursor=pointer]
+                  - button "Desactivar Adriana Admin" [ref=f17e216] [cursor=pointer]
+  - status [ref=f17e221]:
+    - paragraph [ref=f17e226]: Usuario creado
+    - button "Cerrar aviso" [ref=f17e227] [cursor=pointer]

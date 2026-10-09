@@ -1,0 +1,124 @@
+- generic [ref=f5e1]:
+  - generic [ref=f5e5]:
+    - complementary [ref=f5e90]:
+      - generic [ref=f5e7]: GymFlow
+      - list [ref=f5e16]:
+        - listitem [ref=f5e17]:
+          - link [ref=f5e91] [cursor=pointer]:
+            - /url: /dashboard
+            - text: Dashboard
+        - listitem [ref=f5e25]:
+          - link [ref=f5e92] [cursor=pointer]:
+            - /url: /check-in
+            - text: Check-in
+        - listitem [ref=f5e33]:
+          - link [ref=f5e93] [cursor=pointer]:
+            - /url: /socios
+            - text: Socios
+        - listitem [ref=f5e41]:
+          - link [ref=f5e94] [cursor=pointer]:
+            - /url: /caja
+            - text: Caja
+        - listitem [ref=f5e47]:
+          - link [ref=f5e95] [cursor=pointer]:
+            - /url: /planes
+            - text: Planes
+        - listitem [ref=f5e52]:
+          - link [ref=f5e96] [cursor=pointer]:
+            - /url: /cajas
+            - text: Historial de cajas
+        - listitem [ref=f5e59]:
+          - link [ref=f5e97] [cursor=pointer]:
+            - /url: /reportes/ingresos
+            - text: Reportes
+        - listitem [ref=f5e64]:
+          - link [ref=f5e98] [cursor=pointer]:
+            - /url: /staff
+            - text: Staff
+      - generic [ref=f5e70]:
+        - paragraph [ref=f5e71]: Quality Owner
+        - paragraph [ref=f5e72]: QA Gym
+        - generic [ref=f5e73]: Propietario
+        - button [ref=f5e99] [cursor=pointer]: Cerrar sesión
+    - main [ref=f5e81]:
+      - generic [ref=f5e82]:
+        - generic [ref=f5e100]:
+          - generic [ref=f5e101]:
+            - generic [ref=f5e102]:
+              - heading [level=1] [ref=f5e103]: Caja
+              - generic [ref=f5e104]: Abierta
+            - paragraph [ref=f5e107]: Abierta por Quality Owner · 09:58
+          - button [ref=f5e109] [cursor=pointer]: Cerrar caja
+        - generic [ref=f5e110]:
+          - generic [ref=f5e111]:
+            - paragraph [ref=f5e112]: Monto inicial
+            - paragraph [ref=f5e113]: S/ 10.00
+          - generic [ref=f5e114]:
+            - paragraph [ref=f5e115]: Total vendido
+            - paragraph [ref=f5e116]: S/ 120.00
+          - generic [ref=f5e117]:
+            - paragraph [ref=f5e118]: Efectivo esperado
+            - paragraph [ref=f5e119]: S/ 130.00
+          - generic [ref=f5e120]:
+            - paragraph [ref=f5e121]: Efectivo
+            - paragraph [ref=f5e122]: S/ 120.00
+          - generic [ref=f5e123]:
+            - paragraph [ref=f5e124]: Yape
+            - paragraph [ref=f5e125]: S/ 0.00
+          - generic [ref=f5e126]:
+            - paragraph [ref=f5e127]: Plin
+            - paragraph [ref=f5e128]: S/ 0.00
+          - generic [ref=f5e129]:
+            - paragraph [ref=f5e130]: Tarjeta
+            - paragraph [ref=f5e131]: S/ 0.00
+        - region [ref=f5e132]:
+          - heading [level=2] [ref=f5e133]: PAGOS DE ESTA CAJA
+          - table [ref=f5e136]:
+            - caption [ref=f5e137]: Pagos de la caja
+            - rowgroup [ref=f5e138]:
+              - row [ref=f5e139]:
+                - columnheader [ref=f5e140]: Hora
+                - columnheader [ref=f5e141]: Socio
+                - columnheader [ref=f5e142]: Plan
+                - columnheader [ref=f5e143]: Método
+                - columnheader [ref=f5e144]: Referencia
+                - columnheader [ref=f5e145]: Recibido por
+                - columnheader [ref=f5e146]: Monto
+                - columnheader [ref=f5e147]: Estado
+                - columnheader [ref=f5e148]:
+                  - generic [ref=f5e149]: Acciones
+            - rowgroup [ref=f5e150]:
+              - row [ref=f5e151]:
+                - cell [ref=f5e152]: 09:58
+                - cell [ref=f5e153]:
+                  - link [ref=f5e154] [cursor=pointer]:
+                    - /url: /socios/5
+                    - text: Socio Prueba 04
+                - cell [ref=f5e155]: Mensual QA
+                - cell [ref=f5e156]:
+                  - generic [ref=f5e157]: Efectivo
+                - cell [ref=f5e159]: —
+                - cell [ref=f5e160]: Quality Owner
+                - cell [ref=f5e161]: S/ 120.00
+                - cell [ref=f5e162]
+                - cell [ref=f5e163]:
+                  - button [ref=f5e164] [cursor=pointer]
+  - dialog [ref=f5e172]:
+    - generic "Anular pago" [ref=f5e174]:
+      - banner [ref=f5e175]:
+        - generic [ref=f5e176]:
+          - heading "Anular pago" [level=2] [ref=f5e177]
+          - paragraph [ref=f5e178]: Socio Prueba 04 · Mensual QA · S/ 120.00
+        - button "Cerrar" [ref=f5e179] [cursor=pointer]
+      - generic [ref=f5e185]:
+        - paragraph [ref=f5e186]: También se cancelará la membresía asociada.
+        - generic [ref=f5e187]:
+          - generic [ref=f5e188]: Motivo *
+          - textbox "Motivo *" [invalid] [ref=f5e189]
+          - generic [ref=f5e190]:
+            - paragraph [ref=f5e197]: Este campo es obligatorio
+            - paragraph [ref=f5e191]: 4/200
+      - contentinfo [ref=f5e192]:
+        - generic [ref=f5e193]:
+          - button "Cancelar" [ref=f5e194] [cursor=pointer]
+          - button "Anular pago" [active] [ref=f5e195] [cursor=pointer]

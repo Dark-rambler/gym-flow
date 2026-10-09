@@ -1,0 +1,25 @@
+- generic [ref=f41e5]:
+  - complementary "Menú principal" [ref=f41e6]:
+    - generic [ref=f41e7]: GymFlow
+    - list [ref=f41e16]:
+      - listitem [ref=f41e17]:
+        - link "Dashboard" [ref=f41e18] [cursor=pointer]:
+          - /url: /dashboard
+      - listitem [ref=f41e25]:
+        - link "Check-in" [ref=f41e26] [cursor=pointer]:
+          - /url: /check-in
+      - listitem [ref=f41e33]:
+        - link "Socios" [ref=f41e34] [cursor=pointer]:
+          - /url: /socios
+      - listitem [ref=f41e41]:
+        - link "Caja" [ref=f41e42] [cursor=pointer]:
+          - /url: /caja
+      - listitem [ref=f41e47]:
+        - link "Planes" [ref=f41e48] [cursor=pointer]:
+          - /url: /planes
+    - generic [ref=f41e52]:
+      - paragraph [ref=f41e53]: Rita Recepción
+      - paragraph [ref=f41e54]: QA Gym
+      - generic [ref=f41e55]: Recepcionista
+      - button "Cerrar sesión" [ref=f41e57] [cursor=pointer]
+  - main [ref=f41e63]

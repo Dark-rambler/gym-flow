@@ -1,0 +1,49 @@
+- generic [ref=f2e5]:
+  - complementary "Menú principal" [ref=f2e325]:
+    - generic [ref=f2e7]: GymFlow
+    - list [ref=f2e16]:
+      - listitem [ref=f2e17]:
+        - link "Dashboard" [ref=f2e326] [cursor=pointer]:
+          - /url: /dashboard
+      - listitem [ref=f2e25]:
+        - link "Check-in" [ref=f2e327] [cursor=pointer]:
+          - /url: /check-in
+      - listitem [ref=f2e33]:
+        - link "Socios" [ref=f2e328] [cursor=pointer]:
+          - /url: /socios
+      - listitem [ref=f2e41]:
+        - link "Caja" [ref=f2e329] [cursor=pointer]:
+          - /url: /caja
+      - listitem [ref=f2e47]:
+        - link "Planes" [ref=f2e330] [cursor=pointer]:
+          - /url: /planes
+      - listitem [ref=f2e52]:
+        - link "Historial de cajas" [ref=f2e331] [cursor=pointer]:
+          - /url: /cajas
+      - listitem [ref=f2e59]:
+        - link "Reportes" [ref=f2e332] [cursor=pointer]:
+          - /url: /reportes/ingresos
+      - listitem [ref=f2e64]:
+        - link "Staff" [ref=f2e333] [cursor=pointer]:
+          - /url: /staff
+    - generic [ref=f2e70]:
+      - paragraph [ref=f2e71]: Quality Owner
+      - paragraph [ref=f2e72]: QA Gym
+      - generic [ref=f2e73]: Propietario
+      - button "Cerrar sesión" [ref=f2e334] [cursor=pointer]
+  - main [ref=f2e81]:
+    - generic [ref=f2e335]:
+      - generic "Caja" [ref=f2e336]:
+        - heading "Caja" [level=1] [ref=f2e339]
+      - generic [ref=f2e340]:
+        - heading "La caja está cerrada" [level=2] [ref=f2e346]
+        - paragraph [ref=f2e347]: Ábrela para empezar a registrar ventas del día.
+        - generic [ref=f2e348]:
+          - generic [ref=f2e349]:
+            - generic [ref=f2e350]: Monto inicial en efectivo *
+            - generic [ref=f2e351]:
+              - generic: S/
+              - spinbutton "Monto inicial en efectivo *" [ref=f2e352]: "0"
+          - button "Abrir caja" [ref=f2e353] [cursor=pointer]
+        - link "Ver historial de cajas" [ref=f2e354] [cursor=pointer]:
+          - /url: /cajas

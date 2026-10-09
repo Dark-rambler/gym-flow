@@ -1,0 +1,92 @@
+- generic [ref=f41e1]:
+  - generic [ref=f41e5]:
+    - complementary [ref=f41e64]:
+      - generic [ref=f41e7]: GymFlow
+      - list [ref=f41e16]:
+        - listitem [ref=f41e17]:
+          - link [ref=f41e65] [cursor=pointer]:
+            - /url: /dashboard
+            - text: Dashboard
+        - listitem [ref=f41e25]:
+          - link [ref=f41e66] [cursor=pointer]:
+            - /url: /check-in
+            - text: Check-in
+        - listitem [ref=f41e33]:
+          - link [ref=f41e67] [cursor=pointer]:
+            - /url: /socios
+            - text: Socios
+        - listitem [ref=f41e41]:
+          - link [ref=f41e68] [cursor=pointer]:
+            - /url: /caja
+            - text: Caja
+        - listitem [ref=f41e47]:
+          - link [ref=f41e69] [cursor=pointer]:
+            - /url: /planes
+            - text: Planes
+      - generic [ref=f41e52]:
+        - paragraph [ref=f41e53]: Rita Recepción
+        - paragraph [ref=f41e54]: QA Gym
+        - generic [ref=f41e55]: Recepcionista
+        - button [ref=f41e70] [cursor=pointer]: Cerrar sesión
+    - main [ref=f41e63]:
+      - generic [ref=f41e71]:
+        - generic [ref=f41e72]:
+          - generic [ref=f41e73]:
+            - generic [ref=f41e74]:
+              - heading [level=1] [ref=f41e75]: Caja
+              - generic [ref=f41e76]: Abierta
+            - paragraph [ref=f41e79]: Abierta por Rita Recepción · 09:50
+          - button [ref=f41e81] [cursor=pointer]: Cerrar caja
+        - generic [ref=f41e82]:
+          - generic [ref=f41e83]:
+            - paragraph [ref=f41e84]: Monto inicial
+            - paragraph [ref=f41e85]: S/ 20.00
+          - generic [ref=f41e86]:
+            - paragraph [ref=f41e87]: Pagos
+            - paragraph [ref=f41e88]: "1"
+        - region [ref=f41e89]:
+          - heading [level=2] [ref=f41e90]: PAGOS DE ESTA CAJA
+          - table [ref=f41e93]:
+            - caption [ref=f41e94]: Pagos de la caja
+            - rowgroup [ref=f41e95]:
+              - row [ref=f41e96]:
+                - columnheader [ref=f41e97]: Hora
+                - columnheader [ref=f41e98]: Socio
+                - columnheader [ref=f41e99]: Plan
+                - columnheader [ref=f41e100]: Método
+                - columnheader [ref=f41e101]: Referencia
+                - columnheader [ref=f41e102]: Recibido por
+                - columnheader [ref=f41e103]: Monto
+                - columnheader [ref=f41e104]: Estado
+            - rowgroup [ref=f41e105]:
+              - row [ref=f41e106]:
+                - cell [ref=f41e107]: 09:51
+                - cell [ref=f41e108]:
+                  - link [ref=f41e109] [cursor=pointer]:
+                    - /url: /socios/4
+                    - text: Socio Prueba 03
+                - cell [ref=f41e110]: Pase 5 días QA
+                - cell [ref=f41e111]:
+                  - generic [ref=f41e112]: Efectivo
+                - cell [ref=f41e114]: —
+                - cell [ref=f41e115]: Rita Recepción
+                - cell [ref=f41e116]: S/ 25.00
+                - cell [ref=f41e117]
+  - generic "Cerrar caja" [ref=f41e122]:
+    - banner [ref=f41e123]:
+      - heading "Cerrar caja" [level=2] [ref=f41e125]
+      - button "Cerrar" [ref=f41e126] [cursor=pointer]
+    - generic [ref=f41e132]:
+      - paragraph [ref=f41e133]: Cuenta el efectivo físico de la caja e ingresa el total. El sistema hará la comparación.
+      - generic [ref=f41e134]:
+        - generic [ref=f41e135]: Efectivo contado *
+        - generic [ref=f41e136]:
+          - generic: S/
+          - spinbutton "Efectivo contado *" [active] [ref=f41e137]
+      - generic [ref=f41e138]:
+        - generic [ref=f41e139]: Notas
+        - textbox "Notas" [ref=f41e140]
+    - contentinfo [ref=f41e141]:
+      - generic [ref=f41e142]:
+        - button "Cancelar" [ref=f41e143] [cursor=pointer]
+        - button "Cerrar caja" [ref=f41e144] [cursor=pointer]

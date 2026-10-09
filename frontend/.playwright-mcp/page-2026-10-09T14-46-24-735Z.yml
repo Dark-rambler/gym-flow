@@ -1,0 +1,85 @@
+- generic [ref=f18e2]:
+  - generic [ref=f18e5]:
+    - complementary "Menú principal" [ref=f18e210]:
+      - generic [ref=f18e7]: GymFlow
+      - list [ref=f18e16]:
+        - listitem [ref=f18e17]:
+          - link "Dashboard" [ref=f18e211] [cursor=pointer]:
+            - /url: /dashboard
+        - listitem [ref=f18e25]:
+          - link "Check-in" [ref=f18e212] [cursor=pointer]:
+            - /url: /check-in
+        - listitem [ref=f18e33]:
+          - link "Socios" [ref=f18e213] [cursor=pointer]:
+            - /url: /socios
+        - listitem [ref=f18e41]:
+          - link "Caja" [ref=f18e214] [cursor=pointer]:
+            - /url: /caja
+        - listitem [ref=f18e47]:
+          - link "Planes" [ref=f18e215] [cursor=pointer]:
+            - /url: /planes
+        - listitem [ref=f18e52]:
+          - link "Historial de cajas" [ref=f18e216] [cursor=pointer]:
+            - /url: /cajas
+        - listitem [ref=f18e59]:
+          - link "Reportes" [ref=f18e217] [cursor=pointer]:
+            - /url: /reportes/ingresos
+        - listitem [ref=f18e64]:
+          - link "Staff" [ref=f18e218] [cursor=pointer]:
+            - /url: /staff
+      - generic [ref=f18e70]:
+        - paragraph [ref=f18e71]: Quality Owner
+        - paragraph [ref=f18e72]: QA Gym
+        - generic [ref=f18e73]: Propietario
+        - button "Cerrar sesión" [ref=f18e219] [cursor=pointer]
+    - main [ref=f18e81]:
+      - generic [ref=f18e82]:
+        - link "Socios" [ref=f18e220] [cursor=pointer]:
+          - /url: /socios
+        - generic [ref=f18e87]:
+          - generic [ref=f18e88]:
+            - generic [ref=f18e89]:
+              - heading "Pedro Sinplan" [level=1] [ref=f18e221]
+              - generic [ref=f18e91]: Inactivo
+            - paragraph [ref=f18e94]: DNI 22222222 · Socio desde 09/10/2026
+          - generic [ref=f18e95]:
+            - button "Editar" [ref=f18e222] [cursor=pointer]
+            - button "Activar" [active] [ref=f18e223] [cursor=pointer]
+        - paragraph [ref=f18e224]: "Socio inactivo: no puede registrar ingresos."
+        - generic [ref=f18e105]:
+          - region [ref=f18e225]:
+            - heading "MEMBRESÍA ACTUAL" [level=2] [ref=f18e226]
+            - paragraph [ref=f18e108]: Sin membresía activa
+            - button "Vender membresía" [disabled] [ref=f18e227]
+            - paragraph [ref=f18e228]: "Socio inactivo: no puede registrar ingresos."
+          - region [ref=f18e229]:
+            - heading "CARNET QR" [level=2] [ref=f18e230]
+            - img "Código QR de Pedro Sinplan" [ref=f18e231]
+            - paragraph [ref=f18e117]: GF1:f80d36ea-2839-43bf-a786-56c5cc697e63
+            - generic [ref=f18e118]:
+              - button "Copiar enlace" [ref=f18e232] [cursor=pointer]
+              - link "Abrir tarjeta (nueva pestaña)" [ref=f18e233] [cursor=pointer]:
+                - /url: http://localhost:4200/card/f80d36ea-2839-43bf-a786-56c5cc697e63
+            - button "Regenerar QR" [ref=f18e234] [cursor=pointer]
+          - region [ref=f18e235]:
+            - heading "DATOS" [level=2] [ref=f18e236]
+            - generic [ref=f18e139]:
+              - generic [ref=f18e140]:
+                - term [ref=f18e141]: Teléfono
+                - definition [ref=f18e142]: —
+              - generic [ref=f18e143]:
+                - term [ref=f18e144]: Correo
+                - definition [ref=f18e145]: —
+              - generic [ref=f18e146]:
+                - term [ref=f18e147]: Fecha de nacimiento
+                - definition [ref=f18e148]: —
+              - generic [ref=f18e149]:
+                - term [ref=f18e150]: Notas
+                - definition [ref=f18e151]: —
+          - region [ref=f18e237]:
+            - heading "HISTORIAL" [level=2] [ref=f18e238]
+            - generic "Sin historial de membresías." [ref=f18e239]:
+              - paragraph [ref=f18e161]: Sin historial de membresías.
+  - status [ref=f18e240]:
+    - paragraph [ref=f18e245]: Socio desactivado
+    - button "Cerrar aviso" [ref=f18e246] [cursor=pointer]

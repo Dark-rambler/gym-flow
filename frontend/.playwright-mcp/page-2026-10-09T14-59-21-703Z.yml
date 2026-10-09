@@ -1,0 +1,68 @@
+- generic [ref=f13e36]:
+  - complementary "Menú principal" [ref=f13e37]:
+    - generic [ref=f13e38]: GymFlow
+    - list [ref=f13e47]:
+      - listitem [ref=f13e48]:
+        - link "Dashboard" [ref=f13e49] [cursor=pointer]:
+          - /url: /dashboard
+      - listitem [ref=f13e56]:
+        - link "Check-in" [ref=f13e57] [cursor=pointer]:
+          - /url: /check-in
+      - listitem [ref=f13e64]:
+        - link "Socios" [ref=f13e65] [cursor=pointer]:
+          - /url: /socios
+      - listitem [ref=f13e72]:
+        - link "Caja" [ref=f13e73] [cursor=pointer]:
+          - /url: /caja
+      - listitem [ref=f13e78]:
+        - link "Planes" [ref=f13e79] [cursor=pointer]:
+          - /url: /planes
+      - listitem [ref=f13e83]:
+        - link "Historial de cajas" [ref=f13e84] [cursor=pointer]:
+          - /url: /cajas
+      - listitem [ref=f13e90]:
+        - link "Reportes" [ref=f13e91] [cursor=pointer]:
+          - /url: /reportes/ingresos
+      - listitem [ref=f13e95]:
+        - link "Staff" [ref=f13e96] [cursor=pointer]:
+          - /url: /staff
+    - generic [ref=f13e101]:
+      - paragraph [ref=f13e102]: Quality Owner
+      - paragraph [ref=f13e103]: QA Gym
+      - generic [ref=f13e104]: Propietario
+      - button "Cerrar sesión" [ref=f13e106] [cursor=pointer]
+  - main [ref=f13e112]:
+    - generic [ref=f13e113]:
+      - generic "Socios" [ref=f13e114]:
+        - generic [ref=f13e115]:
+          - heading "Socios" [level=1] [ref=f13e117]
+          - paragraph [ref=f13e118]: 1 socios
+        - button "Nuevo socio" [ref=f13e120] [cursor=pointer]
+      - generic [ref=f13e123]:
+        - generic [ref=f13e124]:
+          - generic [ref=f13e125]: Buscar socio
+          - searchbox "Buscar socio" [ref=f13e126]: pedro
+        - table [ref=f13e128]:
+          - caption [ref=f13e129]: Lista de socios
+          - rowgroup [ref=f13e130]:
+            - row [ref=f13e131]:
+              - columnheader "Socio" [ref=f13e132]
+              - columnheader "Teléfono" [ref=f13e133]
+              - columnheader "Membresía" [ref=f13e134]
+              - columnheader "Estado" [ref=f13e135]
+              - columnheader "Acciones" [ref=f13e136]
+          - rowgroup [ref=f13e138]:
+            - row [ref=f13e139]:
+              - cell [ref=f13e140]:
+                - generic [ref=f13e141]:
+                  - generic [aria-hidden] [ref=f13e142]: PS
+                  - generic [ref=f13e143]:
+                    - link "Pedro Sinplan" [ref=f13e144] [cursor=pointer]:
+                      - /url: /socios/24
+                    - paragraph [ref=f13e145]: DNI 22222222
+              - cell "—" [ref=f13e146]
+              - cell "— Sin membresía" [ref=f13e147]
+              - cell "Inactivo" [ref=f13e148]
+              - cell [ref=f13e152]:
+                - link "Ver detalle de Pedro Sinplan" [ref=f13e153] [cursor=pointer]:
+                  - /url: /socios/24

@@ -1,0 +1,49 @@
+- generic [ref=e77]:
+  - complementary "Menú principal" [ref=e78]:
+    - generic [ref=e79]: GymFlow
+    - list [ref=e88]:
+      - listitem [ref=e89]:
+        - link "Dashboard" [ref=e90] [cursor=pointer]:
+          - /url: /dashboard
+      - listitem [ref=e97]:
+        - link "Check-in" [ref=e98] [cursor=pointer]:
+          - /url: /check-in
+      - listitem [ref=e105]:
+        - link "Socios" [ref=e106] [cursor=pointer]:
+          - /url: /socios
+      - listitem [ref=e113]:
+        - link "Caja" [active] [ref=e114] [cursor=pointer]:
+          - /url: /caja
+      - listitem [ref=e119]:
+        - link "Planes" [ref=e120] [cursor=pointer]:
+          - /url: /planes
+      - listitem [ref=e124]:
+        - link "Historial de cajas" [ref=e125] [cursor=pointer]:
+          - /url: /cajas
+      - listitem [ref=e131]:
+        - link "Reportes" [ref=e132] [cursor=pointer]:
+          - /url: /reportes/ingresos
+      - listitem [ref=e136]:
+        - link "Staff" [ref=e137] [cursor=pointer]:
+          - /url: /staff
+    - generic [ref=e142]:
+      - paragraph [ref=e143]: Quality Owner
+      - paragraph [ref=e144]: QA Gym
+      - generic [ref=e145]: Propietario
+      - button "Cerrar sesión" [ref=e147] [cursor=pointer]
+  - main [ref=e153]:
+    - generic [ref=e196]:
+      - generic "Caja" [ref=e197]:
+        - heading "Caja" [level=1] [ref=e200]
+      - generic [ref=e201]:
+        - heading "La caja está cerrada" [level=2] [ref=e207]
+        - paragraph [ref=e208]: Ábrela para empezar a registrar ventas del día.
+        - generic [ref=e209]:
+          - generic [ref=e210]:
+            - generic [ref=e211]: Monto inicial en efectivo *
+            - generic [ref=e212]:
+              - generic: S/
+              - spinbutton "Monto inicial en efectivo *" [ref=e213]: "0"
+          - button "Abrir caja" [ref=e214] [cursor=pointer]
+        - link "Ver historial de cajas" [ref=e215] [cursor=pointer]:
+          - /url: /cajas

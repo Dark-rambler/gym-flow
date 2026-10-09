@@ -1,0 +1,19 @@
+- generic [ref=f27e6]:
+  - banner [ref=f27e7]:
+    - button "Abrir menú" [ref=f27e8] [cursor=pointer]
+    - paragraph [ref=f27e11]: Ingresos
+    - generic [aria-hidden] [ref=f27e12]: QO
+  - main [ref=f27e13]:
+    - generic [ref=f27e14]:
+      - generic "Ingresos" [ref=f27e15]:
+        - generic [ref=f27e16]:
+          - heading "Ingresos" [level=1] [ref=f27e18]
+          - paragraph [ref=f27e19]: Pagos registrados por día y método
+      - generic [ref=f27e20]:
+        - generic [ref=f27e21]:
+          - generic [ref=f27e22]: Desde
+          - textbox "Desde" [ref=f27e23]: 2026-10-01
+        - generic [ref=f27e24]:
+          - generic [ref=f27e25]: Hasta
+          - textbox "Hasta" [ref=f27e26]: 2026-10-09
+        - button "Consultar" [ref=f27e27] [cursor=pointer]

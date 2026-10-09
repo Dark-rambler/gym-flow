@@ -1,0 +1,66 @@
+- generic [ref=f40e5]:
+  - complementary "Menú principal" [ref=f40e6]:
+    - generic [ref=f40e7]: GymFlow
+    - list [ref=f40e16]:
+      - listitem [ref=f40e17]:
+        - link "Dashboard" [ref=f40e18] [cursor=pointer]:
+          - /url: /dashboard
+      - listitem [ref=f40e25]:
+        - link "Check-in" [ref=f40e26] [cursor=pointer]:
+          - /url: /check-in
+      - listitem [ref=f40e33]:
+        - link "Socios" [ref=f40e34] [cursor=pointer]:
+          - /url: /socios
+      - listitem [ref=f40e41]:
+        - link "Caja" [ref=f40e42] [cursor=pointer]:
+          - /url: /caja
+      - listitem [ref=f40e47]:
+        - link "Planes" [ref=f40e48] [cursor=pointer]:
+          - /url: /planes
+    - generic [ref=f40e52]:
+      - paragraph [ref=f40e53]: Rita Recepción
+      - paragraph [ref=f40e54]: QA Gym
+      - generic [ref=f40e55]: Recepcionista
+      - button "Cerrar sesión" [ref=f40e57] [cursor=pointer]
+  - main [ref=f40e63]:
+    - generic [ref=f40e64]:
+      - link "Socios" [ref=f40e65] [cursor=pointer]:
+        - /url: /socios
+      - generic [ref=f40e69]:
+        - generic [ref=f40e70]:
+          - generic [ref=f40e71]:
+            - heading "Socio Prueba 03" [level=1] [ref=f40e72]
+            - generic [ref=f40e73]: Activo
+          - paragraph [ref=f40e76]: DNI QA100003 · Socio desde 09/10/2026
+        - button "Editar" [ref=f40e78] [cursor=pointer]
+      - generic [ref=f40e82]:
+        - region [ref=f40e83]:
+          - heading "MEMBRESÍA ACTUAL" [level=2] [ref=f40e84]
+          - paragraph [ref=f40e85]: Sin membresía activa
+          - button "Vender membresía" [ref=f40e87] [cursor=pointer]
+        - region [ref=f40e90]:
+          - heading "CARNET QR" [level=2] [ref=f40e91]
+          - paragraph [ref=f40e94]: GF1:86fcc277-7a22-4965-83d1-fded91a7c797
+          - generic [ref=f40e95]:
+            - button "Copiar enlace" [ref=f40e96] [cursor=pointer]
+            - link "Abrir tarjeta (nueva pestaña)" [ref=f40e101] [cursor=pointer]:
+              - /url: http://localhost:4200/card/86fcc277-7a22-4965-83d1-fded91a7c797
+        - region [ref=f40e107]:
+          - heading "DATOS" [level=2] [ref=f40e108]
+          - generic [ref=f40e109]:
+            - generic [ref=f40e110]:
+              - term [ref=f40e111]: Teléfono
+              - definition [ref=f40e112]: "90000003"
+            - generic [ref=f40e113]:
+              - term [ref=f40e114]: Correo
+              - definition [ref=f40e115]: —
+            - generic [ref=f40e116]:
+              - term [ref=f40e117]: Fecha de nacimiento
+              - definition [ref=f40e118]: —
+            - generic [ref=f40e119]:
+              - term [ref=f40e120]: Notas
+              - definition [ref=f40e121]: —
+        - region [ref=f40e122]:
+          - heading "HISTORIAL" [level=2] [ref=f40e123]
+          - generic "Sin historial de membresías." [ref=f40e124]:
+            - paragraph [ref=f40e131]: Sin historial de membresías.

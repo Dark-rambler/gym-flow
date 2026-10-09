@@ -1,0 +1,97 @@
+- generic [ref=f18e1]:
+  - generic [ref=f18e5]:
+    - complementary [ref=f18e162]:
+      - generic [ref=f18e7]: GymFlow
+      - list [ref=f18e16]:
+        - listitem [ref=f18e17]:
+          - link [ref=f18e163] [cursor=pointer]:
+            - /url: /dashboard
+            - text: Dashboard
+        - listitem [ref=f18e25]:
+          - link [ref=f18e164] [cursor=pointer]:
+            - /url: /check-in
+            - text: Check-in
+        - listitem [ref=f18e33]:
+          - link [ref=f18e165] [cursor=pointer]:
+            - /url: /socios
+            - text: Socios
+        - listitem [ref=f18e41]:
+          - link [ref=f18e166] [cursor=pointer]:
+            - /url: /caja
+            - text: Caja
+        - listitem [ref=f18e47]:
+          - link [ref=f18e167] [cursor=pointer]:
+            - /url: /planes
+            - text: Planes
+        - listitem [ref=f18e52]:
+          - link [ref=f18e168] [cursor=pointer]:
+            - /url: /cajas
+            - text: Historial de cajas
+        - listitem [ref=f18e59]:
+          - link [ref=f18e169] [cursor=pointer]:
+            - /url: /reportes/ingresos
+            - text: Reportes
+        - listitem [ref=f18e64]:
+          - link [ref=f18e170] [cursor=pointer]:
+            - /url: /staff
+            - text: Staff
+      - generic [ref=f18e70]:
+        - paragraph [ref=f18e71]: Quality Owner
+        - paragraph [ref=f18e72]: QA Gym
+        - generic [ref=f18e73]: Propietario
+        - button [ref=f18e171] [cursor=pointer]: Cerrar sesión
+    - main [ref=f18e81]:
+      - generic [ref=f18e82]:
+        - link [ref=f18e172] [cursor=pointer]:
+          - /url: /socios
+          - text: Socios
+        - generic [ref=f18e87]:
+          - generic [ref=f18e88]:
+            - generic [ref=f18e89]:
+              - heading [level=1] [ref=f18e173]: Pedro Sinplan
+              - generic [ref=f18e91]: Activo
+            - paragraph [ref=f18e94]: DNI 22222222 · Socio desde 09/10/2026
+          - generic [ref=f18e95]:
+            - button [ref=f18e174] [cursor=pointer]: Editar
+            - button [ref=f18e175] [cursor=pointer]: Desactivar
+        - generic [ref=f18e105]:
+          - region [ref=f18e176]:
+            - heading [level=2] [ref=f18e177]: MEMBRESÍA ACTUAL
+            - paragraph [ref=f18e108]: Sin membresía activa
+            - button [ref=f18e178] [cursor=pointer]: Vender membresía
+          - region [ref=f18e179]:
+            - heading [level=2] [ref=f18e180]: CARNET QR
+            - paragraph [ref=f18e117]: GF1:f80d36ea-2839-43bf-a786-56c5cc697e63
+            - generic [ref=f18e118]:
+              - button [ref=f18e182] [cursor=pointer]: Copiar enlace
+              - link [ref=f18e183] [cursor=pointer]:
+                - /url: http://localhost:4200/card/f80d36ea-2839-43bf-a786-56c5cc697e63
+            - button [ref=f18e184] [cursor=pointer]: Regenerar QR
+          - region [ref=f18e185]:
+            - heading [level=2] [ref=f18e186]: DATOS
+            - generic [ref=f18e139]:
+              - generic [ref=f18e140]:
+                - term [ref=f18e141]: Teléfono
+                - definition [ref=f18e142]: —
+              - generic [ref=f18e143]:
+                - term [ref=f18e144]: Correo
+                - definition [ref=f18e145]: —
+              - generic [ref=f18e146]:
+                - term [ref=f18e147]: Fecha de nacimiento
+                - definition [ref=f18e148]: —
+              - generic [ref=f18e149]:
+                - term [ref=f18e150]: Notas
+                - definition [ref=f18e151]: —
+          - region [ref=f18e187]:
+            - heading [level=2] [ref=f18e188]: HISTORIAL
+            - paragraph [ref=f18e161]: Sin historial de membresías.
+  - alertdialog [ref=f18e192]:
+    - generic [ref=f18e194]:
+      - banner [ref=f18e195]:
+        - heading "Desactivar socio" [level=2] [ref=f18e197]
+        - button "Cerrar" [active] [ref=f18e198] [cursor=pointer]
+      - paragraph [ref=f18e204]: ¿Desactivar a Pedro Sinplan? No podrá ingresar al gimnasio hasta que lo reactives.
+      - contentinfo [ref=f18e205]:
+        - generic [ref=f18e206]:
+          - button "Cancelar" [ref=f18e207] [cursor=pointer]
+          - button "Desactivar" [ref=f18e208] [cursor=pointer]

@@ -1,0 +1,48 @@
+- generic [ref=f39e2]:
+  - generic [ref=f39e5]:
+    - complementary "Menú principal" [ref=f39e6]:
+      - generic [ref=f39e7]: GymFlow
+      - list [ref=f39e16]:
+        - listitem [ref=f39e17]:
+          - link "Dashboard" [ref=f39e18] [cursor=pointer]:
+            - /url: /dashboard
+        - listitem [ref=f39e25]:
+          - link "Check-in" [ref=f39e26] [cursor=pointer]:
+            - /url: /check-in
+        - listitem [ref=f39e33]:
+          - link "Socios" [ref=f39e34] [cursor=pointer]:
+            - /url: /socios
+        - listitem [ref=f39e41]:
+          - link "Caja" [ref=f39e42] [cursor=pointer]:
+            - /url: /caja
+        - listitem [ref=f39e47]:
+          - link "Planes" [ref=f39e48] [cursor=pointer]:
+            - /url: /planes
+      - generic [ref=f39e52]:
+        - paragraph [ref=f39e53]: Rita Recepción
+        - paragraph [ref=f39e54]: QA Gym
+        - generic [ref=f39e55]: Recepcionista
+        - button "Cerrar sesión" [ref=f39e57] [cursor=pointer]
+    - main [ref=f39e63]:
+      - generic [ref=f39e64]:
+        - generic "Caja" [ref=f39e65]:
+          - generic [ref=f39e66]:
+            - generic [ref=f39e67]:
+              - heading "Caja" [level=1] [ref=f39e68]
+              - generic [ref=f39e69]: Abierta
+            - paragraph [ref=f39e72]: Abierta por Rita Recepción · 09:50
+          - button "Cerrar caja" [ref=f39e74] [cursor=pointer]
+        - generic [ref=f39e75]:
+          - generic [ref=f39e76]:
+            - paragraph [ref=f39e77]: Monto inicial
+            - paragraph [ref=f39e78]: S/ 20.00
+          - generic [ref=f39e79]:
+            - paragraph [ref=f39e80]: Pagos
+            - paragraph [ref=f39e81]: "0"
+        - region [ref=f39e82]:
+          - heading "PAGOS DE ESTA CAJA" [level=2] [ref=f39e83]
+          - generic "Aún no hay pagos en esta caja." [ref=f39e85]:
+            - paragraph [ref=f39e91]: Aún no hay pagos en esta caja.
+  - status [ref=f39e92]:
+    - paragraph [ref=f39e97]: Caja abierta
+    - button "Cerrar aviso" [ref=f39e98] [cursor=pointer]

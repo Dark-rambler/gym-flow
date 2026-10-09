@@ -1,0 +1,88 @@
+- generic [ref=f46e1]:
+  - generic [ref=f46e5]:
+    - complementary "Menú principal" [ref=f46e6]:
+      - generic [ref=f46e7]: GymFlow
+      - list [ref=f46e16]:
+        - listitem [ref=f46e17]:
+          - link "Dashboard" [ref=f46e18] [cursor=pointer]:
+            - /url: /dashboard
+        - listitem [ref=f46e25]:
+          - link "Check-in" [ref=f46e26] [cursor=pointer]:
+            - /url: /check-in
+        - listitem [ref=f46e33]:
+          - link "Socios" [ref=f46e34] [cursor=pointer]:
+            - /url: /socios
+        - listitem [ref=f46e41]:
+          - link "Caja" [ref=f46e42] [cursor=pointer]:
+            - /url: /caja
+        - listitem [ref=f46e47]:
+          - link "Planes" [ref=f46e48] [cursor=pointer]:
+            - /url: /planes
+        - listitem [ref=f46e52]:
+          - link "Historial de cajas" [ref=f46e53] [cursor=pointer]:
+            - /url: /cajas
+        - listitem [ref=f46e59]:
+          - link "Reportes" [ref=f46e60] [cursor=pointer]:
+            - /url: /reportes/ingresos
+        - listitem [ref=f46e64]:
+          - link "Staff" [ref=f46e65] [cursor=pointer]:
+            - /url: /staff
+      - generic [ref=f46e70]:
+        - paragraph [ref=f46e71]: Quality Owner
+        - paragraph [ref=f46e72]: QA Gym
+        - generic [ref=f46e73]: Propietario
+        - button "Cerrar sesión" [ref=f46e75] [cursor=pointer]
+    - main [ref=f46e81]:
+      - generic [ref=f46e82]:
+        - generic [ref=f46e83]:
+          - generic [ref=f46e84]:
+            - heading "Hola, Quality" [level=1] [ref=f46e86]
+            - paragraph [ref=f46e87]: QA Gym · viernes, 9 de octubre de 2026
+          - generic [ref=f46e88]:
+            - button "Nuevo socio" [active] [ref=f46e89] [cursor=pointer]
+            - link "Registrar ingreso" [ref=f46e92] [cursor=pointer]:
+              - /url: /check-in
+        - generic [ref=f46e109]:
+          - generic [ref=f46e110]:
+            - paragraph [ref=f46e111]: Socios activos
+            - paragraph [ref=f46e112]: "2"
+          - generic [ref=f46e113]:
+            - paragraph [ref=f46e114]: Congelados
+            - paragraph [ref=f46e115]: "0"
+          - generic [ref=f46e116]:
+            - paragraph [ref=f46e117]: Ingresos hoy
+            - paragraph [ref=f46e118]: "1"
+          - paragraph [ref=f46e120]: Caja
+        - region [ref=f46e121]:
+          - heading "Vencen pronto" [level=2] [ref=f46e122]
+  - generic [ref=f46e162]:
+    - banner [ref=f46e163]:
+      - generic:
+        - heading [level=2]
+      - button "Cerrar" [ref=f46e164] [cursor=pointer]
+    - generic [ref=f46e168]:
+      - generic [ref=f46e169]:
+        - generic [ref=f46e170]: Nombre completo *
+        - textbox "Nombre completo *" [ref=f46e171]
+      - generic [ref=f46e172]:
+        - generic [ref=f46e173]: DNI *
+        - textbox "DNI *" [ref=f46e174]
+      - generic [ref=f46e175]:
+        - generic [ref=f46e176]: Teléfono
+        - textbox "Teléfono" [ref=f46e177]
+      - generic [ref=f46e178]:
+        - generic [ref=f46e179]: Correo
+        - textbox "Correo" [ref=f46e180]
+      - generic [ref=f46e181]:
+        - generic [ref=f46e182]: Fecha de nacimiento
+        - textbox "Fecha de nacimiento" [ref=f46e183]
+      - generic [ref=f46e184]:
+        - generic [ref=f46e185]: Notas
+        - textbox "Notas" [ref=f46e186]
+        - generic [ref=f46e187]:
+          - paragraph
+          - paragraph
+    - contentinfo [ref=f46e188]:
+      - generic [ref=f46e189]:
+        - button "Cancelar" [ref=f46e190] [cursor=pointer]
+        - button [ref=f46e191] [cursor=pointer]

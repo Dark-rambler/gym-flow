@@ -1,0 +1,34 @@
+- generic [ref=f14e5]:
+  - complementary "Menú principal" [ref=f14e6]:
+    - generic [ref=f14e7]: GymFlow
+    - list [ref=f14e16]:
+      - listitem [ref=f14e17]:
+        - link "Dashboard" [ref=f14e18] [cursor=pointer]:
+          - /url: /dashboard
+      - listitem [ref=f14e25]:
+        - link "Check-in" [ref=f14e26] [cursor=pointer]:
+          - /url: /check-in
+      - listitem [ref=f14e33]:
+        - link "Socios" [ref=f14e34] [cursor=pointer]:
+          - /url: /socios
+      - listitem [ref=f14e41]:
+        - link "Caja" [ref=f14e42] [cursor=pointer]:
+          - /url: /caja
+      - listitem [ref=f14e47]:
+        - link "Planes" [ref=f14e48] [cursor=pointer]:
+          - /url: /planes
+      - listitem [ref=f14e52]:
+        - link "Historial de cajas" [ref=f14e53] [cursor=pointer]:
+          - /url: /cajas
+      - listitem [ref=f14e59]:
+        - link "Reportes" [ref=f14e60] [cursor=pointer]:
+          - /url: /reportes/ingresos
+      - listitem [ref=f14e64]:
+        - link "Staff" [ref=f14e65] [cursor=pointer]:
+          - /url: /staff
+    - generic [ref=f14e70]:
+      - paragraph [ref=f14e71]: Quality Owner
+      - paragraph [ref=f14e72]: QA Gym
+      - generic [ref=f14e73]: Propietario
+      - button "Cerrar sesión" [ref=f14e75] [cursor=pointer]
+  - main [ref=f14e81]

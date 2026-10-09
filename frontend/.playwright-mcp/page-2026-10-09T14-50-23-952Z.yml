@@ -1,0 +1,29 @@
+- generic [ref=f37e5]:
+  - complementary "Menú principal" [ref=f37e6]:
+    - generic [ref=f37e7]: GymFlow
+    - list [ref=f37e16]:
+      - listitem [ref=f37e17]:
+        - link "Dashboard" [ref=f37e18] [cursor=pointer]:
+          - /url: /dashboard
+      - listitem [ref=f37e25]:
+        - link "Check-in" [ref=f37e26] [cursor=pointer]:
+          - /url: /check-in
+      - listitem [ref=f37e33]:
+        - link "Socios" [ref=f37e34] [cursor=pointer]:
+          - /url: /socios
+      - listitem [ref=f37e41]:
+        - link "Caja" [ref=f37e42] [cursor=pointer]:
+          - /url: /caja
+      - listitem [ref=f37e47]:
+        - link "Planes" [ref=f37e48] [cursor=pointer]:
+          - /url: /planes
+    - generic [ref=f37e52]:
+      - paragraph [ref=f37e53]: Rita Recepción
+      - paragraph [ref=f37e54]: QA Gym
+      - generic [ref=f37e55]: Recepcionista
+      - button "Cerrar sesión" [ref=f37e57] [cursor=pointer]
+  - main [ref=f37e63]:
+    - generic "Planes" [ref=f37e65]:
+      - generic [ref=f37e66]:
+        - heading "Planes" [level=1] [ref=f37e68]
+        - paragraph [ref=f37e69]: Lo que vendes en recepción

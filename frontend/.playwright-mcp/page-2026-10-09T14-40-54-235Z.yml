@@ -1,0 +1,342 @@
+- generic [ref=f5e5]:
+  - complementary "Menú principal" [ref=f5e6]:
+    - generic [ref=f5e7]: GymFlow
+    - list [ref=f5e16]:
+      - listitem [ref=f5e17]:
+        - link "Dashboard" [ref=f5e18] [cursor=pointer]:
+          - /url: /dashboard
+      - listitem [ref=f5e25]:
+        - link "Check-in" [ref=f5e26] [cursor=pointer]:
+          - /url: /check-in
+      - listitem [ref=f5e33]:
+        - link "Socios" [ref=f5e34] [cursor=pointer]:
+          - /url: /socios
+      - listitem [ref=f5e41]:
+        - link "Caja" [ref=f5e42] [cursor=pointer]:
+          - /url: /caja
+      - listitem [ref=f5e47]:
+        - link "Planes" [ref=f5e48] [cursor=pointer]:
+          - /url: /planes
+      - listitem [ref=f5e52]:
+        - link "Historial de cajas" [ref=f5e53] [cursor=pointer]:
+          - /url: /cajas
+      - listitem [ref=f5e59]:
+        - link "Reportes" [ref=f5e60] [cursor=pointer]:
+          - /url: /reportes/ingresos
+      - listitem [ref=f5e64]:
+        - link "Staff" [ref=f5e65] [cursor=pointer]:
+          - /url: /staff
+    - generic [ref=f5e70]:
+      - paragraph [ref=f5e71]: Quality Owner
+      - paragraph [ref=f5e72]: QA Gym
+      - generic [ref=f5e73]: Propietario
+      - button "Cerrar sesión" [ref=f5e75] [cursor=pointer]
+  - main [ref=f5e81]:
+    - generic [ref=f5e82]:
+      - generic "Socios" [ref=f5e83]:
+        - generic [ref=f5e84]:
+          - heading "Socios" [level=1] [ref=f5e86]
+          - paragraph [ref=f5e112]: 24 socios
+        - button "Nuevo socio" [ref=f5e88] [cursor=pointer]
+      - generic [ref=f5e91]:
+        - generic [ref=f5e92]:
+          - generic [ref=f5e93]: Buscar socio
+          - searchbox "Buscar socio" [ref=f5e94]
+        - table [ref=f5e113]:
+          - caption [ref=f5e114]: Lista de socios
+          - rowgroup [ref=f5e115]:
+            - row [ref=f5e116]:
+              - columnheader "Socio" [ref=f5e117]
+              - columnheader "Teléfono" [ref=f5e118]
+              - columnheader "Membresía" [ref=f5e119]
+              - columnheader "Estado" [ref=f5e120]
+              - columnheader "Acciones" [ref=f5e121]
+          - rowgroup [ref=f5e123]:
+            - row [ref=f5e124]:
+              - cell [ref=f5e125]:
+                - generic [ref=f5e126]:
+                  - generic [aria-hidden] [ref=f5e127]: AR
+                  - generic [ref=f5e128]:
+                    - link "Ana Ríos <script>alert(1)</script>" [ref=f5e129] [cursor=pointer]:
+                      - /url: /socios/1
+                    - paragraph [ref=f5e130]: DNI 11111111
+              - cell "987654321" [ref=f5e131]
+              - cell "— Sin membresía" [ref=f5e132]
+              - cell "Activo" [ref=f5e133]
+              - cell [ref=f5e137]:
+                - link "Ver detalle de Ana Ríos <script>alert(1)</script>" [ref=f5e138] [cursor=pointer]:
+                  - /url: /socios/1
+            - row [ref=f5e142]:
+              - cell [ref=f5e143]:
+                - generic [ref=f5e144]:
+                  - generic [aria-hidden] [ref=f5e145]: PS
+                  - generic [ref=f5e146]:
+                    - link "Pedro Sinplan" [ref=f5e147] [cursor=pointer]:
+                      - /url: /socios/24
+                    - paragraph [ref=f5e148]: DNI 22222222
+              - cell "—" [ref=f5e149]
+              - cell "— Sin membresía" [ref=f5e150]
+              - cell "Activo" [ref=f5e151]
+              - cell [ref=f5e155]:
+                - link "Ver detalle de Pedro Sinplan" [ref=f5e156] [cursor=pointer]:
+                  - /url: /socios/24
+            - row [ref=f5e160]:
+              - cell [ref=f5e161]:
+                - generic [ref=f5e162]:
+                  - generic [aria-hidden] [ref=f5e163]: SP
+                  - generic [ref=f5e164]:
+                    - link "Socio Prueba 01" [ref=f5e165] [cursor=pointer]:
+                      - /url: /socios/2
+                    - paragraph [ref=f5e166]: DNI QA100001
+              - cell "90000001" [ref=f5e167]
+              - cell "— Sin membresía" [ref=f5e168]
+              - cell "Activo" [ref=f5e169]
+              - cell [ref=f5e173]:
+                - link "Ver detalle de Socio Prueba 01" [ref=f5e174] [cursor=pointer]:
+                  - /url: /socios/2
+            - row [ref=f5e178]:
+              - cell [ref=f5e179]:
+                - generic [ref=f5e180]:
+                  - generic [aria-hidden] [ref=f5e181]: SP
+                  - generic [ref=f5e182]:
+                    - link "Socio Prueba 02" [ref=f5e183] [cursor=pointer]:
+                      - /url: /socios/3
+                    - paragraph [ref=f5e184]: DNI QA100002
+              - cell "90000002" [ref=f5e185]
+              - cell "— Sin membresía" [ref=f5e186]
+              - cell "Activo" [ref=f5e187]
+              - cell [ref=f5e191]:
+                - link "Ver detalle de Socio Prueba 02" [ref=f5e192] [cursor=pointer]:
+                  - /url: /socios/3
+            - row [ref=f5e196]:
+              - cell [ref=f5e197]:
+                - generic [ref=f5e198]:
+                  - generic [aria-hidden] [ref=f5e199]: SP
+                  - generic [ref=f5e200]:
+                    - link "Socio Prueba 03" [ref=f5e201] [cursor=pointer]:
+                      - /url: /socios/4
+                    - paragraph [ref=f5e202]: DNI QA100003
+              - cell "90000003" [ref=f5e203]
+              - cell "— Sin membresía" [ref=f5e204]
+              - cell "Activo" [ref=f5e205]
+              - cell [ref=f5e209]:
+                - link "Ver detalle de Socio Prueba 03" [ref=f5e210] [cursor=pointer]:
+                  - /url: /socios/4
+            - row [ref=f5e214]:
+              - cell [ref=f5e215]:
+                - generic [ref=f5e216]:
+                  - generic [aria-hidden] [ref=f5e217]: SP
+                  - generic [ref=f5e218]:
+                    - link "Socio Prueba 04" [ref=f5e219] [cursor=pointer]:
+                      - /url: /socios/5
+                    - paragraph [ref=f5e220]: DNI QA100004
+              - cell "90000004" [ref=f5e221]
+              - cell "— Sin membresía" [ref=f5e222]
+              - cell "Activo" [ref=f5e223]
+              - cell [ref=f5e227]:
+                - link "Ver detalle de Socio Prueba 04" [ref=f5e228] [cursor=pointer]:
+                  - /url: /socios/5
+            - row [ref=f5e232]:
+              - cell [ref=f5e233]:
+                - generic [ref=f5e234]:
+                  - generic [aria-hidden] [ref=f5e235]: SP
+                  - generic [ref=f5e236]:
+                    - link "Socio Prueba 05" [ref=f5e237] [cursor=pointer]:
+                      - /url: /socios/6
+                    - paragraph [ref=f5e238]: DNI QA100005
+              - cell "90000005" [ref=f5e239]
+              - cell "— Sin membresía" [ref=f5e240]
+              - cell "Activo" [ref=f5e241]
+              - cell [ref=f5e245]:
+                - link "Ver detalle de Socio Prueba 05" [ref=f5e246] [cursor=pointer]:
+                  - /url: /socios/6
+            - row [ref=f5e250]:
+              - cell [ref=f5e251]:
+                - generic [ref=f5e252]:
+                  - generic [aria-hidden] [ref=f5e253]: SP
+                  - generic [ref=f5e254]:
+                    - link "Socio Prueba 06" [ref=f5e255] [cursor=pointer]:
+                      - /url: /socios/7
+                    - paragraph [ref=f5e256]: DNI QA100006
+              - cell "90000006" [ref=f5e257]
+              - cell "— Sin membresía" [ref=f5e258]
+              - cell "Activo" [ref=f5e259]
+              - cell [ref=f5e263]:
+                - link "Ver detalle de Socio Prueba 06" [ref=f5e264] [cursor=pointer]:
+                  - /url: /socios/7
+            - row [ref=f5e268]:
+              - cell [ref=f5e269]:
+                - generic [ref=f5e270]:
+                  - generic [aria-hidden] [ref=f5e271]: SP
+                  - generic [ref=f5e272]:
+                    - link "Socio Prueba 07" [ref=f5e273] [cursor=pointer]:
+                      - /url: /socios/8
+                    - paragraph [ref=f5e274]: DNI QA100007
+              - cell "90000007" [ref=f5e275]
+              - cell "— Sin membresía" [ref=f5e276]
+              - cell "Activo" [ref=f5e277]
+              - cell [ref=f5e281]:
+                - link "Ver detalle de Socio Prueba 07" [ref=f5e282] [cursor=pointer]:
+                  - /url: /socios/8
+            - row [ref=f5e286]:
+              - cell [ref=f5e287]:
+                - generic [ref=f5e288]:
+                  - generic [aria-hidden] [ref=f5e289]: SP
+                  - generic [ref=f5e290]:
+                    - link "Socio Prueba 08" [ref=f5e291] [cursor=pointer]:
+                      - /url: /socios/9
+                    - paragraph [ref=f5e292]: DNI QA100008
+              - cell "90000008" [ref=f5e293]
+              - cell "— Sin membresía" [ref=f5e294]
+              - cell "Activo" [ref=f5e295]
+              - cell [ref=f5e299]:
+                - link "Ver detalle de Socio Prueba 08" [ref=f5e300] [cursor=pointer]:
+                  - /url: /socios/9
+            - row [ref=f5e304]:
+              - cell [ref=f5e305]:
+                - generic [ref=f5e306]:
+                  - generic [aria-hidden] [ref=f5e307]: SP
+                  - generic [ref=f5e308]:
+                    - link "Socio Prueba 09" [ref=f5e309] [cursor=pointer]:
+                      - /url: /socios/10
+                    - paragraph [ref=f5e310]: DNI QA100009
+              - cell "90000009" [ref=f5e311]
+              - cell "— Sin membresía" [ref=f5e312]
+              - cell "Activo" [ref=f5e313]
+              - cell [ref=f5e317]:
+                - link "Ver detalle de Socio Prueba 09" [ref=f5e318] [cursor=pointer]:
+                  - /url: /socios/10
+            - row [ref=f5e322]:
+              - cell [ref=f5e323]:
+                - generic [ref=f5e324]:
+                  - generic [aria-hidden] [ref=f5e325]: SP
+                  - generic [ref=f5e326]:
+                    - link "Socio Prueba 10" [ref=f5e327] [cursor=pointer]:
+                      - /url: /socios/11
+                    - paragraph [ref=f5e328]: DNI QA100010
+              - cell "900000010" [ref=f5e329]
+              - cell "— Sin membresía" [ref=f5e330]
+              - cell "Activo" [ref=f5e331]
+              - cell [ref=f5e335]:
+                - link "Ver detalle de Socio Prueba 10" [ref=f5e336] [cursor=pointer]:
+                  - /url: /socios/11
+            - row [ref=f5e340]:
+              - cell [ref=f5e341]:
+                - generic [ref=f5e342]:
+                  - generic [aria-hidden] [ref=f5e343]: SP
+                  - generic [ref=f5e344]:
+                    - link "Socio Prueba 11" [ref=f5e345] [cursor=pointer]:
+                      - /url: /socios/12
+                    - paragraph [ref=f5e346]: DNI QA100011
+              - cell "900000011" [ref=f5e347]
+              - cell "— Sin membresía" [ref=f5e348]
+              - cell "Activo" [ref=f5e349]
+              - cell [ref=f5e353]:
+                - link "Ver detalle de Socio Prueba 11" [ref=f5e354] [cursor=pointer]:
+                  - /url: /socios/12
+            - row [ref=f5e358]:
+              - cell [ref=f5e359]:
+                - generic [ref=f5e360]:
+                  - generic [aria-hidden] [ref=f5e361]: SP
+                  - generic [ref=f5e362]:
+                    - link "Socio Prueba 12" [ref=f5e363] [cursor=pointer]:
+                      - /url: /socios/13
+                    - paragraph [ref=f5e364]: DNI QA100012
+              - cell "900000012" [ref=f5e365]
+              - cell "— Sin membresía" [ref=f5e366]
+              - cell "Activo" [ref=f5e367]
+              - cell [ref=f5e371]:
+                - link "Ver detalle de Socio Prueba 12" [ref=f5e372] [cursor=pointer]:
+                  - /url: /socios/13
+            - row [ref=f5e376]:
+              - cell [ref=f5e377]:
+                - generic [ref=f5e378]:
+                  - generic [aria-hidden] [ref=f5e379]: SP
+                  - generic [ref=f5e380]:
+                    - link "Socio Prueba 13" [ref=f5e381] [cursor=pointer]:
+                      - /url: /socios/14
+                    - paragraph [ref=f5e382]: DNI QA100013
+              - cell "900000013" [ref=f5e383]
+              - cell "— Sin membresía" [ref=f5e384]
+              - cell "Activo" [ref=f5e385]
+              - cell [ref=f5e389]:
+                - link "Ver detalle de Socio Prueba 13" [ref=f5e390] [cursor=pointer]:
+                  - /url: /socios/14
+            - row [ref=f5e394]:
+              - cell [ref=f5e395]:
+                - generic [ref=f5e396]:
+                  - generic [aria-hidden] [ref=f5e397]: SP
+                  - generic [ref=f5e398]:
+                    - link "Socio Prueba 14" [ref=f5e399] [cursor=pointer]:
+                      - /url: /socios/15
+                    - paragraph [ref=f5e400]: DNI QA100014
+              - cell "900000014" [ref=f5e401]
+              - cell "— Sin membresía" [ref=f5e402]
+              - cell "Activo" [ref=f5e403]
+              - cell [ref=f5e407]:
+                - link "Ver detalle de Socio Prueba 14" [ref=f5e408] [cursor=pointer]:
+                  - /url: /socios/15
+            - row [ref=f5e412]:
+              - cell [ref=f5e413]:
+                - generic [ref=f5e414]:
+                  - generic [aria-hidden] [ref=f5e415]: SP
+                  - generic [ref=f5e416]:
+                    - link "Socio Prueba 15" [ref=f5e417] [cursor=pointer]:
+                      - /url: /socios/16
+                    - paragraph [ref=f5e418]: DNI QA100015
+              - cell "900000015" [ref=f5e419]
+              - cell "— Sin membresía" [ref=f5e420]
+              - cell "Activo" [ref=f5e421]
+              - cell [ref=f5e425]:
+                - link "Ver detalle de Socio Prueba 15" [ref=f5e426] [cursor=pointer]:
+                  - /url: /socios/16
+            - row [ref=f5e430]:
+              - cell [ref=f5e431]:
+                - generic [ref=f5e432]:
+                  - generic [aria-hidden] [ref=f5e433]: SP
+                  - generic [ref=f5e434]:
+                    - link "Socio Prueba 16" [ref=f5e435] [cursor=pointer]:
+                      - /url: /socios/17
+                    - paragraph [ref=f5e436]: DNI QA100016
+              - cell "900000016" [ref=f5e437]
+              - cell "— Sin membresía" [ref=f5e438]
+              - cell "Activo" [ref=f5e439]
+              - cell [ref=f5e443]:
+                - link "Ver detalle de Socio Prueba 16" [ref=f5e444] [cursor=pointer]:
+                  - /url: /socios/17
+            - row [ref=f5e448]:
+              - cell [ref=f5e449]:
+                - generic [ref=f5e450]:
+                  - generic [aria-hidden] [ref=f5e451]: SP
+                  - generic [ref=f5e452]:
+                    - link "Socio Prueba 17" [ref=f5e453] [cursor=pointer]:
+                      - /url: /socios/18
+                    - paragraph [ref=f5e454]: DNI QA100017
+              - cell "900000017" [ref=f5e455]
+              - cell "— Sin membresía" [ref=f5e456]
+              - cell "Activo" [ref=f5e457]
+              - cell [ref=f5e461]:
+                - link "Ver detalle de Socio Prueba 17" [ref=f5e462] [cursor=pointer]:
+                  - /url: /socios/18
+            - row [ref=f5e466]:
+              - cell [ref=f5e467]:
+                - generic [ref=f5e468]:
+                  - generic [aria-hidden] [ref=f5e469]: SP
+                  - generic [ref=f5e470]:
+                    - link "Socio Prueba 18" [ref=f5e471] [cursor=pointer]:
+                      - /url: /socios/19
+                    - paragraph [ref=f5e472]: DNI QA100018
+              - cell "900000018" [ref=f5e473]
+              - cell "— Sin membresía" [ref=f5e474]
+              - cell "Activo" [ref=f5e475]
+              - cell [ref=f5e479]:
+                - link "Ver detalle de Socio Prueba 18" [ref=f5e480] [cursor=pointer]:
+                  - /url: /socios/19
+        - navigation "Paginación" [ref=f5e485]:
+          - paragraph [ref=f5e486]:
+            - text: Página
+            - strong [ref=f5e487]: "1"
+            - text: de 2 · 24 registros
+          - generic [ref=f5e488]:
+            - button "Página anterior" [disabled] [ref=f5e489]
+            - button "Página siguiente" [ref=f5e493] [cursor=pointer]

@@ -1,0 +1,106 @@
+- generic [ref=f22e1]:
+  - generic [ref=f22e6]:
+    - banner [ref=f22e7]:
+      - button [ref=f22e23] [cursor=pointer]
+      - paragraph [ref=f22e11]: Socio
+      - generic [aria-hidden] [ref=f22e12]: QO
+    - main [ref=f22e13]:
+      - generic [ref=f22e14]:
+        - link [ref=f22e24] [cursor=pointer]:
+          - /url: /socios
+          - text: Socios
+        - generic [ref=f22e25]:
+          - generic [ref=f22e26]:
+            - generic [ref=f22e27]:
+              - heading [level=1] [ref=f22e28]: Ana Ríos Mendoza
+              - generic [ref=f22e29]: Activo
+            - paragraph [ref=f22e32]: DNI 11111111 · Socio desde 09/10/2026
+          - generic [ref=f22e33]:
+            - button [ref=f22e34] [cursor=pointer]: Editar
+            - button [ref=f22e38] [cursor=pointer]: Desactivar
+        - generic [ref=f22e43]:
+          - region [ref=f22e44]:
+            - heading [level=2] [ref=f22e45]: MEMBRESÍA ACTUAL
+            - generic [ref=f22e46]:
+              - paragraph [ref=f22e47]: Mensual QA
+              - generic [ref=f22e48]: Activa
+            - paragraph [ref=f22e51]: 09/10/2026 – 07/11/2026
+            - paragraph [ref=f22e52]: 29 días restantes
+            - paragraph [ref=f22e53]:
+              - generic [ref=f22e54]: S/ 100.00
+              - text: · Yape · 09/10/2026, 09:41
+            - generic [ref=f22e55]:
+              - button [ref=f22e56] [cursor=pointer]: Renovar
+              - button [ref=f22e59] [cursor=pointer]: Congelar
+              - button [ref=f22e66] [cursor=pointer]: Cancelar membresía
+          - region [ref=f22e67]:
+            - heading [level=2] [ref=f22e68]: CARNET QR
+            - paragraph [ref=f22e71]: GF1:edb1ac32-0c6c-4bf8-9ae0-f179a7d4a15b
+            - generic [ref=f22e72]:
+              - button [ref=f22e73] [cursor=pointer]: Copiar enlace
+              - link [ref=f22e78] [cursor=pointer]:
+                - /url: http://localhost:4200/card/edb1ac32-0c6c-4bf8-9ae0-f179a7d4a15b
+            - button [ref=f22e84] [cursor=pointer]: Regenerar QR
+          - region [ref=f22e91]:
+            - heading [level=2] [ref=f22e92]: DATOS
+            - generic [ref=f22e93]:
+              - generic [ref=f22e94]:
+                - term [ref=f22e95]: Teléfono
+                - definition [ref=f22e96]: "987654321"
+              - generic [ref=f22e97]:
+                - term [ref=f22e98]: Correo
+                - definition [ref=f22e99]: —
+              - generic [ref=f22e100]:
+                - term [ref=f22e101]: Fecha de nacimiento
+                - definition [ref=f22e102]: 15/05/1990 (36 años)
+              - generic [ref=f22e103]:
+                - term [ref=f22e104]: Notas
+                - definition [ref=f22e105]: Línea 1 Línea 2
+          - region [ref=f22e106]:
+            - heading [level=2] [ref=f22e107]: HISTORIAL
+            - table [ref=f22e109]:
+              - caption [ref=f22e110]: Historial de membresías
+              - rowgroup [ref=f22e111]:
+                - row [ref=f22e112]:
+                  - columnheader [ref=f22e113]: Plan
+                  - columnheader [ref=f22e114]: Estado
+                  - columnheader [ref=f22e115]: Pago
+                  - columnheader [ref=f22e116]:
+                    - generic [ref=f22e117]: Acciones
+              - rowgroup [ref=f22e118]:
+                - row [ref=f22e119]:
+                  - cell [ref=f22e120]: Mensual QA
+                  - cell [ref=f22e121]:
+                    - generic [ref=f22e122]: Activa
+                  - cell [ref=f22e125]: YapeS/ 100.00
+                  - cell [ref=f22e126]
+  - generic [ref=f22e131]:
+    - banner [ref=f22e132]:
+      - heading "Editar socio" [level=2] [ref=f22e134]
+      - button "Cerrar" [ref=f22e135] [cursor=pointer]
+    - generic [ref=f22e141]:
+      - generic [ref=f22e142]:
+        - generic [ref=f22e143]: Nombre completo *
+        - textbox "Nombre completo *" [active] [ref=f22e144]: Ana Ríos Mendoza
+      - generic [ref=f22e145]:
+        - generic [ref=f22e146]: DNI *
+        - textbox "DNI *" [ref=f22e147]: "11111111"
+      - generic [ref=f22e148]:
+        - generic [ref=f22e149]: Teléfono
+        - textbox "Teléfono" [ref=f22e150]: "987654321"
+      - generic [ref=f22e151]:
+        - generic [ref=f22e152]: Correo
+        - textbox "Correo" [ref=f22e153]
+      - generic [ref=f22e154]:
+        - generic [ref=f22e155]: Fecha de nacimiento
+        - textbox "Fecha de nacimiento" [ref=f22e156]: 1990-05-15
+      - generic [ref=f22e157]:
+        - generic [ref=f22e158]: Notas
+        - textbox "Notas" [ref=f22e159]: Línea 1 Línea 2
+        - generic [ref=f22e160]:
+          - paragraph
+          - paragraph [ref=f22e161]: 15/500
+    - contentinfo [ref=f22e162]:
+      - generic [ref=f22e163]:
+        - button "Cancelar" [ref=f22e164] [cursor=pointer]
+        - button "Guardar socio" [ref=f22e165] [cursor=pointer]

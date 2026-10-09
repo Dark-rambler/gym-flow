@@ -1,0 +1,94 @@
+- generic [ref=f10e5]:
+  - complementary "Menú principal" [ref=f10e6]:
+    - generic [ref=f10e7]: GymFlow
+    - list [ref=f10e16]:
+      - listitem [ref=f10e17]:
+        - link "Dashboard" [ref=f10e18] [cursor=pointer]:
+          - /url: /dashboard
+      - listitem [ref=f10e25]:
+        - link "Check-in" [ref=f10e26] [cursor=pointer]:
+          - /url: /check-in
+      - listitem [ref=f10e33]:
+        - link "Socios" [ref=f10e34] [cursor=pointer]:
+          - /url: /socios
+      - listitem [ref=f10e41]:
+        - link "Caja" [ref=f10e42] [cursor=pointer]:
+          - /url: /caja
+      - listitem [ref=f10e47]:
+        - link "Planes" [ref=f10e48] [cursor=pointer]:
+          - /url: /planes
+      - listitem [ref=f10e52]:
+        - link "Historial de cajas" [ref=f10e53] [cursor=pointer]:
+          - /url: /cajas
+      - listitem [ref=f10e59]:
+        - link "Reportes" [ref=f10e60] [cursor=pointer]:
+          - /url: /reportes/ingresos
+      - listitem [ref=f10e64]:
+        - link "Staff" [ref=f10e65] [cursor=pointer]:
+          - /url: /staff
+    - generic [ref=f10e70]:
+      - paragraph [ref=f10e71]: Quality Owner
+      - paragraph [ref=f10e72]: QA Gym
+      - generic [ref=f10e73]: Propietario
+      - button "Cerrar sesión" [ref=f10e75] [cursor=pointer]
+  - main [ref=f10e81]:
+    - generic [ref=f10e82]:
+      - generic "Check-in" [ref=f10e83]:
+        - generic [ref=f10e84]:
+          - heading "Check-in" [level=1] [ref=f10e86]
+          - paragraph [ref=f10e87]: Registra el ingreso de los socios
+      - generic [ref=f10e88]:
+        - region "Registrar ingreso" [ref=f10e89]:
+          - generic [ref=f10e90]:
+            - generic [ref=f10e91]:
+              - generic [ref=f10e92]: Código QR o DNI
+              - textbox "Código QR o DNI" [active] [ref=f10e93]
+            - button "Registrar ingreso" [disabled] [ref=f10e94]
+          - status [ref=f10e95]:
+            - generic [ref=f10e138]:
+              - generic [ref=f10e144]:
+                - paragraph [ref=f10e145]: Ingreso permitido
+                - paragraph [ref=f10e146]: 09:43:06
+              - paragraph [ref=f10e147]: Ana Ríos Mendoza
+              - paragraph [ref=f10e148]: Mensual QA · vence 07/11/2026 · quedan 29 días
+              - paragraph [ref=f10e161]: Ya había ingresado hoy. Ya registró su ingreso
+        - region [ref=f10e97]:
+          - generic [ref=f10e98]:
+            - heading "Ingresos del día" [level=2] [ref=f10e99]
+            - generic [ref=f10e100]:
+              - generic [ref=f10e101]: Fecha
+              - textbox "Fecha" [ref=f10e102]: 2026-10-09
+          - table [ref=f10e104]:
+            - caption [ref=f10e105]: Ingresos del 09/10/2026
+            - rowgroup [ref=f10e106]:
+              - row [ref=f10e107]:
+                - columnheader "Hora" [ref=f10e108]
+                - columnheader "Socio" [ref=f10e109]
+                - columnheader "Método" [ref=f10e110]
+                - columnheader "Resultado" [ref=f10e111]
+                - columnheader "Motivo" [ref=f10e112]
+            - rowgroup [ref=f10e113]:
+              - row [ref=f10e149]:
+                - cell "09:43" [ref=f10e150]
+                - cell [ref=f10e151]:
+                  - link "Ana Ríos Mendoza" [ref=f10e152] [cursor=pointer]:
+                    - /url: /socios/1
+                - cell "QR" [ref=f10e153]
+                - cell "Permitido" [ref=f10e156]
+                - cell "—" [ref=f10e160]
+              - row [ref=f10e114]:
+                - cell "09:42" [ref=f10e115]
+                - cell [ref=f10e116]:
+                  - link "Pedro Sinplan" [ref=f10e117] [cursor=pointer]:
+                    - /url: /socios/24
+                - cell "DNI" [ref=f10e118]
+                - cell "Denegado" [ref=f10e121]
+                - cell "Sin membresía" [ref=f10e125]
+              - row [ref=f10e126]:
+                - cell "09:42" [ref=f10e127]
+                - cell [ref=f10e128]:
+                  - link "Ana Ríos Mendoza" [ref=f10e129] [cursor=pointer]:
+                    - /url: /socios/1
+                - cell "DNI" [ref=f10e130]
+                - cell "Denegado" [ref=f10e133]
+                - cell "Membresía congelada" [ref=f10e137]

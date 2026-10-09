@@ -1,0 +1,124 @@
+- generic [ref=f20e1]:
+  - generic [ref=f20e5]:
+    - complementary [ref=f20e91]:
+      - generic [ref=f20e7]: GymFlow
+      - list [ref=f20e16]:
+        - listitem [ref=f20e17]:
+          - link [ref=f20e92] [cursor=pointer]:
+            - /url: /dashboard
+            - text: Dashboard
+        - listitem [ref=f20e25]:
+          - link [ref=f20e93] [cursor=pointer]:
+            - /url: /check-in
+            - text: Check-in
+        - listitem [ref=f20e33]:
+          - link [ref=f20e94] [cursor=pointer]:
+            - /url: /socios
+            - text: Socios
+        - listitem [ref=f20e41]:
+          - link [ref=f20e95] [cursor=pointer]:
+            - /url: /caja
+            - text: Caja
+        - listitem [ref=f20e47]:
+          - link [ref=f20e96] [cursor=pointer]:
+            - /url: /planes
+            - text: Planes
+        - listitem [ref=f20e52]:
+          - link [ref=f20e97] [cursor=pointer]:
+            - /url: /cajas
+            - text: Historial de cajas
+        - listitem [ref=f20e59]:
+          - link [ref=f20e98] [cursor=pointer]:
+            - /url: /reportes/ingresos
+            - text: Reportes
+        - listitem [ref=f20e64]:
+          - link [ref=f20e99] [cursor=pointer]:
+            - /url: /staff
+            - text: Staff
+      - generic [ref=f20e70]:
+        - paragraph [ref=f20e71]: Quality Owner
+        - paragraph [ref=f20e72]: QA Gym
+        - generic [ref=f20e73]: Propietario
+        - button [ref=f20e100] [cursor=pointer]: Cerrar sesión
+    - main [ref=f20e81]:
+      - generic [ref=f20e82]:
+        - link [ref=f20e101] [cursor=pointer]:
+          - /url: /socios
+          - text: Socios
+        - generic [ref=f20e102]:
+          - generic [ref=f20e103]:
+            - generic [ref=f20e104]:
+              - heading [level=1] [ref=f20e105]: Socio Prueba 01
+              - generic [ref=f20e106]: Activo
+            - paragraph [ref=f20e109]: DNI QA100001 · Socio desde 09/10/2026
+          - generic [ref=f20e110]:
+            - button [ref=f20e111] [cursor=pointer]: Editar
+            - button [ref=f20e115] [cursor=pointer]: Desactivar
+        - generic [ref=f20e120]:
+          - region [ref=f20e121]:
+            - heading [level=2] [ref=f20e122]: MEMBRESÍA ACTUAL
+            - generic [ref=f20e123]:
+              - paragraph [ref=f20e124]: Trimestral QA
+              - generic [ref=f20e125]: Activa
+            - paragraph [ref=f20e128]: 09/10/2026 – 06/01/2027
+            - paragraph [ref=f20e129]: 89 días restantes
+            - paragraph [ref=f20e130]:
+              - generic [ref=f20e131]: S/ 300.00
+              - text: · Efectivo · 09/10/2026, 09:44
+            - generic [ref=f20e132]:
+              - button [ref=f20e133] [cursor=pointer]: Renovar
+              - button [ref=f20e136] [cursor=pointer]: Congelar
+              - button [ref=f20e143] [cursor=pointer]: Cancelar membresía
+          - region [ref=f20e144]:
+            - heading [level=2] [ref=f20e145]: CARNET QR
+            - paragraph [ref=f20e148]: GF1:4bb49ca8-94fd-4a92-bcb8-25aeb0b95381
+            - generic [ref=f20e149]:
+              - button [ref=f20e150] [cursor=pointer]: Copiar enlace
+              - link [ref=f20e155] [cursor=pointer]:
+                - /url: http://localhost:4200/card/4bb49ca8-94fd-4a92-bcb8-25aeb0b95381
+            - button [ref=f20e161] [cursor=pointer]: Regenerar QR
+          - region [ref=f20e168]:
+            - heading [level=2] [ref=f20e169]: DATOS
+            - generic [ref=f20e170]:
+              - generic [ref=f20e171]:
+                - term [ref=f20e172]: Teléfono
+                - definition [ref=f20e173]: "90000001"
+              - generic [ref=f20e174]:
+                - term [ref=f20e175]: Correo
+                - definition [ref=f20e176]: —
+              - generic [ref=f20e177]:
+                - term [ref=f20e178]: Fecha de nacimiento
+                - definition [ref=f20e179]: —
+              - generic [ref=f20e180]:
+                - term [ref=f20e181]: Notas
+                - definition [ref=f20e182]: —
+          - region [ref=f20e183]:
+            - heading [level=2] [ref=f20e184]: HISTORIAL
+            - table [ref=f20e186]:
+              - caption [ref=f20e187]: Historial de membresías
+              - rowgroup [ref=f20e188]:
+                - row [ref=f20e189]:
+                  - columnheader [ref=f20e190]: Plan
+                  - columnheader [ref=f20e191]: Periodo
+                  - columnheader [ref=f20e192]: Estado
+                  - columnheader [ref=f20e193]: Pago
+                  - columnheader [ref=f20e194]:
+                    - generic [ref=f20e195]: Acciones
+              - rowgroup [ref=f20e196]:
+                - row [ref=f20e197]:
+                  - cell [ref=f20e198]: Trimestral QA
+                  - cell [ref=f20e199]: 09/10/2026 – 06/01/2027
+                  - cell [ref=f20e200]:
+                    - generic [ref=f20e201]: Activa
+                  - cell [ref=f20e204]: EfectivoS/ 300.00
+                  - cell [ref=f20e205]
+  - alertdialog [ref=f20e208]:
+    - generic [ref=f20e210]:
+      - banner [ref=f20e211]:
+        - heading "Cancelar membresía" [level=2] [ref=f20e213]
+        - button "Cerrar" [active] [ref=f20e214] [cursor=pointer]
+      - paragraph [ref=f20e220]: ¿Cancelar la membresía Trimestral QA? Esta acción no se puede deshacer. El pago no se anula automáticamente.
+      - contentinfo [ref=f20e221]:
+        - generic [ref=f20e222]:
+          - button "Cancelar" [ref=f20e223] [cursor=pointer]
+          - button "Cancelar membresía" [ref=f20e224] [cursor=pointer]
