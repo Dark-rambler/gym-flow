@@ -28,9 +28,7 @@ export const MEMBERSHIP_STATUS: Record<MembershipStatus, Chip> = {
 
 export const PAYMENT_METHOD: Record<PaymentMethod, string> = {
   CASH: 'Efectivo',
-  YAPE: 'Yape',
-  PLIN: 'Plin',
-  CARD: 'Tarjeta',
+  QR: 'QR',
 };
 export const PAYMENT_METHODS = Object.keys(PAYMENT_METHOD) as PaymentMethod[];
 

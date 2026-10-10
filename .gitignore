@@ -1,6 +1,4 @@
 # secrets
-.env
-.env.*
 !.env.example
 
 # OS / IDE
@@ -8,7 +6,6 @@
 Thumbs.db
 .idea/
 *.iml
-.vscode/*
 !.vscode/extensions.json
 
 # dependencies & build output
@@ -24,3 +21,4 @@ backend/bin/
 
 # Claude Code personal overrides
 .claude/settings.local.json
+config.bat

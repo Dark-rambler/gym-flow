@@ -16,7 +16,7 @@
     </p>
   }
 
-  <div class="mb-4 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
+  <div class="mb-4 grid grid-cols-2 gap-4 md:grid-cols-4">
     <div class="stat-tile">
       <p class="stat-label">Monto inicial</p>
       <p class="stat-value">{{ d.session.openingAmount | money }}</p>
@@ -49,16 +49,8 @@
         <p class="stat-value">{{ t.cash | money }}</p>
       </div>
       <div class="stat-tile">
-        <p class="stat-label">Yape</p>
-        <p class="stat-value">{{ t.yape | money }}</p>
-      </div>
-      <div class="stat-tile">
-        <p class="stat-label">Plin</p>
-        <p class="stat-value">{{ t.plin | money }}</p>
-      </div>
-      <div class="stat-tile">
-        <p class="stat-label">Tarjeta</p>
-        <p class="stat-value">{{ t.card | money }}</p>
+        <p class="stat-label">QR</p>
+        <p class="stat-value">{{ t.qr | money }}</p>
       </div>
       <div class="stat-tile">
         <p class="stat-label">N° pagos</p>

@@ -13,7 +13,7 @@ export type CheckInDenialReason =
 export type CheckInMethod = 'QR' | 'DNI';
 export type CheckInResult = 'ALLOWED' | 'DENIED';
 export type MembershipStatus = 'SCHEDULED' | 'ACTIVE' | 'FROZEN' | 'EXPIRED' | 'CANCELLED';
-export type PaymentMethod = 'CASH' | 'YAPE' | 'PLIN' | 'CARD';
+export type PaymentMethod = 'CASH' | 'QR';
 
 export interface ApiError {
   status: number;
@@ -179,9 +179,7 @@ export interface PlanRequest {
 // Cash & payments
 export interface PaymentTotals {
   cash: number;
-  yape: number;
-  plin: number;
-  card: number;
+  qr: number;
   total: number;
   count: number;
 }

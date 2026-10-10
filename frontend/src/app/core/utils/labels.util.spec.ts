@@ -13,8 +13,8 @@ describe('labels.util', () => {
     expect(differenceChip(null)).toBeNull();
     expect(differenceChip(0)).toMatchObject({ label: 'Cuadra', tone: 'success' });
     expect(differenceChip(-5)).toMatchObject({ tone: 'danger' });
-    expect(differenceChip(-5)?.label).toMatch(/^Faltante S\/\s5\.00$/);
+    expect(differenceChip(-5)?.label).toMatch(/^Faltante Bs\s5,00$/);
     expect(differenceChip(2.5)).toMatchObject({ tone: 'warn' });
-    expect(differenceChip(2.5)?.label).toMatch(/^Sobrante S\/\s2\.50$/);
+    expect(differenceChip(2.5)?.label).toMatch(/^Sobrante Bs\s2,50$/);
   });
 });
