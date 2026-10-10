@@ -24,7 +24,7 @@
     </button>
   </app-page-header>
 
-  <div class="mb-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
+  <div class="mb-6 grid grid-cols-2 gap-4 lg:grid-cols-5">
     <div class="stat-tile">
       <p class="stat-label">Monto inicial</p>
       <p class="stat-value">{{ c.session.openingAmount | money }}</p>
@@ -43,16 +43,8 @@
         <p class="stat-value">{{ t.cash | money }}</p>
       </div>
       <div class="stat-tile">
-        <p class="stat-label">Yape</p>
-        <p class="stat-value">{{ t.yape | money }}</p>
-      </div>
-      <div class="stat-tile">
-        <p class="stat-label">Plin</p>
-        <p class="stat-value">{{ t.plin | money }}</p>
-      </div>
-      <div class="stat-tile">
-        <p class="stat-label">Tarjeta</p>
-        <p class="stat-value">{{ t.card | money }}</p>
+        <p class="stat-label">QR</p>
+        <p class="stat-value">{{ t.qr | money }}</p>
       </div>
     } @else {
       <div class="stat-tile">
@@ -87,7 +79,7 @@
         <div class="relative">
           <span
             class="pointer-events-none absolute top-1/2 left-4 -translate-y-1/2 text-sm font-semibold text-gray-500"
-            >S/</span
+            >Bs</span
           >
           <input
             id="openingAmount"

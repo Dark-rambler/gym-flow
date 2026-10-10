@@ -6,7 +6,7 @@ import {
   formatMoney,
 } from '../../core/utils/format.util';
 
-/** S/ 1,234.50 */
+/** Bs 1.234,50 */
 @Pipe({ name: 'money' })
 export class MoneyPipe implements PipeTransform {
   transform(value: number | null | undefined): string {

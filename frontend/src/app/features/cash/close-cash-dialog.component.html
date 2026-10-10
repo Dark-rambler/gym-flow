@@ -27,16 +27,8 @@
           <dd class="font-bold tabular-nums">{{ t.cash | money }}</dd>
         </div>
         <div class="rounded-2xl bg-white/60 p-3">
-          <dt class="stat-label">Yape</dt>
-          <dd class="font-bold tabular-nums">{{ t.yape | money }}</dd>
-        </div>
-        <div class="rounded-2xl bg-white/60 p-3">
-          <dt class="stat-label">Plin</dt>
-          <dd class="font-bold tabular-nums">{{ t.plin | money }}</dd>
-        </div>
-        <div class="rounded-2xl bg-white/60 p-3">
-          <dt class="stat-label">Tarjeta</dt>
-          <dd class="font-bold tabular-nums">{{ t.card | money }}</dd>
+          <dt class="stat-label">QR</dt>
+          <dd class="font-bold tabular-nums">{{ t.qr | money }}</dd>
         </div>
         <div class="col-span-2 rounded-2xl bg-white/60 p-3">
           <dt class="stat-label">Total vendido · {{ t.count }} pagos</dt>
@@ -71,7 +63,7 @@
         <div class="relative">
           <span
             class="pointer-events-none absolute top-1/2 left-4 -translate-y-1/2 text-sm font-semibold text-gray-500"
-            >S/</span
+            >Bs</span
           >
           <input
             id="countedCash"
