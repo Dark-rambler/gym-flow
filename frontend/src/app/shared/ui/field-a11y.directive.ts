@@ -4,6 +4,7 @@ import { NgControl } from '@angular/forms';
 /**
  * Sets aria-invalid and links the field to its `<p id="{id}-error">` while it shows an error.
  * Applies to every `.field-input` bound with formControlName in components that import it.
+ * `app-date-picker` does not match (class is on its inner button): use its `invalid`/`describedBy` inputs.
  */
 @Directive({
   selector: '.field-input[formControlName]',

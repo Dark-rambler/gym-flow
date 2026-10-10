@@ -7,6 +7,7 @@ import { applyServerErrors, fieldError } from '../../core/http/api-error';
 import { MemberDetailResponse, MemberRequest } from '../../core/models/api.models';
 import { addDays, todayLima } from '../../core/utils/format.util';
 import { DialogFrameComponent } from '../../shared/ui/dialog-frame.component';
+import { DatePickerComponent } from '../../shared/ui/date-picker.component';
 import { FieldA11yDirective } from '../../shared/ui/field-a11y.directive';
 import { pastDate, requiredText } from '../../core/utils/validators';
 
@@ -17,7 +18,7 @@ export interface MemberFormData {
 /** Create/edit a member. Shared by Socios, Detalle de socio and Dashboard. Closes with the saved member. */
 @Component({
   selector: 'app-member-form-dialog',
-  imports: [ReactiveFormsModule, DialogFrameComponent, FieldA11yDirective],
+  imports: [ReactiveFormsModule, DialogFrameComponent, DatePickerComponent, FieldA11yDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './member-form-dialog.component.html',
 })

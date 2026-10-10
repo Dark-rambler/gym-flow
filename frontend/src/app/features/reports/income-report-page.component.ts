@@ -13,12 +13,19 @@ import { apiErrorMessage } from '../../core/http/api-error';
 import { IncomeDayResponse } from '../../core/models/api.models';
 import { rangeError, todayLima, weekdayShort } from '../../core/utils/format.util';
 import { LocalDatePipe, MoneyPipe } from '../../shared/pipes/format.pipes';
+import { DatePickerComponent } from '../../shared/ui/date-picker.component';
 import { EmptyStateComponent } from '../../shared/ui/empty-state.component';
 import { PageHeaderComponent } from '../../shared/ui/page-header.component';
 
 @Component({
   selector: 'app-income-report-page',
-  imports: [PageHeaderComponent, EmptyStateComponent, MoneyPipe, LocalDatePipe],
+  imports: [
+    PageHeaderComponent,
+    EmptyStateComponent,
+    DatePickerComponent,
+    MoneyPipe,
+    LocalDatePipe,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './income-report-page.component.html',
 })

@@ -22,7 +22,8 @@ export function todayLima(now = new Date()): string {
   return isoDay.format(now);
 }
 
-function parseLocalDate(value: string): Date {
+/** 'YYYY-MM-DD' → Date at UTC midnight (read it with getUTC* / timeZone 'UTC'). */
+export function parseLocalDate(value: string): Date {
   const [y, m, d] = value.split('-').map(Number);
   return new Date(Date.UTC(y, m - 1, d));
 }

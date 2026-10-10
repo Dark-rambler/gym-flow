@@ -64,11 +64,13 @@
     </div>
     <div>
       <label class="field-label" for="birthDate">Fecha de nacimiento</label>
-      <input
-        id="birthDate"
-        type="date"
-        class="field-input"
+      <app-date-picker
+        inputId="birthDate"
+        ariaLabel="Fecha de nacimiento"
         formControlName="birthDate"
+        [clearable]="true"
+        describedBy="birthDate-error"
+        [invalid]="!!err(form.controls.birthDate)"
         [max]="maxBirthDate"
       />
       @if (err(form.controls.birthDate); as message) {

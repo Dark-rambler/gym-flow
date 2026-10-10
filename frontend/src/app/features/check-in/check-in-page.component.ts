@@ -24,6 +24,7 @@ import {
   neutralChip,
 } from '../../core/utils/labels.util';
 import { LimaDateTimePipe, LocalDatePipe } from '../../shared/pipes/format.pipes';
+import { DatePickerComponent } from '../../shared/ui/date-picker.component';
 import { EmptyStateComponent } from '../../shared/ui/empty-state.component';
 import { PageHeaderComponent } from '../../shared/ui/page-header.component';
 import { PaginationComponent } from '../../shared/ui/pagination.component';
@@ -37,6 +38,7 @@ import { QrCameraScannerComponent } from './components/qr-camera-scanner/qr-came
     RouterLink,
     PageHeaderComponent,
     EmptyStateComponent,
+    DatePickerComponent,
     PaginationComponent,
     StatusChipComponent,
     UiIconComponent,

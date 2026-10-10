@@ -4,30 +4,18 @@
   class="glass-panel mb-6 flex flex-wrap items-end gap-4 rounded-3xl p-4"
   (submit)="$event.preventDefault(); search()"
 >
-  <div>
-    <label class="field-label" for="from">Desde</label>
-    <input
-      id="from"
-      type="date"
-      class="field-input"
+  <div class="w-full sm:w-auto">
+    <label class="field-label" for="range">Rango</label>
+    <app-date-picker
+      mode="range"
+      inputId="range"
+      ariaLabel="Rango"
+      describedBy="range-error"
+      [invalid]="!!draftError()"
       [max]="today"
-      [value]="draftFrom()"
-      (change)="draftFrom.set($any($event.target).value)"
-      [attr.aria-invalid]="!!draftError() || null"
-      [attr.aria-describedby]="draftError() ? 'range-error' : null"
-    />
-  </div>
-  <div>
-    <label class="field-label" for="to">Hasta</label>
-    <input
-      id="to"
-      type="date"
-      class="field-input"
-      [max]="today"
-      [value]="draftTo()"
-      (change)="draftTo.set($any($event.target).value)"
-      [attr.aria-invalid]="!!draftError() || null"
-      [attr.aria-describedby]="draftError() ? 'range-error' : null"
+      [from]="draftFrom()"
+      [to]="draftTo()"
+      (rangeChange)="draftFrom.set($event.from); draftTo.set($event.to)"
     />
   </div>
   <button type="submit" class="btn btn-primary" [disabled]="!!draftError()">Consultar</button>

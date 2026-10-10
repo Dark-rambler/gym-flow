@@ -132,13 +132,13 @@
       <h2 id="log-title" class="text-lg font-extrabold text-gray-900">Ingresos del día</h2>
       <div>
         <label class="field-label" for="log-date">Fecha</label>
-        <input
-          id="log-date"
-          type="date"
-          class="field-input py-2"
+        <app-date-picker
+          inputId="log-date"
+          ariaLabel="Fecha"
+          triggerClass="py-2"
           [max]="today"
           [value]="date()"
-          (change)="setDate($any($event.target).value)"
+          (valueChange)="setDate($event)"
         />
       </div>
     </div>
