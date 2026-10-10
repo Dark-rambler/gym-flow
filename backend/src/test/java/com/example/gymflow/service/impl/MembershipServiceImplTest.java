@@ -56,7 +56,7 @@ class MembershipServiceImplTest {
     }
 
     private MembershipSaleRequest sale(String price) {
-        return new MembershipSaleRequest(2L, price == null ? null : new BigDecimal(price), PaymentMethod.YAPE, " OP-123 ", KEY);
+        return new MembershipSaleRequest(2L, price == null ? null : new BigDecimal(price), PaymentMethod.QR, " OP-123 ", KEY);
     }
 
     private void givenSellable() {
@@ -111,7 +111,7 @@ class MembershipServiceImplTest {
         assertThat(response.status()).isEqualTo(MembershipStatus.SCHEDULED);
         assertThat(response.price()).isEqualTo(new BigDecimal("100.00"));
         assertThat(response.payment().amount()).isEqualTo(new BigDecimal("100.00"));
-        assertThat(response.payment().method()).isEqualTo(PaymentMethod.YAPE);
+        assertThat(response.payment().method()).isEqualTo(PaymentMethod.QR);
     }
 
     @Test
