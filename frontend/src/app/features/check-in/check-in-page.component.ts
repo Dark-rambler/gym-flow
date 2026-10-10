@@ -107,6 +107,9 @@ export class CheckInPageComponent {
       .subscribe({
         next: (response) => {
           this.result.set(response);
+          beep(
+            response.result === 'DENIED' ? 'denied' : response.duplicate ? 'duplicate' : 'allowed',
+          );
           // a reader may have typed the next code meanwhile: only clear what was submitted
           if (this.code().trim() === code) this.code.set('');
           this.focusInput();
@@ -121,6 +124,7 @@ export class CheckInPageComponent {
           this.submitError.set(
             clientError ? apiErrorMessage(e) : 'No se pudo registrar el ingreso. Intenta de nuevo.',
           );
+          beep('denied');
           this.focusInput();
         },
       });
@@ -145,5 +149,25 @@ export class CheckInPageComponent {
 
   private focusInput(): void {
     this.codeInput().nativeElement.focus();
+  }
+}
+
+type CheckInOutcome = 'allowed' | 'duplicate' | 'denied';
+
+let audio: AudioContext | null = null;
+
+/** Tono corto: agudo si pasa, medio si ya estaba, grave si no puede pasar. */
+function beep(outcome: CheckInOutcome): void {
+  try {
+    audio ??= new AudioContext();
+    const osc = audio.createOscillator();
+    const gain = audio.createGain();
+    osc.frequency.value = outcome === 'allowed' ? 880 : outcome === 'duplicate' ? 600 : 220;
+    gain.gain.value = 0.15;
+    osc.connect(gain).connect(audio.destination);
+    osc.start();
+    osc.stop(audio.currentTime + (outcome === 'denied' ? 0.35 : 0.12));
+  } catch {
+    // sin audio (política del navegador): no pasa nada
   }
 }
