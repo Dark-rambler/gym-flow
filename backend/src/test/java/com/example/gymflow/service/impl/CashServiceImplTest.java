@@ -65,7 +65,7 @@ class CashServiceImplTest {
         when(cashSessionRepository.save(any())).thenAnswer(inv -> inv.getArgument(0));
         when(paymentRepository.findAllByCashSessionId(7L)).thenReturn(List.of(
                 payment(PaymentMethod.CASH, "120.00", false),
-                payment(PaymentMethod.YAPE, "50.00", false),
+                payment(PaymentMethod.QR, "50.00", false),
                 payment(PaymentMethod.CASH, "80.00", true)));
     }
 
@@ -73,16 +73,15 @@ class CashServiceImplTest {
     void closeCashSession_should_computeTotalsExpectedAndDifference_excludingVoided_forOwner() {
         givenOpenSessionWithPayments();
 
-        var detail = service.closeCashSession(new CashCloseRequest(new BigDecimal("215"), " Faltaron 5 soles "), 1L, "OWNER");
+        var detail = service.closeCashSession(new CashCloseRequest(new BigDecimal("215"), " Faltaron 5 bolivianos "), 1L, "OWNER");
 
         var session = detail.session();
         assertThat(session.status()).isEqualTo(CashSessionStatus.CLOSED);
         assertThat(session.closedAt()).isEqualTo(NOW);
         assertThat(session.closedByName()).isEqualTo("Ana Pérez");
-        assertThat(session.notes()).isEqualTo("Faltaron 5 soles");
+        assertThat(session.notes()).isEqualTo("Faltaron 5 bolivianos");
         assertThat(session.totals().cash()).isEqualByComparingTo("120.00");
-        assertThat(session.totals().yape()).isEqualByComparingTo("50.00");
-        assertThat(session.totals().plin()).isEqualTo(new BigDecimal("0.00"));
+        assertThat(session.totals().qr()).isEqualByComparingTo("50.00");
         assertThat(session.totals().total()).isEqualByComparingTo("170.00");
         assertThat(session.totals().count()).isEqualTo(2);
         assertThat(session.expectedCash()).isEqualByComparingTo("220.00");

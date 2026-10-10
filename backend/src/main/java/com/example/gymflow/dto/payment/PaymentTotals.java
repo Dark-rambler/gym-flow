@@ -13,9 +13,7 @@ import java.util.EnumMap;
  */
 public record PaymentTotals(
         BigDecimal cash,
-        BigDecimal yape,
-        BigDecimal plin,
-        BigDecimal card,
+        BigDecimal qr,
         BigDecimal total,
         long count
 ) {
@@ -35,9 +33,7 @@ public record PaymentTotals(
         var total = byMethod.values().stream().reduce(BigDecimal.ZERO, BigDecimal::add);
         return new PaymentTotals(
                 money(byMethod.get(PaymentMethod.CASH)),
-                money(byMethod.get(PaymentMethod.YAPE)),
-                money(byMethod.get(PaymentMethod.PLIN)),
-                money(byMethod.get(PaymentMethod.CARD)),
+                money(byMethod.get(PaymentMethod.QR)),
                 money(total),
                 count);
     }

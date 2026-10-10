@@ -103,9 +103,9 @@ public class DataSeeder implements ApplicationRunner {
         // expired
         seedMembership(luis, monthly, lastMonth, owner, PaymentMethod.CASH, today.minusDays(40));
         // active, expires in 3 days (shows on dashboard)
-        seedMembership(maria, monthly, current, reception, PaymentMethod.YAPE, today.minusDays(26));
+        seedMembership(maria, monthly, current, reception, PaymentMethod.QR, today.minusDays(26));
         // active, long
-        seedMembership(juan, quarterly, current, reception, PaymentMethod.CARD, today.minusDays(10));
+        seedMembership(juan, quarterly, current, reception, PaymentMethod.QR, today.minusDays(10));
         // today only
         seedMembership(sofia, daily, current, reception, PaymentMethod.CASH, today);
 
