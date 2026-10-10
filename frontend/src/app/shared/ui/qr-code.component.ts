@@ -26,7 +26,9 @@ export class QrCodeComponent {
   protected readonly image = resource({
     params: () => this.value(),
     loader: async ({ params }) => {
-      const { toDataURL } = await import('qrcode');
+      // qrcode is CJS: prod build nests exports under `default`, dev server doesn't.
+      const mod = await import('qrcode');
+      const { toDataURL } = mod.default ?? mod;
       return toDataURL(params, { margin: 1, width: 560, errorCorrectionLevel: 'M' });
     },
   });
