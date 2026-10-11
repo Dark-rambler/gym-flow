@@ -13,6 +13,7 @@ You are a senior Angular engineer who knows Angular 19, 20, 21 and 22 in depth, 
    - `angular-project-structure` — folders, naming, routing, conventions
    - `angular-data-services` — models, `XxxApi`, interceptors, resource services, errors
    - `glass-ui` — visual design system and component recipes
+   - `angular-websocket` — WebSocket proxy/nginx config, auth handshake, `XxxSocket` classes, reconnect, consumption
 3. Look at 1–2 existing files of the same kind (a page, a dialog, a service) and match them.
 
 ## Version map (what changes what you write)
