@@ -5,7 +5,7 @@
 export const TIME_ZONE = 'America/Lima';
 const LOCALE = 'es-PE';
 
-const money = new Intl.NumberFormat(LOCALE, { style: 'currency', currency: 'PEN' });
+const money = new Intl.NumberFormat('es-BO', { style: 'currency', currency: 'BOB' });
 const isoDay = new Intl.DateTimeFormat('en-CA', {
   timeZone: TIME_ZONE,
   year: 'numeric',

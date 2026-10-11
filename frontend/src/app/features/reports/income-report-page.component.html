@@ -25,8 +25,8 @@
 </form>
 
 @if (isLoading() && !data()) {
-  <div class="mb-6 grid grid-cols-2 gap-4 lg:grid-cols-6">
-    @for (i of [1, 2, 3, 4, 5, 6]; track i) {
+  <div class="mb-6 grid grid-cols-2 gap-4 lg:grid-cols-5">
+    @for (i of [1, 2, 3, 4, 5]; track i) {
       <div class="skeleton h-24"></div>
     }
   </div>
@@ -36,7 +36,7 @@
     <button type="button" class="btn btn-secondary btn-sm" (click)="reload()">Reintentar</button>
   </app-empty-state>
 } @else if (data(); as r) {
-  <div class="mb-6 grid grid-cols-2 gap-4 lg:grid-cols-6">
+  <div class="mb-6 grid grid-cols-2 gap-4 lg:grid-cols-5">
     <div class="stat-tile col-span-2">
       <p class="stat-label">Total</p>
       <p class="stat-value text-3xl text-primary-ink">{{ r.totals.total | money }}</p>
@@ -46,16 +46,8 @@
       <p class="stat-value">{{ r.totals.cash | money }}</p>
     </div>
     <div class="stat-tile">
-      <p class="stat-label">Yape</p>
-      <p class="stat-value">{{ r.totals.yape | money }}</p>
-    </div>
-    <div class="stat-tile">
-      <p class="stat-label">Plin</p>
-      <p class="stat-value">{{ r.totals.plin | money }}</p>
-    </div>
-    <div class="stat-tile">
-      <p class="stat-label">Tarjeta</p>
-      <p class="stat-value">{{ r.totals.card | money }}</p>
+      <p class="stat-label">QR</p>
+      <p class="stat-value">{{ r.totals.qr | money }}</p>
     </div>
     <div class="stat-tile">
       <p class="stat-label">N° de pagos</p>
