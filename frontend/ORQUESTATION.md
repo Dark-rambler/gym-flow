@@ -10,12 +10,13 @@ Agents defined in `frontend/.claude/agents/`. Subagents **do not talk to each ot
 
 **Tools:** `Read`, `Edit`, `Write`, `Glob`, `Grep`, `Bash`, `WebFetch`, `WebSearch`.
 
-**Skills it follows:** `angular-project-structure`, `angular-data-services`, `glass-ui`.
+**Skills it follows:** `angular-project-structure`, `angular-data-services`, `angular-websocket`, `glass-ui`.
 
 **Functions:**
 - Detect the `@angular/core` version in `package.json` and never use APIs from later versions.
 - Create standalone components with `inject()`, signal inputs/outputs, `computed`, `@if/@for/@switch` and `OnPush`.
 - Consume the backend only through the `XxxApi` classes in `src/app/core/api` and the models in `src/app/core/models`; server state via `rxResource`/`resource`.
+- Real-time updates through one `XxxSocket` class per channel in `src/app/core/api` (e.g. `board.socket.ts`, STOMP via `@stomp/rx-stomp`): JWT in the CONNECT frame, reconnect with backoff, resync from REST on reconnect, disconnect on logout; WebSocket proxy in `proxy.conf.js` and `nginx.conf`.
 - Lazy routes with functional guards (`core/auth/auth.guards.ts`) and interceptors (`core/http/api.interceptors.ts`).
 - Typed reactive forms, accessibility basics (labels, `aria-label`, keyboard).
 - Version upgrades with `ng update` and the official migrations, one major at a time.
@@ -47,6 +48,7 @@ Agents defined in `frontend/.claude/agents/`. Subagents **do not talk to each ot
 - Check preconditions: Playwright MCP connected, dev server at `http://localhost:4200` (starts it with `npm start` if needed), backend responding, credentials per role.
 - Test each screen: happy path, unhappy paths (empty forms, double click, Esc, reload, guarded routes), states, keyboard/a11y and responsive (1440, 768 and 390 px).
 - Check console and network requests after every action; any NG0xxx error or 4xx/5xx is a finding.
+- Real-time screens (e.g. board): open two sessions, change data in one and confirm the other updates without reload; check the `/ws` connection reconnects after a reload and closes on logout.
 - **Output:** `BLOCKER` / `MAJOR` / `MINOR` findings with steps, expected vs. actual, evidence and UX criterion; a list of what passed and what couldn't be tested; if there are UX MAJOR/BLOCKER findings, it says to hand them to `ui-ux-expert`.
 
 ### 4. `code-reviewer` — Design reviewer (read-only)
@@ -57,8 +59,8 @@ Agents defined in `frontend/.claude/agents/`. Subagents **do not talk to each ot
 
 **Functions:**
 - Scope: whatever it is given, otherwise `git diff HEAD` + untracked files.
-- Use project conventions as the baseline (`angular-project-structure`, `angular-data-services`).
-- Detect SOLID violations, over-engineering (single-implementation interfaces, one-product factories), duplicated knowledge, and leaky layers (e.g. a component using `HttpClient` instead of the `core/api` layer, `core` importing from `features`).
+- Use project conventions as the baseline (`angular-project-structure`, `angular-data-services`, `angular-websocket`).
+- Detect SOLID violations, over-engineering (single-implementation interfaces, one-product factories), duplicated knowledge, and leaky layers (e.g. a component using `HttpClient` or opening a WebSocket instead of the `core/api` layer, `core` importing from `features`, subscriptions without cleanup).
 - **Output:** up to ~15 `HIGH` / `MEDIUM` / `LOW` findings with `file:line`, problem and minimal fix, plus a 2–3 line verdict.
 
 ## Available skills
@@ -67,6 +69,7 @@ Agents defined in `frontend/.claude/agents/`. Subagents **do not talk to each ot
 |-----------------------------|----------------------------------------------------------|-----------------------------------------------|
 | `angular-project-structure` | core/shared/features/layout folders, routes, conventions | `angular-expert`, `code-reviewer`             |
 | `angular-data-services`     | Models, `XxxApi`, interceptors, errors                   | `angular-expert`, `code-reviewer`             |
+| `angular-websocket`         | `XxxSocket` classes, JWT handshake, reconnect, proxy     | `angular-expert`, `code-reviewer`             |
 | `glass-ui` (+ `glass.css`)  | Glassmorphism-lite design system                         | `angular-expert`, `ui-ux-expert`, `ui-tester` |
 
 ## Communication flow
@@ -117,3 +120,4 @@ sequenceDiagram
 3. `ui-tester` needs the backend running and credentials; if missing, the orchestrator reports it as a blocker instead of testing against a broken stack.
 4. At most **2 fix cycles**; after that, escalate to the user.
 5. If the backend changes its HTTP contract (see `backend/ORQUESTATION.md`), the orchestrator first launches `angular-expert` to update `src/app/core/models` and `src/app/core/api`, then `ui-tester` on the affected screens.
+6. The same applies to WebSocket contract changes (`/ws` endpoint, STOMP topics, message payloads — backend skill `spring-websocket`): `angular-expert` updates the `XxxSocket` class and its models, then `ui-tester` checks the live update with two sessions.
